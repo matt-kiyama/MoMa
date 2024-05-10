@@ -1,0 +1,23 @@
+{
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages",
+        "/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages",
+        "/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages",
+        "/home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages",
+        "/home/rslomron/moveit2_ws/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/rslomron/moveit2_ws/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages",
+        "/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages",
+        "/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages",
+        "/home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages",
+        "/home/rslomron/moveit2_ws/install/moveit_msgs/local/lib/python3.10/dist-packages",
+        "/home/rslomron/moveit2_ws/install/moveit_configs_utils/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

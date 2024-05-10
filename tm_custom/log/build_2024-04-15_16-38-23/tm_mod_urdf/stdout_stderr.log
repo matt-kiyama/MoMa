@@ -1,0 +1,29 @@
+running egg_info
+writing ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/PKG-INFO
+writing dependency_links to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/dependency_links.txt
+writing entry points to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/entry_points.txt
+writing requirements to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/requires.txt
+writing top-level names to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/top_level.txt
+reading manifest file '../../build/tm_mod_urdf/tm_mod_urdf.egg-info/SOURCES.txt'
+writing manifest file '../../build/tm_mod_urdf/tm_mod_urdf.egg-info/SOURCES.txt'
+running build
+running build_py
+copying tm_mod_urdf/modify_urdf.py -> /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf
+copying tm_mod_urdf/_modify_urdf.py -> /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf
+copying tm_mod_urdf/modify_xacro.py -> /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf
+running install
+running install_lib
+copying /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf/modify_urdf.py -> /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf
+copying /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf/_modify_urdf.py -> /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf
+copying /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf/modify_xacro.py -> /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf
+byte-compiling /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf/modify_urdf.py to modify_urdf.cpython-310.pyc
+byte-compiling /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf/_modify_urdf.py to _modify_urdf.cpython-310.pyc
+byte-compiling /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf/modify_xacro.py to modify_xacro.cpython-310.pyc
+running install_data
+copying package.xml -> /home/rslomron/tm_custom/install/tm_mod_urdf/share/tm_mod_urdf
+running install_egg_info
+Copying ../../build/tm_mod_urdf/tm_mod_urdf.egg-info to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf-1.1.2-py3.10.egg-info
+running install_scripts
+Installing modify_urdf script to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/tm_mod_urdf
+Installing modify_xacro script to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/tm_mod_urdf
+writing list of installed files to '/home/rslomron/tm_custom/build/tm_mod_urdf/install.log'

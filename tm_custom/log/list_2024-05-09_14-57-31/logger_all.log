@@ -1,0 +1,240 @@
+[0.178s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'list', '-p', '--base-paths', '/home/rslomron/tm_custom']
+[0.180s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='list', build_base='build', ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['/home/rslomron/tm_custom'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], topological_order=False, names_only=False, paths_only=True, topological_graph=False, topological_graph_dot=False, topological_graph_density=False, topological_graph_legend=False, topological_graph_dot_cluster=False, topological_graph_dot_include_skipped=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7efb1a66c5b0>, verb_extension=<colcon_package_information.verb.list.ListVerb object at 0x7efb1a63b5e0>, main=<bound method ListVerb.main of <colcon_package_information.verb.list.ListVerb object at 0x7efb1a63b5e0>>, mixin_verb=('list',))
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.482s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.482s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rslomron/tm_custom'
+[0.482s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extensions ['ignore', 'ignore_ament_install']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'ignore'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'ignore_ament_install'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extensions ['colcon_pkg']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'colcon_pkg'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extensions ['colcon_meta']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'colcon_meta'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extensions ['ros']
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'ros'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extensions ['cmake', 'python']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'cmake'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'python'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extensions ['python_setup_py']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom) by extension 'python_setup_py'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/build) by extensions ['ignore', 'ignore_ament_install']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/build) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/build) ignored
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/install) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/install) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/install) ignored
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/log) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/log) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/log) ignored
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extensions ['ignore', 'ignore_ament_install']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'ignore'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'ignore_ament_install'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extensions ['colcon_pkg']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'colcon_pkg'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extensions ['colcon_meta']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'colcon_meta'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extensions ['ros']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'ros'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extensions ['cmake', 'python']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'cmake'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'python'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extensions ['python_setup_py']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/rosbag2_2024_05_09-14_42_06) by extension 'python_setup_py'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'ignore_ament_install'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extensions ['colcon_pkg']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'colcon_pkg'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extensions ['colcon_meta']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'colcon_meta'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extensions ['ros']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'ros'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extensions ['cmake', 'python']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'cmake'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'python'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extensions ['python_setup_py']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src) by extension 'python_setup_py'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extensions ['ignore', 'ignore_ament_install']
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extension 'ignore'
+[0.503s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extension 'ignore_ament_install'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extensions ['colcon_pkg']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extension 'colcon_pkg'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extensions ['colcon_meta']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extension 'colcon_meta'
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extensions ['ros']
+[0.504s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/custom_package) by extension 'ros'
+[0.507s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/custom_package' with type 'ros.ament_cmake' and name 'custom_package'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extensions ['ignore', 'ignore_ament_install']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extension 'ignore'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extension 'ignore_ament_install'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extensions ['colcon_pkg']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extension 'colcon_pkg'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extensions ['colcon_meta']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extension 'colcon_meta'
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extensions ['ros']
+[0.508s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/demo) by extension 'ros'
+[0.509s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/demo' with type 'ros.ament_cmake' and name 'demo'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extensions ['ignore', 'ignore_ament_install']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extension 'ignore'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extension 'ignore_ament_install'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extensions ['colcon_pkg']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extension 'colcon_pkg'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extensions ['colcon_meta']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extension 'colcon_meta'
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extensions ['ros']
+[0.510s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_get_status) by extension 'ros'
+[0.510s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/techman_robot_get_status' with type 'ros.ament_python' and name 'techman_robot_get_status'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extension 'ignore'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extension 'ignore_ament_install'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extensions ['colcon_pkg']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extension 'colcon_pkg'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extensions ['colcon_meta']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extension 'colcon_meta'
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extensions ['ros']
+[0.511s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/techman_robot_msgs) by extension 'ros'
+[0.512s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/techman_robot_msgs' with type 'ros.ament_cmake' and name 'techman_robot_msgs'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extensions ['ignore', 'ignore_ament_install']
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extension 'ignore'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extension 'ignore_ament_install'
+[0.512s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extensions ['colcon_pkg']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extension 'colcon_pkg'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extensions ['colcon_meta']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extension 'colcon_meta'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extensions ['ros']
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_description) by extension 'ros'
+[0.513s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_description' with type 'ros.ament_cmake' and name 'tm_description'
+[0.513s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extension 'ignore'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extension 'ignore_ament_install'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extensions ['colcon_pkg']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extension 'colcon_pkg'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extensions ['colcon_meta']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extension 'colcon_meta'
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extensions ['ros']
+[0.514s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_driver) by extension 'ros'
+[0.515s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_driver' with type 'ros.ament_cmake' and name 'tm_driver'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extensions ['ignore', 'ignore_ament_install']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extension 'ignore'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extension 'ignore_ament_install'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extensions ['colcon_pkg']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extension 'colcon_pkg'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extensions ['colcon_meta']
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extension 'colcon_meta'
+[0.515s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extensions ['ros']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_mod_urdf) by extension 'ros'
+[0.516s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_mod_urdf' with type 'ros.ament_python' and name 'tm_mod_urdf'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extensions ['ignore', 'ignore_ament_install']
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extension 'ignore'
+[0.516s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extension 'ignore_ament_install'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extensions ['colcon_pkg']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extension 'colcon_pkg'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extensions ['colcon_meta']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extension 'colcon_meta'
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extensions ['ros']
+[0.517s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12) by extension 'ros'
+[0.518s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm12' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm12'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extensions ['ignore', 'ignore_ament_install']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extension 'ignore'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extension 'ignore_ament_install'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extensions ['colcon_pkg']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extension 'colcon_pkg'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extensions ['colcon_meta']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extension 'colcon_meta'
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extensions ['ros']
+[0.518s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm12x) by extension 'ros'
+[0.519s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm12x' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm12x'
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extensions ['ignore', 'ignore_ament_install']
+[0.519s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extension 'ignore'
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extension 'ignore_ament_install'
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extensions ['colcon_pkg']
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extension 'colcon_pkg'
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extensions ['colcon_meta']
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extension 'colcon_meta'
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extensions ['ros']
+[0.520s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14) by extension 'ros'
+[0.521s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm14' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm14'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extensions ['ignore', 'ignore_ament_install']
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extension 'ignore'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extension 'ignore_ament_install'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extensions ['colcon_pkg']
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extension 'colcon_pkg'
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extensions ['colcon_meta']
+[0.521s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extension 'colcon_meta'
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extensions ['ros']
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm14x) by extension 'ros'
+[0.522s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm14x' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm14x'
+[0.522s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extensions ['ignore', 'ignore_ament_install']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extension 'ignore'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extension 'ignore_ament_install'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extensions ['colcon_pkg']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extension 'colcon_pkg'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extensions ['colcon_meta']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extension 'colcon_meta'
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extensions ['ros']
+[0.523s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700) by extension 'ros'
+[0.524s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm5-700' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm5-700'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extensions ['ignore', 'ignore_ament_install']
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extension 'ignore'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extension 'ignore_ament_install'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extensions ['colcon_pkg']
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extension 'colcon_pkg'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extensions ['colcon_meta']
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extension 'colcon_meta'
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extensions ['ros']
+[0.524s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900) by extension 'ros'
+[0.525s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm5-900' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm5-900'
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extensions ['ignore', 'ignore_ament_install']
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extension 'ignore'
+[0.525s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extension 'ignore_ament_install'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extensions ['colcon_pkg']
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extension 'colcon_pkg'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extensions ['colcon_meta']
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extension 'colcon_meta'
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extensions ['ros']
+[0.526s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700) by extension 'ros'
+[0.527s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-700' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm5x-700'
+[0.527s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extensions ['ignore', 'ignore_ament_install']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extension 'ignore'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extension 'ignore_ament_install'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extensions ['colcon_pkg']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extension 'colcon_pkg'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extensions ['colcon_meta']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extension 'colcon_meta'
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extensions ['ros']
+[0.529s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900) by extension 'ros'
+[0.530s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_config_tm5x-900' with type 'ros.ament_cmake' and name 'tm_moveit_config_tm5x-900'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extensions ['ignore', 'ignore_ament_install']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extension 'ignore'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extension 'ignore_ament_install'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extensions ['colcon_pkg']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extension 'colcon_pkg'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extensions ['colcon_meta']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extension 'colcon_meta'
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extensions ['ros']
+[0.530s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_moveit_cpp_demo) by extension 'ros'
+[0.531s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_moveit_cpp_demo' with type 'ros.ament_cmake' and name 'tm_moveit_cpp_demo'
+[0.531s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extension 'ignore'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extension 'ignore_ament_install'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extensions ['colcon_pkg']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extension 'colcon_pkg'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extensions ['colcon_meta']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extension 'colcon_meta'
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extensions ['ros']
+[0.532s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/tm_msgs) by extension 'ros'
+[0.533s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/tm_msgs' with type 'ros.ament_cmake' and name 'tm_msgs'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extensions ['ignore', 'ignore_ament_install']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extension 'ignore'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extension 'ignore_ament_install'
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extensions ['colcon_pkg']
+[0.533s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extension 'colcon_pkg'
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extensions ['colcon_meta']
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extension 'colcon_meta'
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extensions ['ros']
+[0.534s] Level 1:colcon.colcon_core.package_identification:_identify(/home/rslomron/tm_custom/src/ui_for_debug_and_demo) by extension 'ros'
+[0.535s] DEBUG:colcon.colcon_core.package_identification:Package '/home/rslomron/tm_custom/src/ui_for_debug_and_demo' with type 'ros.ament_cmake' and name 'ui_for_debug_and_demo'
+[0.535s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults

@@ -1,0 +1,12 @@
+[0.101s] Invoking command in '/home/rslomron/tm_custom/build/custom_package': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/techman_robot_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/techman_robot_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/techman_robot_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/custom_package -- -j8 -l8
+[0.127s] [35m[1mConsolidate compiler generated dependencies of target tm_send_command[0m
+[0.128s] [35m[1mConsolidate compiler generated dependencies of target sub_img[0m
+[0.128s] [ 25%] [32mBuilding CXX object CMakeFiles/tm_send_command.dir/src/send_command.cpp.o[0m
+[0.136s] [ 75%] Built target sub_img
+[4.550s] [01m[K/home/rslomron/tm_custom/src/custom_package/src/send_command.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[4.550s] [01m[K/home/rslomron/tm_custom/src/custom_package/src/send_command.cpp:24:70:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[4.550s]    24 |   if(rclcpp::spin_until_future_complete(node, res_future) != rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS){
+[4.551s]       |                                                                      [01;31m[K^~~~~~~~[m[K
+[5.647s] gmake[2]: *** [CMakeFiles/tm_send_command.dir/build.make:76: CMakeFiles/tm_send_command.dir/src/send_command.cpp.o] Error 1
+[5.648s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/tm_send_command.dir/all] Error 2
+[5.648s] gmake: *** [Makefile:146: all] Error 2

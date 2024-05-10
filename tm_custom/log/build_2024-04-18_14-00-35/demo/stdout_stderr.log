@@ -1,0 +1,27 @@
+[35m[1mConsolidate compiler generated dependencies of target demo_send_script[0m
+[35m[1mConsolidate compiler generated dependencies of target demo_set_event[0m
+[  7%] Built target demo_ask_sta
+[ 14%] Built target demo_write_item
+[ 21%] Built target demo_connect_tm
+[ 28%] Built target demo_set_io
+[ 35%] Built target demo_set_event
+[ 39%] [32mBuilding CXX object CMakeFiles/demo_send_script.dir/src/demo_send_script.cpp.o[0m
+[ 46%] Built target demo_set_positions
+[ 53%] Built target demo_ask_item
+[35m[1mConsolidate compiler generated dependencies of target demo_leave_listen_node[0m
+[ 60%] Built target demo_get_feedback
+[ 67%] Built target demo_get_torque_feedback
+[ 75%] Built target demo_get_sta_response
+[ 82%] Built target demo_get_sct_response
+[ 85%] [32mBuilding CXX object CMakeFiles/demo_leave_listen_node.dir/src/demo_leave_listen_node.cpp.o[0m
+[ 92%] Built target demo_get_svr_response
+[01m[K/home/rslomron/tm_custom/src/demo/src/demo_send_script.cpp:[m[K In function ‘[01m[Kbool send_cmd(std::string, std::shared_ptr<rclcpp::Node>, rclcpp::Client<tm_msgs::srv::SendScript>::SharedPtr)[m[K’:
+[01m[K/home/rslomron/tm_custom/src/demo/src/demo_send_script.cpp:26:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+   26 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+      |             [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/demo_send_script.dir/build.make:76: CMakeFiles/demo_send_script.dir/src/demo_send_script.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:163: CMakeFiles/demo_send_script.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 96%] [32m[1mLinking CXX executable demo_leave_listen_node[0m
+[ 96%] Built target demo_leave_listen_node
+gmake: *** [Makefile:146: all] Error 2

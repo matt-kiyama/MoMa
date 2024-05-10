@@ -1,0 +1,48 @@
+[0.016s] Invoking command in '/home/rslomron/tm_custom/build/demo': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/demo -- -j8 -l8
+[0.099s] [  7%] Built target demo_ask_sta
+[0.102s] [ 14%] Built target demo_send_script
+[0.102s] [ 21%] Built target demo_connect_tm
+[0.115s] [ 35%] Built target demo_set_io
+[0.115s] [ 35%] Built target demo_set_event
+[0.120s] [ 42%] Built target demo_set_positions
+[0.128s] [ 50%] Built target demo_write_item
+[0.155s] [ 57%] Built target demo_get_torque_feedback
+[0.159s] [ 64%] Built target demo_get_feedback
+[0.167s] [ 71%] Built target demo_get_sct_response
+[0.169s] [ 78%] Built target demo_ask_item
+[0.177s] [ 85%] Built target demo_get_sta_response
+[0.183s] [ 92%] Built target demo_get_svr_response
+[0.192s] [100%] Built target demo_leave_listen_node
+[0.211s] Invoked command in '/home/rslomron/tm_custom/build/demo' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/demo -- -j8 -l8
+[0.273s] Invoking command in '/home/rslomron/tm_custom/build/demo': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rslomron/tm_custom/build/demo
+[0.281s] -- Install configuration: ""
+[0.281s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_send_script
+[0.282s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_ask_sta
+[0.282s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_connect_tm
+[0.282s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_set_event
+[0.283s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_set_io
+[0.283s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_set_positions
+[0.286s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_write_item
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_ask_item
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_get_feedback
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_get_torque_feedback
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_get_sct_response
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_get_sta_response
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_get_svr_response
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/lib/demo/demo_leave_listen_node
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/ament_index/resource_index/package_run_dependencies/demo
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/ament_index/resource_index/parent_prefix_path/demo
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/environment/ament_prefix_path.sh
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/environment/ament_prefix_path.dsv
+[0.289s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/environment/path.sh
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/environment/path.dsv
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/local_setup.bash
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/local_setup.sh
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/local_setup.zsh
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/local_setup.dsv
+[0.290s] -- Installing: /home/rslomron/tm_custom/install/demo/share/demo/package.dsv
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/ament_index/resource_index/packages/demo
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/cmake/demoConfig.cmake
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/cmake/demoConfig-version.cmake
+[0.290s] -- Up-to-date: /home/rslomron/tm_custom/install/demo/share/demo/package.xml
+[0.303s] Invoked command in '/home/rslomron/tm_custom/build/demo' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rslomron/tm_custom/build/demo

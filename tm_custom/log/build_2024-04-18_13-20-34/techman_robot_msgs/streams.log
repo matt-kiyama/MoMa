@@ -1,0 +1,148 @@
+[0.026s] Invoking command in '/home/rslomron/tm_custom/build/techman_robot_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/techman_robot_msgs -- -j8 -l8
+[0.646s] [  3%] Built target techman_robot_msgs__cpp
+[0.647s] [ 12%] Built target techman_robot_msgs__rosidl_generator_c
+[0.647s] [ 12%] Built target ament_cmake_python_copy_techman_robot_msgs
+[0.647s] [ 29%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_cpp
+[0.647s] [ 38%] Built target techman_robot_msgs__rosidl_typesupport_c
+[0.647s] [ 45%] Built target techman_robot_msgs__rosidl_typesupport_introspection_cpp
+[0.647s] [ 51%] Built target techman_robot_msgs__rosidl_typesupport_cpp
+[0.647s] [ 61%] Built target techman_robot_msgs__rosidl_typesupport_introspection_c
+[0.648s] [ 70%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_c
+[0.648s] [ 70%] Built target techman_robot_msgs
+[0.648s] [ 74%] Built target techman_robot_msgs__py
+[0.648s] [ 80%] Built target techman_robot_msgs__rosidl_generator_py
+[0.648s] [ 87%] Built target techman_robot_msgs__rosidl_typesupport_introspection_c__pyext
+[0.648s] [ 93%] Built target techman_robot_msgs__rosidl_typesupport_c__pyext
+[0.648s] [100%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_c__pyext
+[0.648s] running egg_info
+[0.648s] writing techman_robot_msgs.egg-info/PKG-INFO
+[0.649s] writing dependency_links to techman_robot_msgs.egg-info/dependency_links.txt
+[0.649s] writing top-level names to techman_robot_msgs.egg-info/top_level.txt
+[0.649s] reading manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'
+[0.649s] writing manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'
+[0.649s] [100%] Built target ament_cmake_python_build_techman_robot_msgs_egg
+[0.656s] Invoked command in '/home/rslomron/tm_custom/build/techman_robot_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/techman_robot_msgs -- -j8 -l8
+[0.738s] Invoking command in '/home/rslomron/tm_custom/build/techman_robot_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/techman_robot_msgs
+[0.750s] -- Install configuration: ""
+[0.752s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/ament_index/resource_index/rosidl_interfaces/techman_robot_msgs
+[0.760s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg/rosidl_generator_c__visibility_control.h
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__type_support.h
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__functions.h
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__functions.c
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__struct.h
+[0.761s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/techman_robot_command.h
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/library_path.sh
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/library_path.dsv
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_generator_c.so
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__rosidl_typesupport_fastrtps_c.h
+[0.762s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_typesupport_fastrtps_c.so
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__type_support.c
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__rosidl_typesupport_introspection_c.h
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_typesupport_introspection_c.so
+[0.763s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_typesupport_c.so
+[0.764s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs
+[0.764s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv
+[0.764s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail
+[0.764s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__struct.hpp
+[0.764s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__builder.hpp
+[0.764s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__traits.hpp
+[0.765s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/techman_robot_command.hpp
+[0.765s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs
+[0.765s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/dds_fastrtps
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__rosidl_typesupport_fastrtps_cpp.hpp
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_typesupport_fastrtps_cpp.so
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv
+[0.766s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__type_support.cpp
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/include/techman_robot_msgs/techman_robot_msgs/srv/detail/techman_robot_command__rosidl_typesupport_introspection_cpp.hpp
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_typesupport_introspection_cpp.so
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_typesupport_cpp.so
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/pythonpath.sh
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/pythonpath.dsv
+[0.767s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs-1.0.0-py3.10.egg-info
+[0.767s] -- Installing: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs-1.0.0-py3.10.egg-info/top_level.txt
+[0.768s] -- Installing: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs-1.0.0-py3.10.egg-info/PKG-INFO
+[0.768s] -- Installing: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs-1.0.0-py3.10.egg-info/dependency_links.txt
+[0.768s] -- Installing: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs-1.0.0-py3.10.egg-info/SOURCES.txt
+[0.769s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs
+[0.769s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/libtechman_robot_msgs__rosidl_generator_py.so
+[0.770s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/_techman_robot_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[0.771s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.771s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/__init__.py
+[0.771s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/srv
+[0.771s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/srv/_techman_robot_command.py
+[0.772s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/srv/_techman_robot_command_s.c
+[0.772s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/srv/__init__.py
+[0.772s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/_techman_robot_msgs_s.ep.rosidl_typesupport_c.c
+[0.773s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/_techman_robot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.773s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.773s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.806s] Listing '/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs'...
+[0.806s] Listing '/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/srv'...
+[0.811s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.812s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.812s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.812s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/lib/libtechman_robot_msgs__rosidl_generator_py.so
+[0.813s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/srv/TechmanRobotCommand.idl
+[0.813s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/srv/TechmanRobotCommand.srv
+[0.813s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/srv/TechmanRobotCommand_Request.msg
+[0.813s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/srv/TechmanRobotCommand_Response.msg
+[0.814s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/ament_index/resource_index/package_run_dependencies/techman_robot_msgs
+[0.815s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/ament_index/resource_index/parent_prefix_path/techman_robot_msgs
+[0.815s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/ament_prefix_path.sh
+[0.815s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/ament_prefix_path.dsv
+[0.815s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/path.sh
+[0.815s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/environment/path.dsv
+[0.816s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/local_setup.bash
+[0.816s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/local_setup.sh
+[0.816s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/local_setup.zsh
+[0.816s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/local_setup.dsv
+[0.816s] -- Installing: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/package.dsv
+[0.817s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/ament_index/resource_index/packages/techman_robot_msgs
+[0.817s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_generator_cExport.cmake
+[0.817s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_generator_cExport-noconfig.cmake
+[0.817s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[0.817s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_introspection_cExport.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_cExport.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_generator_cppExport.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.818s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_cppExport.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_generator_pyExport.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/export_techman_robot_msgs__rosidl_generator_pyExport-noconfig.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/rosidl_cmake-extras.cmake
+[0.819s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.820s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[0.820s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[0.820s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.820s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.821s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.821s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgsConfig.cmake
+[0.821s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/cmake/techman_robot_msgsConfig-version.cmake
+[0.821s] -- Up-to-date: /home/rslomron/tm_custom/install/techman_robot_msgs/share/techman_robot_msgs/package.xml
+[0.843s] Invoked command in '/home/rslomron/tm_custom/build/techman_robot_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/techman_robot_msgs

@@ -1,0 +1,7 @@
+[01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_positions.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_positions.cpp:44:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+   44 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+      |             [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/demo_set_positions.dir/build.make:76: CMakeFiles/demo_set_positions.dir/src/demo_set_positions.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:293: CMakeFiles/demo_set_positions.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,67 @@
+[0.017s] Invoking command in '/home/rslomron/tm_custom/build/demo': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/demo -- -j8 -l8
+[0.075s] [35m[1mConsolidate compiler generated dependencies of target demo_ask_sta[0m
+[0.079s] [35m[1mConsolidate compiler generated dependencies of target demo_send_script[0m
+[0.083s] [35m[1mConsolidate compiler generated dependencies of target demo_set_event[0m
+[0.095s] [35m[1mConsolidate compiler generated dependencies of target demo_connect_tm[0m
+[0.107s] [  3%] [32mBuilding CXX object CMakeFiles/demo_send_script.dir/src/demo_send_script.cpp.o[0m
+[0.116s] [  7%] [32mBuilding CXX object CMakeFiles/demo_ask_sta.dir/src/demo_ask_sta.cpp.o[0m
+[0.122s] [35m[1mConsolidate compiler generated dependencies of target demo_write_item[0m
+[0.125s] [35m[1mConsolidate compiler generated dependencies of target demo_ask_item[0m
+[0.128s] [35m[1mConsolidate compiler generated dependencies of target demo_set_io[0m
+[0.139s] [35m[1mConsolidate compiler generated dependencies of target demo_set_positions[0m
+[0.144s] [ 10%] [32mBuilding CXX object CMakeFiles/demo_set_event.dir/src/demo_set_event.cpp.o[0m
+[0.148s] [ 14%] [32mBuilding CXX object CMakeFiles/demo_connect_tm.dir/src/demo_connect_tm.cpp.o[0m
+[0.177s] [ 17%] [32mBuilding CXX object CMakeFiles/demo_write_item.dir/src/demo_write_item.cpp.o[0m
+[0.208s] [ 21%] [32mBuilding CXX object CMakeFiles/demo_set_io.dir/src/demo_set_io.cpp.o[0m
+[0.220s] [ 25%] [32mBuilding CXX object CMakeFiles/demo_set_positions.dir/src/demo_set_positions.cpp.o[0m
+[0.254s] [ 28%] [32mBuilding CXX object CMakeFiles/demo_ask_item.dir/src/demo_ask_item.cpp.o[0m
+[4.646s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_send_script.cpp:[m[K In function ‘[01m[Kbool send_cmd(std::string, std::shared_ptr<rclcpp::Node>, rclcpp::Client<tm_msgs::srv::SendScript>::SharedPtr)[m[K’:
+[4.646s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_send_script.cpp:26:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[4.646s]    26 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[4.646s]       |             [01;31m[K^~~~~~~~[m[K
+[4.658s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_connect_tm.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[4.658s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_connect_tm.cpp:36:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[4.659s]    36 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[4.659s]       |             [01;31m[K^~~~~~~~[m[K
+[4.875s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_io.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[4.875s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_io.cpp:36:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[4.875s]    36 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[4.876s]       |             [01;31m[K^~~~~~~~[m[K
+[4.999s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_ask_item.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[4.999s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_ask_item.cpp:35:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[4.999s]    35 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[5.000s]       |             [01;31m[K^~~~~~~~[m[K
+[5.016s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_ask_sta.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.016s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_ask_sta.cpp:36:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[5.016s]    36 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[5.016s]       |             [01;31m[K^~~~~~~~[m[K
+[5.026s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_write_item.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.026s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_write_item.cpp:35:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[5.026s]    35 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[5.027s]       |             [01;31m[K^~~~~~~~[m[K
+[5.158s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_event.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.158s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_event.cpp:35:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[5.158s]    35 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[5.158s]       |             [01;31m[K^~~~~~~~[m[K
+[5.580s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_positions.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[5.580s] [01m[K/home/rslomron/tm_custom/src/demo/src/demo_set_positions.cpp:43:13:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::executor[m[K’ has not been declared
+[5.580s]    43 |     rclcpp::[01;31m[Kexecutor[m[K::FutureReturnCode::SUCCESS)
+[5.580s]       |             [01;31m[K^~~~~~~~[m[K
+[5.609s] gmake[2]: *** [CMakeFiles/demo_send_script.dir/build.make:76: CMakeFiles/demo_send_script.dir/src/demo_send_script.cpp.o] Error 1
+[5.609s] gmake[1]: *** [CMakeFiles/Makefile2:163: CMakeFiles/demo_send_script.dir/all] Error 2
+[5.610s] gmake[1]: *** Waiting for unfinished jobs....
+[5.681s] gmake[2]: *** [CMakeFiles/demo_connect_tm.dir/build.make:76: CMakeFiles/demo_connect_tm.dir/src/demo_connect_tm.cpp.o] Error 1
+[5.681s] gmake[1]: *** [CMakeFiles/Makefile2:215: CMakeFiles/demo_connect_tm.dir/all] Error 2
+[5.897s] gmake[2]: *** [CMakeFiles/demo_write_item.dir/build.make:76: CMakeFiles/demo_write_item.dir/src/demo_write_item.cpp.o] Error 1
+[5.897s] gmake[1]: *** [CMakeFiles/Makefile2:319: CMakeFiles/demo_write_item.dir/all] Error 2
+[5.897s] gmake[2]: *** [CMakeFiles/demo_set_io.dir/build.make:76: CMakeFiles/demo_set_io.dir/src/demo_set_io.cpp.o] Error 1
+[5.897s] gmake[1]: *** [CMakeFiles/Makefile2:267: CMakeFiles/demo_set_io.dir/all] Error 2
+[5.932s] gmake[2]: *** [CMakeFiles/demo_ask_sta.dir/build.make:76: CMakeFiles/demo_ask_sta.dir/src/demo_ask_sta.cpp.o] Error 1
+[5.932s] gmake[1]: *** [CMakeFiles/Makefile2:189: CMakeFiles/demo_ask_sta.dir/all] Error 2
+[6.005s] gmake[2]: *** [CMakeFiles/demo_ask_item.dir/build.make:76: CMakeFiles/demo_ask_item.dir/src/demo_ask_item.cpp.o] Error 1
+[6.005s] gmake[1]: *** [CMakeFiles/Makefile2:345: CMakeFiles/demo_ask_item.dir/all] Error 2
+[6.068s] gmake[2]: *** [CMakeFiles/demo_set_event.dir/build.make:76: CMakeFiles/demo_set_event.dir/src/demo_set_event.cpp.o] Error 1
+[6.068s] gmake[1]: *** [CMakeFiles/Makefile2:241: CMakeFiles/demo_set_event.dir/all] Error 2
+[6.317s] gmake[2]: *** [CMakeFiles/demo_set_positions.dir/build.make:76: CMakeFiles/demo_set_positions.dir/src/demo_set_positions.cpp.o] Error 1
+[6.317s] gmake[1]: *** [CMakeFiles/Makefile2:293: CMakeFiles/demo_set_positions.dir/all] Error 2
+[6.317s] gmake: *** [Makefile:146: all] Error 2

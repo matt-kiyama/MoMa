@@ -1,0 +1,23 @@
+[0.074s] Invoking command in '/home/rslomron/tm_custom/build/tm_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/techman_robot_get_status:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_msgs -- -j8 -l8
+[1.389s] [  0%] Built target tm_msgs__cpp
+[1.390s] [ 12%] Built target tm_msgs__rosidl_generator_c
+[1.390s] [ 12%] Built target ament_cmake_python_copy_tm_msgs
+[1.391s] [ 24%] Built target tm_msgs__rosidl_typesupport_cpp
+[1.391s] [ 35%] Built target tm_msgs__rosidl_typesupport_fastrtps_cpp
+[1.391s] [ 47%] Built target tm_msgs__rosidl_typesupport_fastrtps_c
+[1.391s] [ 59%] Built target tm_msgs__rosidl_typesupport_introspection_c
+[1.392s] [ 71%] Built target tm_msgs__rosidl_typesupport_introspection_cpp
+[1.392s] [ 83%] Built target tm_msgs__rosidl_typesupport_c
+[1.392s] [ 83%] Built target tm_msgs
+[1.392s] [ 84%] Built target tm_msgs__py
+[1.392s] [ 95%] Built target tm_msgs__rosidl_generator_py
+[1.392s] [ 97%] Built target tm_msgs__rosidl_typesupport_c__pyext
+[1.392s] [ 99%] Built target tm_msgs__rosidl_typesupport_introspection_c__pyext
+[1.393s] [100%] Built target tm_msgs__rosidl_typesupport_fastrtps_c__pyext
+[1.393s] running egg_info
+[1.393s] writing tm_msgs.egg-info/PKG-INFO
+[1.393s] writing dependency_links to tm_msgs.egg-info/dependency_links.txt
+[1.393s] writing top-level names to tm_msgs.egg-info/top_level.txt
+[1.393s] reading manifest file 'tm_msgs.egg-info/SOURCES.txt'
+[1.393s] writing manifest file 'tm_msgs.egg-info/SOURCES.txt'
+[1.394s] [100%] Built target ament_cmake_python_build_tm_msgs_egg

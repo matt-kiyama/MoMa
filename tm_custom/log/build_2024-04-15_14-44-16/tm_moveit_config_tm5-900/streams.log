@@ -1,0 +1,42 @@
+[0.028s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm5-900': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake /home/rslomron/tm_custom/src/tm_moveit_config_tm5-900 -DCMAKE_INSTALL_PREFIX=/home/rslomron/tm_custom/install/tm_moveit_config_tm5-900
+[0.119s] -- The C compiler identification is GNU 11.4.0
+[0.214s] -- The CXX compiler identification is GNU 11.4.0
+[0.226s] -- Detecting C compiler ABI info
+[0.333s] -- Detecting C compiler ABI info - done
+[0.361s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.362s] -- Detecting C compile features
+[0.362s] -- Detecting C compile features - done
+[0.362s] -- Detecting CXX compiler ABI info
+[0.484s] -- Detecting CXX compiler ABI info - done
+[0.493s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.494s] -- Detecting CXX compile features
+[0.496s] -- Detecting CXX compile features - done
+[0.506s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.751s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.906s] -- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.024s] -- Added test 'lint_cmake' to check CMake code style
+[1.027s] -- Added test 'xmllint' to check XML markup files
+[1.029s] -- Configuring done
+[1.033s] -- Generating done
+[1.035s] -- Build files have been written to: /home/rslomron/tm_custom/build/tm_moveit_config_tm5-900
+[1.044s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm5-900' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake /home/rslomron/tm_custom/src/tm_moveit_config_tm5-900 -DCMAKE_INSTALL_PREFIX=/home/rslomron/tm_custom/install/tm_moveit_config_tm5-900
+[1.047s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm5-900': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_moveit_config_tm5-900 -- -j8 -l8
+[1.108s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm5-900' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_moveit_config_tm5-900 -- -j8 -l8
+[1.141s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm5-900': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_moveit_config_tm5-900
+[1.152s] -- Install configuration: ""
+[1.153s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/ament_index/resource_index/package_run_dependencies/tm_moveit_config_tm5-900
+[1.153s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/ament_index/resource_index/parent_prefix_path/tm_moveit_config_tm5-900
+[1.154s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/environment/ament_prefix_path.sh
+[1.154s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/environment/ament_prefix_path.dsv
+[1.155s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/environment/path.sh
+[1.155s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/environment/path.dsv
+[1.155s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/local_setup.bash
+[1.155s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/local_setup.sh
+[1.155s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/local_setup.zsh
+[1.156s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/local_setup.dsv
+[1.156s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/package.dsv
+[1.156s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/ament_index/resource_index/packages/tm_moveit_config_tm5-900
+[1.156s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/cmake/tm_moveit_config_tm5-900Config.cmake
+[1.156s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/cmake/tm_moveit_config_tm5-900Config-version.cmake
+[1.157s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5-900/share/tm_moveit_config_tm5-900/package.xml
+[1.162s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm5-900' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_moveit_config_tm5-900

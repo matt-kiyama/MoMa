@@ -1,0 +1,22 @@
+[2.136s] Invoking command in '/home/rslomron/tm_custom/src/tm_mod_urdf': PYTHONPATH=/home/rslomron/tm_custom/build/tm_mod_urdf/prefix_override:/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/tm_mod_urdf build --build-base /home/rslomron/tm_custom/build/tm_mod_urdf/build install --record /home/rslomron/tm_custom/build/tm_mod_urdf/install.log --single-version-externally-managed install_data
+[2.710s] running egg_info
+[2.713s] writing ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/PKG-INFO
+[2.713s] writing dependency_links to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/dependency_links.txt
+[2.713s] writing entry points to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/entry_points.txt
+[2.713s] writing requirements to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/requires.txt
+[2.714s] writing top-level names to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/top_level.txt
+[2.723s] reading manifest file '../../build/tm_mod_urdf/tm_mod_urdf.egg-info/SOURCES.txt'
+[2.726s] writing manifest file '../../build/tm_mod_urdf/tm_mod_urdf.egg-info/SOURCES.txt'
+[2.726s] running build
+[2.726s] running build_py
+[2.727s] running install
+[2.727s] running install_lib
+[2.729s] running install_data
+[2.730s] running install_egg_info
+[2.741s] removing '/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf-1.1.2-py3.10.egg-info' (and everything under it)
+[2.743s] Copying ../../build/tm_mod_urdf/tm_mod_urdf.egg-info to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf-1.1.2-py3.10.egg-info
+[2.744s] running install_scripts
+[2.788s] Installing modify_urdf script to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/tm_mod_urdf
+[2.788s] Installing modify_xacro script to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/tm_mod_urdf
+[2.788s] writing list of installed files to '/home/rslomron/tm_custom/build/tm_mod_urdf/install.log'
+[2.874s] Invoked command in '/home/rslomron/tm_custom/src/tm_mod_urdf' returned '0': PYTHONPATH=/home/rslomron/tm_custom/build/tm_mod_urdf/prefix_override:/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/tm_mod_urdf build --build-base /home/rslomron/tm_custom/build/tm_mod_urdf/build install --record /home/rslomron/tm_custom/build/tm_mod_urdf/install.log --single-version-externally-managed install_data

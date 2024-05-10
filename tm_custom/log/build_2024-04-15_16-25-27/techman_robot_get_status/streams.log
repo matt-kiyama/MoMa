@@ -1,0 +1,31 @@
+[0.642s] Invoking command in '/home/rslomron/tm_custom/src/techman_robot_get_status': PYTHONPATH=/home/rslomron/tm_custom/build/techman_robot_get_status/prefix_override:/home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/techman_robot_get_status build --build-base /home/rslomron/tm_custom/build/techman_robot_get_status/build install --record /home/rslomron/tm_custom/build/techman_robot_get_status/install.log --single-version-externally-managed install_data
+[0.883s] running egg_info
+[0.884s] writing ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/PKG-INFO
+[0.884s] writing dependency_links to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/dependency_links.txt
+[0.885s] writing entry points to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/entry_points.txt
+[0.885s] writing requirements to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/requires.txt
+[0.885s] writing top-level names to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/top_level.txt
+[0.886s] reading manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+[0.887s] writing manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+[0.887s] running build
+[0.887s] running build_py
+[0.887s] copying techman_robot_get_status/image_pub.py -> /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[0.888s] copying techman_robot_get_status/translate_jason_to_list.py -> /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[0.888s] copying techman_robot_get_status/get_status.py -> /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[0.888s] running install
+[0.888s] running install_lib
+[0.889s] copying /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/image_pub.py -> /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[0.889s] copying /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/translate_jason_to_list.py -> /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[0.889s] copying /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/get_status.py -> /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[0.889s] byte-compiling /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/image_pub.py to image_pub.cpython-310.pyc
+[0.891s] byte-compiling /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/translate_jason_to_list.py to translate_jason_to_list.cpython-310.pyc
+[0.891s] byte-compiling /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/get_status.py to get_status.cpython-310.pyc
+[0.892s] running install_data
+[0.892s] running install_egg_info
+[0.894s] removing '/home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status-1.0.0-py3.10.egg-info' (and everything under it)
+[0.894s] Copying ../../build/techman_robot_get_status/techman_robot_get_status.egg-info to /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status-1.0.0-py3.10.egg-info
+[0.895s] running install_scripts
+[0.914s] Installing image_talker script to /home/rslomron/tm_custom/install/techman_robot_get_status/lib/techman_robot_get_status
+[0.914s] Installing status_talker script to /home/rslomron/tm_custom/install/techman_robot_get_status/lib/techman_robot_get_status
+[0.914s] writing list of installed files to '/home/rslomron/tm_custom/build/techman_robot_get_status/install.log'
+[0.939s] Invoked command in '/home/rslomron/tm_custom/src/techman_robot_get_status' returned '0': PYTHONPATH=/home/rslomron/tm_custom/build/techman_robot_get_status/prefix_override:/home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/techman_robot_get_status build --build-base /home/rslomron/tm_custom/build/techman_robot_get_status/build install --record /home/rslomron/tm_custom/build/techman_robot_get_status/install.log --single-version-externally-managed install_data

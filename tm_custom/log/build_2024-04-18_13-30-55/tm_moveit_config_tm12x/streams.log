@@ -1,0 +1,20 @@
+[0.056s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm12x': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_moveit_config_tm12x -- -j8 -l8
+[0.099s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm12x' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_moveit_config_tm12x -- -j8 -l8
+[0.134s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm12x': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_moveit_config_tm12x
+[0.146s] -- Install configuration: ""
+[0.146s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/ament_index/resource_index/package_run_dependencies/tm_moveit_config_tm12x
+[0.146s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/ament_index/resource_index/parent_prefix_path/tm_moveit_config_tm12x
+[0.147s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/environment/ament_prefix_path.sh
+[0.147s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/environment/ament_prefix_path.dsv
+[0.147s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/environment/path.sh
+[0.149s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/environment/path.dsv
+[0.149s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/local_setup.bash
+[0.151s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/local_setup.sh
+[0.151s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/local_setup.zsh
+[0.151s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/local_setup.dsv
+[0.152s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/package.dsv
+[0.152s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/ament_index/resource_index/packages/tm_moveit_config_tm12x
+[0.152s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/cmake/tm_moveit_config_tm12xConfig.cmake
+[0.153s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/cmake/tm_moveit_config_tm12xConfig-version.cmake
+[0.153s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm12x/share/tm_moveit_config_tm12x/package.xml
+[0.160s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_config_tm12x' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_moveit_config_tm12x

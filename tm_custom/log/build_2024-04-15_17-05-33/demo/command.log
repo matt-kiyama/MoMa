@@ -1,0 +1,1 @@
+Invoking command in '/home/rslomron/tm_custom/build/demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/demo -- -j8 -l8

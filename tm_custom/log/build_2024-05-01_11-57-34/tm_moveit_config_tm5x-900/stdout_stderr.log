@@ -1,0 +1,43 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/rslomron/tm_custom/build/tm_moveit_config_tm5x-900
+-- Install configuration: ""
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/ament_index/resource_index/package_run_dependencies/tm_moveit_config_tm5x-900
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/ament_index/resource_index/parent_prefix_path/tm_moveit_config_tm5x-900
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/environment/ament_prefix_path.sh
+-- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/environment/path.sh
+-- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/environment/path.dsv
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/local_setup.bash
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/local_setup.sh
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/local_setup.zsh
+-- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/local_setup.dsv
+-- Installing: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/package.dsv
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/ament_index/resource_index/packages/tm_moveit_config_tm5x-900
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/cmake/tm_moveit_config_tm5x-900Config.cmake
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/cmake/tm_moveit_config_tm5x-900Config-version.cmake
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/package.xml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/ros_controllers.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/fake_controllers.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/stomp_planning.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/ompl_planning.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/chomp_planning.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/tm5x-900.srdf
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/sensors_3d.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/kinematics.yaml
+-- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900/share/tm_moveit_config_tm5x-900/config/joint_limits.yaml

@@ -1,0 +1,26 @@
+[0.016s] Invoking command in '/home/rslomron/tm_custom/build/ui_for_debug_and_demo': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/ui_for_debug_and_demo -- -j8 -l8
+[0.097s] [ 14%] [34m[1mAutomatic MOC and UIC for target robot_ui[0m
+[0.148s] [ 14%] Built target robot_ui_autogen
+[0.204s] [100%] Built target robot_ui
+[0.225s] Invoked command in '/home/rslomron/tm_custom/build/ui_for_debug_and_demo' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/ui_for_debug_and_demo -- -j8 -l8
+[0.276s] Invoking command in '/home/rslomron/tm_custom/build/ui_for_debug_and_demo': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rslomron/tm_custom/build/ui_for_debug_and_demo
+[0.286s] -- Install configuration: ""
+[0.286s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/lib/ui_for_debug_and_demo/robot_ui
+[0.286s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/launch
+[0.286s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/launch/tm_gui.launch.py
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ament_index/resource_index/package_run_dependencies/ui_for_debug_and_demo
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ament_index/resource_index/parent_prefix_path/ui_for_debug_and_demo
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/ament_prefix_path.sh
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/ament_prefix_path.dsv
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/path.sh
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/path.dsv
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.bash
+[0.287s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.sh
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.zsh
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.dsv
+[0.288s] -- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/package.dsv
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ament_index/resource_index/packages/ui_for_debug_and_demo
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/cmake/ui_for_debug_and_demoConfig.cmake
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/cmake/ui_for_debug_and_demoConfig-version.cmake
+[0.288s] -- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/package.xml
+[0.292s] Invoked command in '/home/rslomron/tm_custom/build/ui_for_debug_and_demo' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --install /home/rslomron/tm_custom/build/ui_for_debug_and_demo

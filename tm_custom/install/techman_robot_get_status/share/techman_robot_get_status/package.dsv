@@ -1,0 +1,6 @@
+source;share/techman_robot_get_status/hook/pythonpath.ps1
+source;share/techman_robot_get_status/hook/pythonpath.dsv
+source;share/techman_robot_get_status/hook/pythonpath.sh
+source;share/techman_robot_get_status/hook/ament_prefix_path.ps1
+source;share/techman_robot_get_status/hook/ament_prefix_path.dsv
+source;share/techman_robot_get_status/hook/ament_prefix_path.sh

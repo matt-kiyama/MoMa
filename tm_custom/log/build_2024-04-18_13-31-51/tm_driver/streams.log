@@ -1,0 +1,12 @@
+[0.020s] Invoking command in '/home/rslomron/tm_custom/build/tm_driver': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_driver -- -j8 -l8
+[0.076s] [35m[1mConsolidate compiler generated dependencies of target tm_driver[0m
+[0.166s] [  6%] [32mBuilding CXX object CMakeFiles/tm_driver.dir/src/tm_ros2_svr.cpp.o[0m
+[0.924s] In file included from [01m[K/home/rslomron/tm_custom/src/tm_driver/src/tm_ros2_svr.cpp:3[m[K:
+[0.924s] [01m[K/opt/ros/humble/include/tf2_geometry_msgs/tf2_geometry_msgs/tf2_geometry_msgs.hpp:59:10:[m[K [01;31m[Kfatal error: [m[Ktf2_ros/buffer_interface.h: No such file or directory
+[0.925s]    59 | #include [01;31m[K"tf2_ros/buffer_interface.h"[m[K
+[0.925s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.925s] compilation terminated.
+[0.929s] gmake[2]: *** [CMakeFiles/tm_driver.dir/build.make:104: CMakeFiles/tm_driver.dir/src/tm_ros2_svr.cpp.o] Error 1
+[0.930s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/tm_driver.dir/all] Error 2
+[0.930s] gmake: *** [Makefile:146: all] Error 2
+[0.932s] Invoked command in '/home/rslomron/tm_custom/build/tm_driver' returned '2': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_driver -- -j8 -l8

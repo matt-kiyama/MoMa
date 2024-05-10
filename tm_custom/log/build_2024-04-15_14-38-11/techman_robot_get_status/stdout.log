@@ -1,0 +1,31 @@
+running egg_info
+creating ../../build/techman_robot_get_status/techman_robot_get_status.egg-info
+writing ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/PKG-INFO
+writing dependency_links to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/dependency_links.txt
+writing entry points to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/entry_points.txt
+writing requirements to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/requires.txt
+writing top-level names to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/top_level.txt
+writing manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+reading manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+writing manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rslomron/tm_custom/build/techman_robot_get_status/build
+creating /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib
+creating /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+copying techman_robot_get_status/__init__.py -> /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+running install
+running install_lib
+creating /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+copying /home/rslomron/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/__init__.py -> /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+byte-compiling /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/rslomron/tm_custom/install/techman_robot_get_status/share/ament_index
+creating /home/rslomron/tm_custom/install/techman_robot_get_status/share/ament_index/resource_index
+creating /home/rslomron/tm_custom/install/techman_robot_get_status/share/ament_index/resource_index/packages
+copying resource/techman_robot_get_status -> /home/rslomron/tm_custom/install/techman_robot_get_status/share/ament_index/resource_index/packages
+copying package.xml -> /home/rslomron/tm_custom/install/techman_robot_get_status/share/techman_robot_get_status
+running install_egg_info
+Copying ../../build/techman_robot_get_status/techman_robot_get_status.egg-info to /home/rslomron/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/rslomron/tm_custom/build/techman_robot_get_status/install.log'

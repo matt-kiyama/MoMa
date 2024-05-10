@@ -1,0 +1,31 @@
+[0.600s] Invoking command in '/home/rslomron/tm_custom/src/tm_mod_urdf': PYTHONPATH=/home/rslomron/tm_custom/build/tm_mod_urdf/prefix_override:/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/tm_mod_urdf build --build-base /home/rslomron/tm_custom/build/tm_mod_urdf/build install --record /home/rslomron/tm_custom/build/tm_mod_urdf/install.log --single-version-externally-managed install_data
+[0.863s] running egg_info
+[0.863s] writing ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/PKG-INFO
+[0.863s] writing dependency_links to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/dependency_links.txt
+[0.864s] writing entry points to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/entry_points.txt
+[0.864s] writing requirements to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/requires.txt
+[0.864s] writing top-level names to ../../build/tm_mod_urdf/tm_mod_urdf.egg-info/top_level.txt
+[0.865s] reading manifest file '../../build/tm_mod_urdf/tm_mod_urdf.egg-info/SOURCES.txt'
+[0.866s] writing manifest file '../../build/tm_mod_urdf/tm_mod_urdf.egg-info/SOURCES.txt'
+[0.867s] running build
+[0.867s] running build_py
+[0.867s] copying tm_mod_urdf/modify_urdf.py -> /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf
+[0.867s] copying tm_mod_urdf/_modify_urdf.py -> /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf
+[0.867s] copying tm_mod_urdf/modify_xacro.py -> /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf
+[0.868s] running install
+[0.868s] running install_lib
+[0.868s] copying /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf/modify_urdf.py -> /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf
+[0.868s] copying /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf/_modify_urdf.py -> /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf
+[0.868s] copying /home/rslomron/tm_custom/build/tm_mod_urdf/build/lib/tm_mod_urdf/modify_xacro.py -> /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf
+[0.869s] byte-compiling /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf/modify_urdf.py to modify_urdf.cpython-310.pyc
+[0.870s] byte-compiling /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf/_modify_urdf.py to _modify_urdf.cpython-310.pyc
+[0.872s] byte-compiling /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf/modify_xacro.py to modify_xacro.cpython-310.pyc
+[0.873s] running install_data
+[0.873s] copying package.xml -> /home/rslomron/tm_custom/install/tm_mod_urdf/share/tm_mod_urdf
+[0.874s] running install_egg_info
+[0.875s] Copying ../../build/tm_mod_urdf/tm_mod_urdf.egg-info to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages/tm_mod_urdf-1.1.2-py3.10.egg-info
+[0.876s] running install_scripts
+[0.897s] Installing modify_urdf script to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/tm_mod_urdf
+[0.897s] Installing modify_xacro script to /home/rslomron/tm_custom/install/tm_mod_urdf/lib/tm_mod_urdf
+[0.897s] writing list of installed files to '/home/rslomron/tm_custom/build/tm_mod_urdf/install.log'
+[0.923s] Invoked command in '/home/rslomron/tm_custom/src/tm_mod_urdf' returned '0': PYTHONPATH=/home/rslomron/tm_custom/build/tm_mod_urdf/prefix_override:/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/tm_mod_urdf build --build-base /home/rslomron/tm_custom/build/tm_mod_urdf/build install --record /home/rslomron/tm_custom/build/tm_mod_urdf/install.log --single-version-externally-managed install_data

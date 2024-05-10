@@ -1,0 +1,21 @@
+In file included from [01m[K/home/rslomron/tm_custom/src/tm_driver/src/tm_ros2_composition.cpp:1[m[K:
+[01m[K/home/rslomron/tm_custom/src/tm_driver/include/tm_driver/tm_ros2_svr.h:6:10:[m[K [01;31m[Kfatal error: [m[Ktm_msgs/msg/feedback_state.hpp: No such file or directory
+    6 | #include [01;31m[K"tm_msgs/msg/feedback_state.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+In file included from [01m[K/home/rslomron/tm_custom/src/tm_driver/src/tm_ros2_sct.cpp:1[m[K:
+[01m[K/home/rslomron/tm_custom/src/tm_driver/include/tm_driver/tm_ros2_sct.h:7:10:[m[K [01;31m[Kfatal error: [m[Ktm_msgs/msg/sct_response.hpp: No such file or directory
+    7 | #include [01;31m[K"tm_msgs/msg/sct_response.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/tm_driver.dir/build.make:76: CMakeFiles/tm_driver.dir/src/tm_ros2_composition.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/tm_driver.dir/build.make:90: CMakeFiles/tm_driver.dir/src/tm_ros2_sct.cpp.o] Error 1
+In file included from [01m[K/home/rslomron/tm_custom/src/tm_driver/src/tm_ros2_svr.cpp:1[m[K:
+[01m[K/home/rslomron/tm_custom/src/tm_driver/include/tm_driver/tm_ros2_svr.h:6:10:[m[K [01;31m[Kfatal error: [m[Ktm_msgs/msg/feedback_state.hpp: No such file or directory
+    6 | #include [01;31m[K"tm_msgs/msg/feedback_state.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/tm_driver.dir/build.make:104: CMakeFiles/tm_driver.dir/src/tm_ros2_svr.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/tm_driver.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

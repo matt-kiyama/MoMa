@@ -1,0 +1,106 @@
+[0.695s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_cpp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake /home/rslomron/tm_custom/src/tm_moveit_cpp_demo -DCMAKE_INSTALL_PREFIX=/home/rslomron/tm_custom/install/tm_moveit_cpp_demo
+[0.760s] -- The C compiler identification is GNU 11.4.0
+[0.819s] -- The CXX compiler identification is GNU 11.4.0
+[0.826s] -- Detecting C compiler ABI info
+[0.957s] -- Detecting C compiler ABI info - done
+[0.961s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.962s] -- Detecting C compile features
+[0.964s] -- Detecting C compile features - done
+[0.977s] -- Detecting CXX compiler ABI info
+[1.103s] -- Detecting CXX compiler ABI info - done
+[1.116s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.116s] -- Detecting CXX compile features
+[1.117s] -- Detecting CXX compile features - done
+[1.127s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.404s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.004s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[2.115s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.132s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.156s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.186s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.260s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.102s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[4.220s] -- Found parameter_traits: 0.3.8 (/opt/ros/humble/share/parameter_traits/cmake)
+[4.348s] -- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[4.357s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[4.500s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[4.532s] -- Found FastRTPS: /opt/ros/humble/include  
+[4.604s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[4.621s] -- Found Threads: TRUE  
+[4.802s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[4.808s] -- Found rclcpp_lifecycle: 16.0.8 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[4.873s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[5.020s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[5.243s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[6.121s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[6.749s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[7.035s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[7.679s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system 
+[7.752s] -- Configuring done
+[7.788s] -- Generating done
+[7.791s] -- Build files have been written to: /home/rslomron/tm_custom/build/tm_moveit_cpp_demo
+[7.806s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_cpp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake /home/rslomron/tm_custom/src/tm_moveit_cpp_demo -DCMAKE_INSTALL_PREFIX=/home/rslomron/tm_custom/install/tm_moveit_cpp_demo
+[7.808s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_cpp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_moveit_cpp_demo -- -j8 -l8
+[7.878s] [ 50%] [32mBuilding CXX object CMakeFiles/run_moveit_cpp.dir/src/run_moveit_cpp.cpp.o[0m
+[18.845s] [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:134:44:[m[K [01;35m[Kwarning: [m[K‘[01m[Kmoveit::planning_interface::MoveItCppPtr[m[K’ is deprecated: use moveit_cpp [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[18.845s]   134 |   moveit::planning_interface::MoveItCppPtr [01;35m[Kmoveit_cpp_[m[K;
+[18.846s]       |                                            [01;35m[K^~~~~~~~~~~[m[K
+[18.846s] In file included from [01m[K/home/rslomron/moveit2_ws/install/moveit_core/include/moveit/macros/class_forward.h:39[m[K,
+[18.846s]                  from [01m[K/home/rslomron/moveit2_ws/install/moveit_core/include/moveit/controller_manager/controller_manager.h:42[m[K,
+[18.846s]                  from [01m[K/home/rslomron/moveit2_ws/install/moveit_ros_planning/include/moveit/moveit_cpp/moveit_cpp.h:43[m[K,
+[18.846s]                  from [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:47[m[K:
+[18.847s] [01m[K/home/rslomron/moveit2_ws/install/moveit_ros_planning/include/moveit/moveit_cpp/moveit_cpp.h:205:34:[m[K [01;36m[Knote: [m[Kdeclared here
+[18.847s]   205 | [[deprecated("use moveit_cpp")]] [01;36m[KMOVEIT_DECLARE_PTR[m[K(MoveItCpp, moveit_cpp::MoveItCpp);
+[18.847s]       |                                  [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[18.853s] [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:[m[K In member function ‘[01m[Kvoid MoveItCppDemo::run()[m[K’:
+[18.854s] [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:67:64:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing MoveItCpp = class moveit_cpp::MoveItCpp[m[K’ is deprecated: use moveit_cpp [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[18.854s]    67 |     moveit_cpp_ = std::make_shared<moveit::planning_interface::[01;35m[KMoveItCpp[m[K>(node_);
+[18.854s]       |                                                                [01;35m[K^~~~~~~~~[m[K
+[18.854s] In file included from [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:47[m[K:
+[18.854s] [01m[K/home/rslomron/moveit2_ws/install/moveit_ros_planning/include/moveit/moveit_cpp/moveit_cpp.h:204:7:[m[K [01;36m[Knote: [m[Kdeclared here
+[18.855s]   204 | using [01;36m[KMoveItCpp[m[K [[deprecated("use moveit_cpp")]] = moveit_cpp::MoveItCpp;
+[18.855s]       |       [01;36m[K^~~~~~~~~[m[K
+[18.856s] [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:72:54:[m[K [01;35m[Kwarning: [m[K‘[01m[Kusing PlanningComponent = class moveit_cpp::PlanningComponent[m[K’ is deprecated: use moveit_cpp [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+[18.856s]    72 |     moveit::planning_interface::PlanningComponent arm[01;35m[K([m[K"tmr_arm", moveit_cpp_);
+[18.856s]       |                                                      [01;35m[K^[m[K
+[18.857s] In file included from [01m[K/home/rslomron/tm_custom/src/tm_moveit_cpp_demo/src/run_moveit_cpp.cpp:48[m[K:
+[18.857s] [01m[K/home/rslomron/moveit2_ws/install/moveit_ros_planning/include/moveit/moveit_cpp/planning_component.h:205:7:[m[K [01;36m[Knote: [m[Kdeclared here
+[18.857s]   205 | using [01;36m[KPlanningComponent[m[K [[deprecated("use moveit_cpp")]] = moveit_cpp::PlanningComponent;
+[18.857s]       |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[24.818s] [100%] [32m[1mLinking CXX executable run_moveit_cpp[0m
+[25.303s] [100%] Built target run_moveit_cpp
+[25.319s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_cpp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_moveit_cpp_demo -- -j8 -l8
+[25.365s] Invoking command in '/home/rslomron/tm_custom/build/tm_moveit_cpp_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_moveit_cpp_demo
+[25.378s] -- Install configuration: ""
+[25.378s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/lib/tm_moveit_cpp_demo/run_moveit_cpp
+[25.379s] -- Set runtime path of "/home/rslomron/tm_custom/install/tm_moveit_cpp_demo/lib/tm_moveit_cpp_demo/run_moveit_cpp" to ""
+[25.379s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm5-900_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm5-700_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/run_moveit_cpp.rviz
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm14x_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm12_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm12x_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm14_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm5x-700_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/launch/tm5x-900_run_moveit_cpp.launch.py
+[25.380s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/config
+[25.381s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/config/moveit_cpp.yaml
+[25.381s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/config/controllers.yaml
+[25.381s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/ament_index/resource_index/package_run_dependencies/tm_moveit_cpp_demo
+[25.381s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/ament_index/resource_index/parent_prefix_path/tm_moveit_cpp_demo
+[25.381s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/environment/ament_prefix_path.sh
+[25.381s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/environment/ament_prefix_path.dsv
+[25.381s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/environment/path.sh
+[25.381s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/environment/path.dsv
+[25.381s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/local_setup.bash
+[25.382s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/local_setup.sh
+[25.382s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/local_setup.zsh
+[25.382s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/local_setup.dsv
+[25.382s] -- Installing: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/package.dsv
+[25.382s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/ament_index/resource_index/packages/tm_moveit_cpp_demo
+[25.382s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/cmake/tm_moveit_cpp_demoConfig.cmake
+[25.382s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/cmake/tm_moveit_cpp_demoConfig-version.cmake
+[25.382s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_moveit_cpp_demo/share/tm_moveit_cpp_demo/package.xml
+[25.384s] Invoked command in '/home/rslomron/tm_custom/build/tm_moveit_cpp_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_moveit_cpp_demo

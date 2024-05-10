@@ -1,0 +1,42 @@
+[0.015s] Invoking command in '/home/rslomron/tm_custom/build/demo': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs:/opt/ros/humble LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /home/rslomron/tm_custom/build/demo -- -j8 -l8
+[0.071s] [35m[1mConsolidate compiler generated dependencies of target demo_ask_sta[0m
+[0.071s] [35m[1mConsolidate compiler generated dependencies of target demo_set_event[0m
+[0.073s] [35m[1mConsolidate compiler generated dependencies of target demo_set_io[0m
+[0.078s] [35m[1mConsolidate compiler generated dependencies of target demo_send_script[0m
+[0.084s] [35m[1mConsolidate compiler generated dependencies of target demo_write_item[0m
+[0.091s] [35m[1mConsolidate compiler generated dependencies of target demo_connect_tm[0m
+[0.092s] [35m[1mConsolidate compiler generated dependencies of target demo_set_positions[0m
+[0.110s] [  3%] [32mBuilding CXX object CMakeFiles/demo_ask_sta.dir/src/demo_ask_sta.cpp.o[0m
+[0.113s] [  7%] [32mBuilding CXX object CMakeFiles/demo_set_event.dir/src/demo_set_event.cpp.o[0m
+[0.119s] [ 10%] [32mBuilding CXX object CMakeFiles/demo_send_script.dir/src/demo_send_script.cpp.o[0m
+[0.127s] [ 14%] [32mBuilding CXX object CMakeFiles/demo_connect_tm.dir/src/demo_connect_tm.cpp.o[0m
+[0.137s] [ 17%] [32mBuilding CXX object CMakeFiles/demo_set_positions.dir/src/demo_set_positions.cpp.o[0m
+[0.139s] [ 25%] Built target demo_ask_item
+[0.149s] [ 28%] [32mBuilding CXX object CMakeFiles/demo_set_io.dir/src/demo_set_io.cpp.o[0m
+[0.150s] [ 32%] [32mBuilding CXX object CMakeFiles/demo_write_item.dir/src/demo_write_item.cpp.o[0m
+[0.204s] [35m[1mConsolidate compiler generated dependencies of target demo_get_feedback[0m
+[0.348s] [ 39%] Built target demo_get_feedback
+[0.519s] [ 42%] [32mBuilding CXX object CMakeFiles/demo_get_torque_feedback.dir/get_status_demo_src/demo_get_torque_feedback.cpp.o[0m
+[1.164s] gmake[2]: *** wait: No child processes.  Stop.
+[1.164s] gmake[2]: *** [CMakeFiles/demo_set_event.dir/build.make:76: CMakeFiles/demo_set_event.dir/src/demo_set_event.cpp.o] Interrupt
+[1.165s] gmake[2]: *** [CMakeFiles/demo_write_item.dir/build.make:76: CMakeFiles/demo_write_item.dir/src/demo_write_item.cpp.o] Interrupt
+[1.165s] gmake[2]: *** wait: No child processes.  Stop.
+[1.165s] gmake[2]: *** Waiting for unfinished jobs....
+[1.165s] gmake[2]: *** wait: No child processes.  Stop.
+[1.165s] gmake[2]: *** [CMakeFiles/demo_get_torque_feedback.dir/build.make:76: CMakeFiles/demo_get_torque_feedback.dir/get_status_demo_src/demo_get_torque_feedback.cpp.o] Interrupt
+[1.166s] gmake[2]: *** Waiting for unfinished jobs....
+[1.166s] gmake[2]: *** wait: No child processes.  Stop.
+[1.166s] gmake[1]: *** [CMakeFiles/Makefile2:319: CMakeFiles/demo_write_item.dir/all] Interrupt
+[1.166s] gmake[1]: *** [CMakeFiles/Makefile2:241: CMakeFiles/demo_set_event.dir/all] Interrupt
+[1.166s] gmake[1]: *** [CMakeFiles/Makefile2:163: CMakeFiles/demo_send_script.dir/all] Error 2
+[1.166s] gmake[1]: *** [CMakeFiles/Makefile2:397: CMakeFiles/demo_get_torque_feedback.dir/all] Interrupt
+[1.166s] gmake[2]: *** [CMakeFiles/demo_set_io.dir/build.make:76: CMakeFiles/demo_set_io.dir/src/demo_set_io.cpp.o] Interrupt
+[1.166s] gmake[2]: *** [CMakeFiles/demo_set_positions.dir/build.make:76: CMakeFiles/demo_set_positions.dir/src/demo_set_positions.cpp.o] Interrupt
+[1.166s] gmake[1]: *** [CMakeFiles/Makefile2:267: CMakeFiles/demo_set_io.dir/all] Interrupt
+[1.167s] gmake[1]: *** [CMakeFiles/Makefile2:293: CMakeFiles/demo_set_positions.dir/all] Interrupt
+[1.167s] gmake[2]: *** wait: No child processes.  Stop.
+[1.167s] gmake[2]: *** Waiting for unfinished jobs....
+[1.167s] gmake[2]: *** wait: No child processes.  Stop.
+[1.167s] gmake[1]: *** [CMakeFiles/Makefile2:189: CMakeFiles/demo_ask_sta.dir/all] Error 2
+[1.167s] gmake[1]: *** [CMakeFiles/Makefile2:215: CMakeFiles/demo_connect_tm.dir/all] Error 2
+[1.167s] gmake: *** [Makefile:146: all] Interrupt

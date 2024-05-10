@@ -1,0 +1,26 @@
+[0.011s] Invoking command in '/home/rslomron/tm_custom/build/tm_driver': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_driver -- -j8 -l8
+[0.138s] [  6%] [32m[1mLinking CXX executable tm_driver[0m
+[1.811s] [100%] Built target tm_driver
+[1.827s] Invoked command in '/home/rslomron/tm_custom/build/tm_driver' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_driver -- -j8 -l8
+[1.879s] Invoking command in '/home/rslomron/tm_custom/build/tm_driver': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_driver
+[1.885s] -- Install configuration: ""
+[1.886s] -- Installing: /home/rslomron/tm_custom/install/tm_driver/lib/tm_driver/tm_driver
+[1.895s] -- Set runtime path of "/home/rslomron/tm_custom/install/tm_driver/lib/tm_driver/tm_driver" to ""
+[1.895s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/launch
+[1.895s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/launch/tm_bringup.launch.py
+[1.896s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/ament_index/resource_index/package_run_dependencies/tm_driver
+[1.896s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/ament_index/resource_index/parent_prefix_path/tm_driver
+[1.896s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/environment/ament_prefix_path.sh
+[1.896s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/environment/ament_prefix_path.dsv
+[1.896s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/environment/path.sh
+[1.897s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/environment/path.dsv
+[1.897s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/local_setup.bash
+[1.897s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/local_setup.sh
+[1.897s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/local_setup.zsh
+[1.897s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/local_setup.dsv
+[1.897s] -- Installing: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/package.dsv
+[1.897s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/ament_index/resource_index/packages/tm_driver
+[1.898s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/cmake/tm_driverConfig.cmake
+[1.898s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/cmake/tm_driverConfig-version.cmake
+[1.898s] -- Up-to-date: /home/rslomron/tm_custom/install/tm_driver/share/tm_driver/package.xml
+[1.901s] Invoked command in '/home/rslomron/tm_custom/build/tm_driver' returned '0': AMENT_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs CMAKE_PREFIX_PATH=/home/rslomron/tm_custom/install/tm_msgs LD_LIBRARY_PATH=/home/rslomron/tm_custom/install/tm_msgs/lib PYTHONPATH=/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_driver

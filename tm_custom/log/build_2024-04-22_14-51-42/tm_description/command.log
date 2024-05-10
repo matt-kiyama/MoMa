@@ -1,0 +1,4 @@
+Invoking command in '/home/rslomron/tm_custom/build/tm_description': /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_description -- -j8 -l8
+Invoked command in '/home/rslomron/tm_custom/build/tm_description' returned '0': /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_description -- -j8 -l8
+Invoking command in '/home/rslomron/tm_custom/build/tm_description': /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_description
+Invoked command in '/home/rslomron/tm_custom/build/tm_description' returned '0': /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_description

@@ -1,0 +1,305 @@
+[0.000000] (-) TimerEvent: {}
+[0.000437] (-) JobUnselected: {'identifier': 'custom_package'}
+[0.000589] (-) JobUnselected: {'identifier': 'demo'}
+[0.000735] (-) JobUnselected: {'identifier': 'techman_robot_get_status'}
+[0.000859] (-) JobUnselected: {'identifier': 'techman_robot_msgs'}
+[0.000888] (-) JobUnselected: {'identifier': 'tm_description'}
+[0.000925] (-) JobUnselected: {'identifier': 'tm_driver'}
+[0.000964] (-) JobUnselected: {'identifier': 'tm_mod_urdf'}
+[0.000991] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm12'}
+[0.001174] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm12x'}
+[0.001271] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm14'}
+[0.001298] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm14x'}
+[0.001332] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5-700'}
+[0.001365] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5-900'}
+[0.001390] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5x-700'}
+[0.001576] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5x-900'}
+[0.001611] (-) JobUnselected: {'identifier': 'tm_moveit_cpp_demo'}
+[0.001646] (-) JobUnselected: {'identifier': 'tm_msgs'}
+[0.001674] (ui_for_debug_and_demo) JobQueued: {'identifier': 'ui_for_debug_and_demo', 'dependencies': OrderedDict([('tm_msgs', '/home/rslomron/tm_custom/install/tm_msgs')])}
+[0.001708] (ui_for_debug_and_demo) JobStarted: {'identifier': 'ui_for_debug_and_demo'}
+[0.012800] (ui_for_debug_and_demo) JobProgress: {'identifier': 'ui_for_debug_and_demo', 'progress': 'cmake'}
+[0.013376] (ui_for_debug_and_demo) JobProgress: {'identifier': 'ui_for_debug_and_demo', 'progress': 'build'}
+[0.013955] (ui_for_debug_and_demo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rslomron/tm_custom/build/ui_for_debug_and_demo', '--', '-j8', '-l8'], 'cwd': '/home/rslomron/tm_custom/build/ui_for_debug_and_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rslomron/tm_custom/install/tm_msgs/lib:/home/rslomron/tm_custom/install/techman_robot_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1161'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rslomron/tm_custom/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1135,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1135'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e5bfed01_1f63_462f_975f_43ded7a8c426'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.10O4L2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.116'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rslomron/tm_custom/install/tm_msgs:/home/rslomron/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/home/rslomron/tm_custom/install/tm_description:/home/rslomron/tm_custom/install/custom_2:/home/rslomron/tm_custom/install/techman_robot_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/tm_custom/build/ui_for_debug_and_demo'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:/home/rslomron/tm_custom/install/tm_get_status/lib/python3.10/site-packages:/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rslomron/tm_custom/install/tm_msgs:/home/rslomron/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/tm_custom/install/tm_description:/home/rslomron/tm_custom/install/custom_2:/home/rslomron/tm_custom/install/techman_robot_msgs:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble')]), 'shell': False}
+[0.038851] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099637] (-) TimerEvent: {}
+[0.184497] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rclcpp: 16.0.8 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.199792] (-) TimerEvent: {}
+[0.259332] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.265985] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.276284] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.292761] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.299929] (-) TimerEvent: {}
+[0.316289] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.400103] (-) TimerEvent: {}
+[0.400495] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.1 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.404228] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.500262] (-) TimerEvent: {}
+[0.514173] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[0.541759] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[0.588966] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.600320] (-) TimerEvent: {}
+[0.601057] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[0.675779] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[0.676066] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[0.700451] (-) TimerEvent: {}
+[0.750107] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[0.751399] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.800529] (-) TimerEvent: {}
+[0.900816] (-) TimerEvent: {}
+[0.924081] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found rclcpp_action: 16.0.8 (/opt/ros/humble/share/rclcpp_action/cmake)\n'}
+[1.000927] (-) TimerEvent: {}
+[1.023124] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found tm_msgs: 1.1.2 (/home/rslomron/tm_custom/install/tm_msgs/share/tm_msgs/cmake)\n'}
+[1.098895] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.101012] (-) TimerEvent: {}
+[1.177363] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.178393] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[1.178540] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.179284] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.180080] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.180514] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[1.181596] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.181742] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.182389] (ui_for_debug_and_demo) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.183319] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.201135] (-) TimerEvent: {}
+[1.236030] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Generating done\n'}
+[1.237954] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Build files have been written to: /home/rslomron/tm_custom/build/ui_for_debug_and_demo\n'}
+[1.274270] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 14%] \x1b[34m\x1b[1mAutomatic MOC and UIC for target robot_ui\x1b[0m\n'}
+[1.301268] (-) TimerEvent: {}
+[1.401622] (-) TimerEvent: {}
+[1.502089] (-) TimerEvent: {}
+[1.602552] (-) TimerEvent: {}
+[1.643792] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 14%] Built target robot_ui_autogen\n'}
+[1.656395] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating ui_tm_ros_driver_windows.h\x1b[0m\n'}
+[1.687508] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/robot_ui.dir/src/main.cpp.o\x1b[0m\n'}
+[1.687791] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/robot_ui.dir/src/tm_ros_driver_windows.cpp.o\x1b[0m\n'}
+[1.687961] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/robot_ui.dir/robot_ui_autogen/mocs_compilation.cpp.o\x1b[0m\n'}
+[1.688087] (ui_for_debug_and_demo) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding CXX object CMakeFiles/robot_ui.dir/src/ros_page.cpp.o\x1b[0m\n'}
+[1.702670] (-) TimerEvent: {}
+[1.803031] (-) TimerEvent: {}
+[1.903389] (-) TimerEvent: {}
+[2.003744] (-) TimerEvent: {}
+[2.104079] (-) TimerEvent: {}
+[2.204437] (-) TimerEvent: {}
+[2.304795] (-) TimerEvent: {}
+[2.405154] (-) TimerEvent: {}
+[2.505514] (-) TimerEvent: {}
+[2.605863] (-) TimerEvent: {}
+[2.706213] (-) TimerEvent: {}
+[2.806569] (-) TimerEvent: {}
+[2.906915] (-) TimerEvent: {}
+[3.007265] (-) TimerEvent: {}
+[3.107620] (-) TimerEvent: {}
+[3.207972] (-) TimerEvent: {}
+[3.308331] (-) TimerEvent: {}
+[3.408686] (-) TimerEvent: {}
+[3.509038] (-) TimerEvent: {}
+[3.609391] (-) TimerEvent: {}
+[3.709751] (-) TimerEvent: {}
+[3.810107] (-) TimerEvent: {}
+[3.910461] (-) TimerEvent: {}
+[4.010800] (-) TimerEvent: {}
+[4.111134] (-) TimerEvent: {}
+[4.211488] (-) TimerEvent: {}
+[4.311839] (-) TimerEvent: {}
+[4.412182] (-) TimerEvent: {}
+[4.512531] (-) TimerEvent: {}
+[4.612883] (-) TimerEvent: {}
+[4.713232] (-) TimerEvent: {}
+[4.813597] (-) TimerEvent: {}
+[4.913955] (-) TimerEvent: {}
+[5.014319] (-) TimerEvent: {}
+[5.114676] (-) TimerEvent: {}
+[5.215022] (-) TimerEvent: {}
+[5.315377] (-) TimerEvent: {}
+[5.415728] (-) TimerEvent: {}
+[5.516081] (-) TimerEvent: {}
+[5.616444] (-) TimerEvent: {}
+[5.716798] (-) TimerEvent: {}
+[5.817154] (-) TimerEvent: {}
+[5.917514] (-) TimerEvent: {}
+[6.017986] (-) TimerEvent: {}
+[6.118433] (-) TimerEvent: {}
+[6.218891] (-) TimerEvent: {}
+[6.319349] (-) TimerEvent: {}
+[6.419803] (-) TimerEvent: {}
+[6.520257] (-) TimerEvent: {}
+[6.620716] (-) TimerEvent: {}
+[6.721171] (-) TimerEvent: {}
+[6.821570] (-) TimerEvent: {}
+[6.921929] (-) TimerEvent: {}
+[7.022297] (-) TimerEvent: {}
+[7.122713] (-) TimerEvent: {}
+[7.223055] (-) TimerEvent: {}
+[7.323510] (-) TimerEvent: {}
+[7.423978] (-) TimerEvent: {}
+[7.524435] (-) TimerEvent: {}
+[7.624892] (-) TimerEvent: {}
+[7.725347] (-) TimerEvent: {}
+[7.825801] (-) TimerEvent: {}
+[7.926252] (-) TimerEvent: {}
+[8.026678] (-) TimerEvent: {}
+[8.127135] (-) TimerEvent: {}
+[8.227590] (-) TimerEvent: {}
+[8.328045] (-) TimerEvent: {}
+[8.428500] (-) TimerEvent: {}
+[8.528960] (-) TimerEvent: {}
+[8.629421] (-) TimerEvent: {}
+[8.729889] (-) TimerEvent: {}
+[8.830337] (-) TimerEvent: {}
+[8.930809] (-) TimerEvent: {}
+[9.031269] (-) TimerEvent: {}
+[9.131728] (-) TimerEvent: {}
+[9.232187] (-) TimerEvent: {}
+[9.332642] (-) TimerEvent: {}
+[9.433101] (-) TimerEvent: {}
+[9.533555] (-) TimerEvent: {}
+[9.634008] (-) TimerEvent: {}
+[9.734454] (-) TimerEvent: {}
+[9.834906] (-) TimerEvent: {}
+[9.935331] (-) TimerEvent: {}
+[10.035753] (-) TimerEvent: {}
+[10.136161] (-) TimerEvent: {}
+[10.236629] (-) TimerEvent: {}
+[10.337102] (-) TimerEvent: {}
+[10.437574] (-) TimerEvent: {}
+[10.538046] (-) TimerEvent: {}
+[10.638479] (-) TimerEvent: {}
+[10.738934] (-) TimerEvent: {}
+[10.839392] (-) TimerEvent: {}
+[10.939849] (-) TimerEvent: {}
+[11.040304] (-) TimerEvent: {}
+[11.140771] (-) TimerEvent: {}
+[11.241238] (-) TimerEvent: {}
+[11.341695] (-) TimerEvent: {}
+[11.442181] (-) TimerEvent: {}
+[11.542599] (-) TimerEvent: {}
+[11.643063] (-) TimerEvent: {}
+[11.743533] (-) TimerEvent: {}
+[11.843997] (-) TimerEvent: {}
+[11.944447] (-) TimerEvent: {}
+[12.044916] (-) TimerEvent: {}
+[12.145364] (-) TimerEvent: {}
+[12.245811] (-) TimerEvent: {}
+[12.346251] (-) TimerEvent: {}
+[12.446668] (-) TimerEvent: {}
+[12.547115] (-) TimerEvent: {}
+[12.647561] (-) TimerEvent: {}
+[12.748010] (-) TimerEvent: {}
+[12.848455] (-) TimerEvent: {}
+[12.948898] (-) TimerEvent: {}
+[13.049345] (-) TimerEvent: {}
+[13.149793] (-) TimerEvent: {}
+[13.250260] (-) TimerEvent: {}
+[13.350663] (-) TimerEvent: {}
+[13.451111] (-) TimerEvent: {}
+[13.551561] (-) TimerEvent: {}
+[13.651999] (-) TimerEvent: {}
+[13.752460] (-) TimerEvent: {}
+[13.852922] (-) TimerEvent: {}
+[13.953382] (-) TimerEvent: {}
+[14.053844] (-) TimerEvent: {}
+[14.154280] (-) TimerEvent: {}
+[14.254725] (-) TimerEvent: {}
+[14.355187] (-) TimerEvent: {}
+[14.455647] (-) TimerEvent: {}
+[14.556110] (-) TimerEvent: {}
+[14.656571] (-) TimerEvent: {}
+[14.757033] (-) TimerEvent: {}
+[14.857495] (-) TimerEvent: {}
+[14.957958] (-) TimerEvent: {}
+[15.058408] (-) TimerEvent: {}
+[15.158876] (-) TimerEvent: {}
+[15.259320] (-) TimerEvent: {}
+[15.359786] (-) TimerEvent: {}
+[15.460248] (-) TimerEvent: {}
+[15.560708] (-) TimerEvent: {}
+[15.661171] (-) TimerEvent: {}
+[15.761619] (-) TimerEvent: {}
+[15.862073] (-) TimerEvent: {}
+[15.962506] (-) TimerEvent: {}
+[16.062964] (-) TimerEvent: {}
+[16.163433] (-) TimerEvent: {}
+[16.263854] (-) TimerEvent: {}
+[16.364314] (-) TimerEvent: {}
+[16.464768] (-) TimerEvent: {}
+[16.565218] (-) TimerEvent: {}
+[16.665669] (-) TimerEvent: {}
+[16.766118] (-) TimerEvent: {}
+[16.866613] (-) TimerEvent: {}
+[16.967062] (-) TimerEvent: {}
+[17.067508] (-) TimerEvent: {}
+[17.167954] (-) TimerEvent: {}
+[17.268406] (-) TimerEvent: {}
+[17.368852] (-) TimerEvent: {}
+[17.469299] (-) TimerEvent: {}
+[17.569747] (-) TimerEvent: {}
+[17.670213] (-) TimerEvent: {}
+[17.770669] (-) TimerEvent: {}
+[17.871114] (-) TimerEvent: {}
+[17.971567] (-) TimerEvent: {}
+[18.072015] (-) TimerEvent: {}
+[18.172468] (-) TimerEvent: {}
+[18.272919] (-) TimerEvent: {}
+[18.373378] (-) TimerEvent: {}
+[18.473798] (-) TimerEvent: {}
+[18.574146] (-) TimerEvent: {}
+[18.674482] (-) TimerEvent: {}
+[18.774951] (-) TimerEvent: {}
+[18.875411] (-) TimerEvent: {}
+[18.975878] (-) TimerEvent: {}
+[19.076350] (-) TimerEvent: {}
+[19.176812] (-) TimerEvent: {}
+[19.277278] (-) TimerEvent: {}
+[19.377752] (-) TimerEvent: {}
+[19.478235] (-) TimerEvent: {}
+[19.578714] (-) TimerEvent: {}
+[19.679187] (-) TimerEvent: {}
+[19.779632] (-) TimerEvent: {}
+[19.797599] (ui_for_debug_and_demo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable robot_ui\x1b[0m\n'}
+[19.879787] (-) TimerEvent: {}
+[19.980259] (-) TimerEvent: {}
+[20.080746] (-) TimerEvent: {}
+[20.181253] (-) TimerEvent: {}
+[20.281748] (-) TimerEvent: {}
+[20.382245] (-) TimerEvent: {}
+[20.482707] (-) TimerEvent: {}
+[20.583201] (-) TimerEvent: {}
+[20.683679] (-) TimerEvent: {}
+[20.784156] (-) TimerEvent: {}
+[20.884617] (-) TimerEvent: {}
+[20.985081] (-) TimerEvent: {}
+[21.085537] (-) TimerEvent: {}
+[21.185998] (-) TimerEvent: {}
+[21.286463] (-) TimerEvent: {}
+[21.386939] (-) TimerEvent: {}
+[21.487408] (-) TimerEvent: {}
+[21.510305] (ui_for_debug_and_demo) StdoutLine: {'line': b'[100%] Built target robot_ui\n'}
+[21.521076] (ui_for_debug_and_demo) CommandEnded: {'returncode': 0}
+[21.553894] (ui_for_debug_and_demo) JobProgress: {'identifier': 'ui_for_debug_and_demo', 'progress': 'install'}
+[21.562201] (ui_for_debug_and_demo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rslomron/tm_custom/build/ui_for_debug_and_demo'], 'cwd': '/home/rslomron/tm_custom/build/ui_for_debug_and_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rslomron/tm_custom/install/tm_msgs/lib:/home/rslomron/tm_custom/install/techman_robot_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1161'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rslomron/tm_custom/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1135,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1135'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/e5bfed01_1f63_462f_975f_43ded7a8c426'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.10O4L2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.116'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rslomron/tm_custom/install/tm_msgs:/home/rslomron/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/home/rslomron/tm_custom/install/tm_description:/home/rslomron/tm_custom/install/custom_2:/home/rslomron/tm_custom/install/techman_robot_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/tm_custom/build/ui_for_debug_and_demo'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rslomron/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:/home/rslomron/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:/home/rslomron/tm_custom/install/tm_get_status/lib/python3.10/site-packages:/home/rslomron/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rslomron/tm_custom/install/tm_msgs:/home/rslomron/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/tm_custom/install/tm_description:/home/rslomron/tm_custom/install/custom_2:/home/rslomron/tm_custom/install/techman_robot_msgs:/home/rslomron/tm_custom/install/tm_mod_urdf:/home/rslomron/tm_custom/install/tm_get_status:/opt/ros/humble')]), 'shell': False}
+[21.571525] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[21.571695] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/lib/ui_for_debug_and_demo/robot_ui\n'}
+[21.580162] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/tm_custom/install/ui_for_debug_and_demo/lib/ui_for_debug_and_demo/robot_ui" to ""\n'}
+[21.580528] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/launch\n'}
+[21.580706] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/launch/tm_gui.launch.py\n'}
+[21.580817] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ament_index/resource_index/package_run_dependencies/ui_for_debug_and_demo\n'}
+[21.580982] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ament_index/resource_index/parent_prefix_path/ui_for_debug_and_demo\n'}
+[21.581071] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/ament_prefix_path.sh\n'}
+[21.581176] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/ament_prefix_path.dsv\n'}
+[21.581292] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/path.sh\n'}
+[21.581376] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/environment/path.dsv\n'}
+[21.581479] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.bash\n'}
+[21.581585] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.sh\n'}
+[21.581684] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.zsh\n'}
+[21.581767] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/local_setup.dsv\n'}
+[21.581846] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/package.dsv\n'}
+[21.581933] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ament_index/resource_index/packages/ui_for_debug_and_demo\n'}
+[21.582013] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/cmake/ui_for_debug_and_demoConfig.cmake\n'}
+[21.582091] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/cmake/ui_for_debug_and_demoConfig-version.cmake\n'}
+[21.582190] (ui_for_debug_and_demo) StdoutLine: {'line': b'-- Installing: /home/rslomron/tm_custom/install/ui_for_debug_and_demo/share/ui_for_debug_and_demo/package.xml\n'}
+[21.583394] (ui_for_debug_and_demo) CommandEnded: {'returncode': 0}
+[21.587512] (-) TimerEvent: {}
+[21.636141] (ui_for_debug_and_demo) JobEnded: {'identifier': 'ui_for_debug_and_demo', 'rc': 0}
+[21.636870] (-) EventReactorShutdown: {}
