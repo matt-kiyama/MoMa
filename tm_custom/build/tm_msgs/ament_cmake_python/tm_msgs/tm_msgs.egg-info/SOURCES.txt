@@ -4,17 +4,3 @@ tm_msgs.egg-info/PKG-INFO
 tm_msgs.egg-info/SOURCES.txt
 tm_msgs.egg-info/dependency_links.txt
 tm_msgs.egg-info/top_level.txt
-tm_msgs/msg/__init__.py
-tm_msgs/msg/_feedback_state.py
-tm_msgs/msg/_sct_response.py
-tm_msgs/msg/_sta_response.py
-tm_msgs/msg/_svr_response.py
-tm_msgs/srv/__init__.py
-tm_msgs/srv/_ask_item.py
-tm_msgs/srv/_ask_sta.py
-tm_msgs/srv/_connect_tm.py
-tm_msgs/srv/_send_script.py
-tm_msgs/srv/_set_event.py
-tm_msgs/srv/_set_io.py
-tm_msgs/srv/_set_positions.py
-tm_msgs/srv/_write_item.py

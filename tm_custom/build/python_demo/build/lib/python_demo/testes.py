@@ -48,7 +48,7 @@ def main(args=None):
                 arm_service.get_logger().info()
             else:
                 arm_service.get_logger().info(
-                    'Penis: %f' % arm_service.req.velocity
+                    'Velocity: %f' % arm_service.req.velocity
                 )
             break
 

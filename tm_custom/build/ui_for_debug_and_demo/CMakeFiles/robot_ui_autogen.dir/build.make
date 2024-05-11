@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rslomron/tm_custom/src/ui_for_debug_and_demo
+CMAKE_SOURCE_DIR = /home/rslomron/MoMa/tm_custom/src/ui_for_debug_and_demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rslomron/tm_custom/build/ui_for_debug_and_demo
+CMAKE_BINARY_DIR = /home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo
 
 # Utility rule file for robot_ui_autogen.
 
@@ -67,8 +67,8 @@ include CMakeFiles/robot_ui_autogen.dir/compiler_depend.make
 include CMakeFiles/robot_ui_autogen.dir/progress.make
 
 CMakeFiles/robot_ui_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rslomron/tm_custom/build/ui_for_debug_and_demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target robot_ui"
-	/usr/bin/cmake -E cmake_autogen /home/rslomron/tm_custom/build/ui_for_debug_and_demo/CMakeFiles/robot_ui_autogen.dir/AutogenInfo.json ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target robot_ui"
+	/usr/bin/cmake -E cmake_autogen /home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo/CMakeFiles/robot_ui_autogen.dir/AutogenInfo.json ""
 
 robot_ui_autogen: CMakeFiles/robot_ui_autogen
 robot_ui_autogen: CMakeFiles/robot_ui_autogen.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/robot_ui_autogen.dir/clean:
 .PHONY : CMakeFiles/robot_ui_autogen.dir/clean
 
 CMakeFiles/robot_ui_autogen.dir/depend:
-	cd /home/rslomron/tm_custom/build/ui_for_debug_and_demo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rslomron/tm_custom/src/ui_for_debug_and_demo /home/rslomron/tm_custom/src/ui_for_debug_and_demo /home/rslomron/tm_custom/build/ui_for_debug_and_demo /home/rslomron/tm_custom/build/ui_for_debug_and_demo /home/rslomron/tm_custom/build/ui_for_debug_and_demo/CMakeFiles/robot_ui_autogen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rslomron/MoMa/tm_custom/src/ui_for_debug_and_demo /home/rslomron/MoMa/tm_custom/src/ui_for_debug_and_demo /home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo /home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo /home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo/CMakeFiles/robot_ui_autogen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/robot_ui_autogen.dir/depend
 

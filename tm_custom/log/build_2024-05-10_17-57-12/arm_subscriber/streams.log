@@ -1,0 +1,29 @@
+[0.774s] Invoking command in '/home/rslomron/MoMa/tm_custom/src/arm_subscriber': PYTHONPATH=/home/rslomron/MoMa/tm_custom/build/arm_subscriber/prefix_override:/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/arm_subscriber build --build-base /home/rslomron/MoMa/tm_custom/build/arm_subscriber/build install --record /home/rslomron/MoMa/tm_custom/build/arm_subscriber/install.log --single-version-externally-managed install_data
+[1.062s] running egg_info
+[1.063s] writing ../../build/arm_subscriber/arm_subscriber.egg-info/PKG-INFO
+[1.063s] writing dependency_links to ../../build/arm_subscriber/arm_subscriber.egg-info/dependency_links.txt
+[1.063s] writing entry points to ../../build/arm_subscriber/arm_subscriber.egg-info/entry_points.txt
+[1.063s] writing requirements to ../../build/arm_subscriber/arm_subscriber.egg-info/requires.txt
+[1.063s] writing top-level names to ../../build/arm_subscriber/arm_subscriber.egg-info/top_level.txt
+[1.065s] reading manifest file '../../build/arm_subscriber/arm_subscriber.egg-info/SOURCES.txt'
+[1.067s] writing manifest file '../../build/arm_subscriber/arm_subscriber.egg-info/SOURCES.txt'
+[1.067s] running build
+[1.067s] running build_py
+[1.068s] copying arm_subscriber/safety_node.py -> /home/rslomron/MoMa/tm_custom/build/arm_subscriber/build/lib/arm_subscriber
+[1.068s] running install
+[1.068s] running install_lib
+[1.068s] copying /home/rslomron/MoMa/tm_custom/build/arm_subscriber/build/lib/arm_subscriber/safety_node.py -> /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber
+[1.069s] byte-compiling /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber/safety_node.py to safety_node.cpython-310.pyc
+[1.069s] running install_data
+[1.069s]   File "/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber/safety_node.py", line 6
+[1.070s]     import '/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/threshold' as penis
+[1.070s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1.070s] SyntaxError: invalid syntax
+[1.070s] 
+[1.070s] running install_egg_info
+[1.071s] removing '/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber-0.0.0-py3.10.egg-info' (and everything under it)
+[1.071s] Copying ../../build/arm_subscriber/arm_subscriber.egg-info to /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber-0.0.0-py3.10.egg-info
+[1.072s] running install_scripts
+[1.093s] Installing safety script to /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/arm_subscriber
+[1.093s] writing list of installed files to '/home/rslomron/MoMa/tm_custom/build/arm_subscriber/install.log'
+[1.119s] Invoked command in '/home/rslomron/MoMa/tm_custom/src/arm_subscriber' returned '0': PYTHONPATH=/home/rslomron/MoMa/tm_custom/build/arm_subscriber/prefix_override:/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/arm_subscriber build --build-base /home/rslomron/MoMa/tm_custom/build/arm_subscriber/build install --record /home/rslomron/MoMa/tm_custom/build/arm_subscriber/install.log --single-version-externally-managed install_data

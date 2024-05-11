@@ -1,0 +1,44 @@
+[2.223s] Invoking command in '/home/rslomron/MoMa/tm_custom/src/techman_robot_get_status': PYTHONPATH=/home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/prefix_override:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/techman_robot_get_status build --build-base /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build install --record /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/install.log --single-version-externally-managed install_data
+[2.936s] running egg_info
+[2.936s] creating ../../build/techman_robot_get_status/techman_robot_get_status.egg-info
+[2.936s] writing ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/PKG-INFO
+[2.937s] writing dependency_links to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/dependency_links.txt
+[2.937s] writing entry points to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/entry_points.txt
+[2.937s] writing requirements to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/requires.txt
+[2.937s] writing top-level names to ../../build/techman_robot_get_status/techman_robot_get_status.egg-info/top_level.txt
+[2.937s] writing manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+[2.940s] reading manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+[2.943s] writing manifest file '../../build/techman_robot_get_status/techman_robot_get_status.egg-info/SOURCES.txt'
+[2.944s] running build
+[2.944s] running build_py
+[2.945s] creating /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build
+[2.945s] creating /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib
+[2.949s] creating /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[2.949s] copying techman_robot_get_status/image_pub.py -> /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[2.949s] copying techman_robot_get_status/__init__.py -> /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[2.949s] copying techman_robot_get_status/translate_jason_to_list.py -> /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[2.949s] copying techman_robot_get_status/get_status.py -> /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status
+[2.950s] running install
+[2.951s] running install_lib
+[2.978s] creating /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[2.978s] copying /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/image_pub.py -> /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[2.978s] copying /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/__init__.py -> /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[2.978s] copying /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/translate_jason_to_list.py -> /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[2.978s] copying /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build/lib/techman_robot_get_status/get_status.py -> /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status
+[2.978s] byte-compiling /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/image_pub.py to image_pub.cpython-310.pyc
+[2.978s] byte-compiling /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/__init__.py to __init__.cpython-310.pyc
+[2.979s] byte-compiling /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/translate_jason_to_list.py to translate_jason_to_list.cpython-310.pyc
+[2.979s] byte-compiling /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status/get_status.py to get_status.cpython-310.pyc
+[2.979s] running install_data
+[2.979s] creating /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/share/ament_index
+[2.979s] creating /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/share/ament_index/resource_index
+[2.979s] creating /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/share/ament_index/resource_index/packages
+[2.979s] copying resource/techman_robot_get_status -> /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/share/ament_index/resource_index/packages
+[2.979s] copying package.xml -> /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/share/techman_robot_get_status
+[2.979s] running install_egg_info
+[2.982s] Copying ../../build/techman_robot_get_status/techman_robot_get_status.egg-info to /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages/techman_robot_get_status-1.0.0-py3.10.egg-info
+[2.984s] running install_scripts
+[3.099s] Installing image_talker script to /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/techman_robot_get_status
+[3.099s] Installing status_talker script to /home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/techman_robot_get_status
+[3.099s] writing list of installed files to '/home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/install.log'
+[3.185s] Invoked command in '/home/rslomron/MoMa/tm_custom/src/techman_robot_get_status' returned '0': PYTHONPATH=/home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/prefix_override:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/techman_robot_get_status build --build-base /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/build install --record /home/rslomron/MoMa/tm_custom/build/techman_robot_get_status/install.log --single-version-externally-managed install_data

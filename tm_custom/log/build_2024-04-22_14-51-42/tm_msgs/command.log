@@ -1,4 +1,0 @@
-Invoking command in '/home/rslomron/tm_custom/build/tm_msgs': /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_msgs -- -j8 -l8
-Invoked command in '/home/rslomron/tm_custom/build/tm_msgs' returned '0': /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_msgs -- -j8 -l8
-Invoking command in '/home/rslomron/tm_custom/build/tm_msgs': /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_msgs
-Invoked command in '/home/rslomron/tm_custom/build/tm_msgs' returned '0': /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_msgs

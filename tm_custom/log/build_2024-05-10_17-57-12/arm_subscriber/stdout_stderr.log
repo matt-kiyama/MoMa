@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/arm_subscriber/arm_subscriber.egg-info/PKG-INFO
+writing dependency_links to ../../build/arm_subscriber/arm_subscriber.egg-info/dependency_links.txt
+writing entry points to ../../build/arm_subscriber/arm_subscriber.egg-info/entry_points.txt
+writing requirements to ../../build/arm_subscriber/arm_subscriber.egg-info/requires.txt
+writing top-level names to ../../build/arm_subscriber/arm_subscriber.egg-info/top_level.txt
+reading manifest file '../../build/arm_subscriber/arm_subscriber.egg-info/SOURCES.txt'
+writing manifest file '../../build/arm_subscriber/arm_subscriber.egg-info/SOURCES.txt'
+running build
+running build_py
+copying arm_subscriber/safety_node.py -> /home/rslomron/MoMa/tm_custom/build/arm_subscriber/build/lib/arm_subscriber
+running install
+running install_lib
+copying /home/rslomron/MoMa/tm_custom/build/arm_subscriber/build/lib/arm_subscriber/safety_node.py -> /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber
+byte-compiling /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber/safety_node.py to safety_node.cpython-310.pyc
+running install_data
+  File "/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber/safety_node.py", line 6
+    import '/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/threshold' as penis
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+
+running install_egg_info
+removing '/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/arm_subscriber/arm_subscriber.egg-info to /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber-0.0.0-py3.10.egg-info
+running install_scripts
+Installing safety script to /home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/arm_subscriber
+writing list of installed files to '/home/rslomron/MoMa/tm_custom/build/arm_subscriber/install.log'

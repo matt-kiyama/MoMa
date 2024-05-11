@@ -1,17 +1,17 @@
 {
   "package_name": "tm_msgs",
   "non_idl_tuples": [
-    "/home/rslomron/tm_custom/src/tm_msgs:msg/FeedbackState.msg",
-    "/home/rslomron/tm_custom/src/tm_msgs:msg/SvrResponse.msg",
-    "/home/rslomron/tm_custom/src/tm_msgs:msg/SctResponse.msg",
-    "/home/rslomron/tm_custom/src/tm_msgs:msg/StaResponse.msg",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/ConnectTM.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/WriteItem.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/AskItem.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/SendScript.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/SetEvent.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/SetIO.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/SetPositions.srv",
-    "/home/rslomron/tm_custom/src/tm_msgs:srv/AskSta.srv"
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:msg/FeedbackState.msg",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:msg/SvrResponse.msg",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:msg/SctResponse.msg",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:msg/StaResponse.msg",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/ConnectTM.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/WriteItem.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/AskItem.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/SendScript.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/SetEvent.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/SetIO.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/SetPositions.srv",
+    "/home/rslomron/MoMa/tm_custom/src/tm_msgs:srv/AskSta.srv"
   ]
 }

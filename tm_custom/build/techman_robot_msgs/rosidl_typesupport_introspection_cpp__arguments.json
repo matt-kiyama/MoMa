@@ -1,9 +1,9 @@
 {
   "package_name": "techman_robot_msgs",
-  "output_dir": "/home/rslomron/tm_custom/build/techman_robot_msgs/rosidl_typesupport_introspection_cpp/techman_robot_msgs",
+  "output_dir": "/home/rslomron/MoMa/tm_custom/build/techman_robot_msgs/rosidl_typesupport_introspection_cpp/techman_robot_msgs",
   "template_dir": "/opt/ros/humble/share/rosidl_typesupport_introspection_cpp/resource",
   "idl_tuples": [
-    "/home/rslomron/tm_custom/build/techman_robot_msgs/rosidl_adapter/techman_robot_msgs:srv/TechmanRobotCommand.idl"
+    "/home/rslomron/MoMa/tm_custom/build/techman_robot_msgs/rosidl_adapter/techman_robot_msgs:srv/TechmanRobotCommand.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/lib/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp",
@@ -14,6 +14,6 @@
     "/opt/ros/humble/share/rosidl_typesupport_introspection_cpp/resource/msg__type_support.cpp.em",
     "/opt/ros/humble/share/rosidl_typesupport_introspection_cpp/resource/srv__rosidl_typesupport_introspection_cpp.hpp.em",
     "/opt/ros/humble/share/rosidl_typesupport_introspection_cpp/resource/srv__type_support.cpp.em",
-    "/home/rslomron/tm_custom/build/techman_robot_msgs/rosidl_adapter/techman_robot_msgs/srv/TechmanRobotCommand.idl"
+    "/home/rslomron/MoMa/tm_custom/build/techman_robot_msgs/rosidl_adapter/techman_robot_msgs/srv/TechmanRobotCommand.idl"
   ]
 }

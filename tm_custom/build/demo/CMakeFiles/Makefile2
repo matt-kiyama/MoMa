@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rslomron/tm_custom/src/demo
+CMAKE_SOURCE_DIR = /home/rslomron/MoMa/tm_custom/src/demo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rslomron/tm_custom/build/demo
+CMAKE_BINARY_DIR = /home/rslomron/MoMa/tm_custom/build/demo
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -109,14 +109,14 @@ clean: CMakeFiles/demo_leave_listen_node.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/demo_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -135,14 +135,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/demo_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_uninstall.dir/build.make CMakeFiles/demo_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_uninstall.dir/build.make CMakeFiles/demo_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num= "Built target demo_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num= "Built target demo_uninstall"
 .PHONY : CMakeFiles/demo_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_uninstall.dir/rule
 
 # Convenience name for target.
@@ -161,14 +161,14 @@ CMakeFiles/demo_uninstall.dir/clean:
 CMakeFiles/demo_send_script.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_send_script.dir/build.make CMakeFiles/demo_send_script.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_send_script.dir/build.make CMakeFiles/demo_send_script.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=19,20 "Built target demo_send_script"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=19,20 "Built target demo_send_script"
 .PHONY : CMakeFiles/demo_send_script.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_send_script.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_send_script.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_send_script.dir/rule
 
 # Convenience name for target.
@@ -187,14 +187,14 @@ CMakeFiles/demo_send_script.dir/clean:
 CMakeFiles/demo_ask_sta.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_ask_sta.dir/build.make CMakeFiles/demo_ask_sta.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_ask_sta.dir/build.make CMakeFiles/demo_ask_sta.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=3,4 "Built target demo_ask_sta"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=3,4 "Built target demo_ask_sta"
 .PHONY : CMakeFiles/demo_ask_sta.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_ask_sta.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_ask_sta.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_ask_sta.dir/rule
 
 # Convenience name for target.
@@ -213,14 +213,14 @@ CMakeFiles/demo_ask_sta.dir/clean:
 CMakeFiles/demo_connect_tm.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_connect_tm.dir/build.make CMakeFiles/demo_connect_tm.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_connect_tm.dir/build.make CMakeFiles/demo_connect_tm.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=5,6 "Built target demo_connect_tm"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=5,6 "Built target demo_connect_tm"
 .PHONY : CMakeFiles/demo_connect_tm.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_connect_tm.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_connect_tm.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_connect_tm.dir/rule
 
 # Convenience name for target.
@@ -239,14 +239,14 @@ CMakeFiles/demo_connect_tm.dir/clean:
 CMakeFiles/demo_set_event.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_set_event.dir/build.make CMakeFiles/demo_set_event.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_set_event.dir/build.make CMakeFiles/demo_set_event.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=21,22 "Built target demo_set_event"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=21,22 "Built target demo_set_event"
 .PHONY : CMakeFiles/demo_set_event.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_set_event.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_set_event.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_set_event.dir/rule
 
 # Convenience name for target.
@@ -265,14 +265,14 @@ CMakeFiles/demo_set_event.dir/clean:
 CMakeFiles/demo_set_io.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_set_io.dir/build.make CMakeFiles/demo_set_io.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_set_io.dir/build.make CMakeFiles/demo_set_io.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=23,24 "Built target demo_set_io"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=23,24 "Built target demo_set_io"
 .PHONY : CMakeFiles/demo_set_io.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_set_io.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_set_io.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_set_io.dir/rule
 
 # Convenience name for target.
@@ -291,14 +291,14 @@ CMakeFiles/demo_set_io.dir/clean:
 CMakeFiles/demo_set_positions.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_set_positions.dir/build.make CMakeFiles/demo_set_positions.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_set_positions.dir/build.make CMakeFiles/demo_set_positions.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=25,26 "Built target demo_set_positions"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=25,26 "Built target demo_set_positions"
 .PHONY : CMakeFiles/demo_set_positions.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_set_positions.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_set_positions.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_set_positions.dir/rule
 
 # Convenience name for target.
@@ -317,14 +317,14 @@ CMakeFiles/demo_set_positions.dir/clean:
 CMakeFiles/demo_write_item.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_write_item.dir/build.make CMakeFiles/demo_write_item.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_write_item.dir/build.make CMakeFiles/demo_write_item.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=27,28 "Built target demo_write_item"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=27,28 "Built target demo_write_item"
 .PHONY : CMakeFiles/demo_write_item.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_write_item.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_write_item.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_write_item.dir/rule
 
 # Convenience name for target.
@@ -343,14 +343,14 @@ CMakeFiles/demo_write_item.dir/clean:
 CMakeFiles/demo_ask_item.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_ask_item.dir/build.make CMakeFiles/demo_ask_item.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_ask_item.dir/build.make CMakeFiles/demo_ask_item.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=1,2 "Built target demo_ask_item"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=1,2 "Built target demo_ask_item"
 .PHONY : CMakeFiles/demo_ask_item.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_ask_item.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_ask_item.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_ask_item.dir/rule
 
 # Convenience name for target.
@@ -369,14 +369,14 @@ CMakeFiles/demo_ask_item.dir/clean:
 CMakeFiles/demo_get_feedback.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_feedback.dir/build.make CMakeFiles/demo_get_feedback.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_feedback.dir/build.make CMakeFiles/demo_get_feedback.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=7,8 "Built target demo_get_feedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=7,8 "Built target demo_get_feedback"
 .PHONY : CMakeFiles/demo_get_feedback.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_get_feedback.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_get_feedback.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_get_feedback.dir/rule
 
 # Convenience name for target.
@@ -395,14 +395,14 @@ CMakeFiles/demo_get_feedback.dir/clean:
 CMakeFiles/demo_get_torque_feedback.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_torque_feedback.dir/build.make CMakeFiles/demo_get_torque_feedback.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_torque_feedback.dir/build.make CMakeFiles/demo_get_torque_feedback.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=15,16 "Built target demo_get_torque_feedback"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=15,16 "Built target demo_get_torque_feedback"
 .PHONY : CMakeFiles/demo_get_torque_feedback.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_get_torque_feedback.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_get_torque_feedback.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_get_torque_feedback.dir/rule
 
 # Convenience name for target.
@@ -421,14 +421,14 @@ CMakeFiles/demo_get_torque_feedback.dir/clean:
 CMakeFiles/demo_get_sct_response.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_sct_response.dir/build.make CMakeFiles/demo_get_sct_response.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_sct_response.dir/build.make CMakeFiles/demo_get_sct_response.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=9,10 "Built target demo_get_sct_response"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=9,10 "Built target demo_get_sct_response"
 .PHONY : CMakeFiles/demo_get_sct_response.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_get_sct_response.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_get_sct_response.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_get_sct_response.dir/rule
 
 # Convenience name for target.
@@ -447,14 +447,14 @@ CMakeFiles/demo_get_sct_response.dir/clean:
 CMakeFiles/demo_get_sta_response.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_sta_response.dir/build.make CMakeFiles/demo_get_sta_response.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_sta_response.dir/build.make CMakeFiles/demo_get_sta_response.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=11,12 "Built target demo_get_sta_response"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=11,12 "Built target demo_get_sta_response"
 .PHONY : CMakeFiles/demo_get_sta_response.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_get_sta_response.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_get_sta_response.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_get_sta_response.dir/rule
 
 # Convenience name for target.
@@ -473,14 +473,14 @@ CMakeFiles/demo_get_sta_response.dir/clean:
 CMakeFiles/demo_get_svr_response.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_svr_response.dir/build.make CMakeFiles/demo_get_svr_response.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_get_svr_response.dir/build.make CMakeFiles/demo_get_svr_response.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=13,14 "Built target demo_get_svr_response"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=13,14 "Built target demo_get_svr_response"
 .PHONY : CMakeFiles/demo_get_svr_response.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_get_svr_response.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_get_svr_response.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_get_svr_response.dir/rule
 
 # Convenience name for target.
@@ -499,14 +499,14 @@ CMakeFiles/demo_get_svr_response.dir/clean:
 CMakeFiles/demo_leave_listen_node.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_leave_listen_node.dir/build.make CMakeFiles/demo_leave_listen_node.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/demo_leave_listen_node.dir/build.make CMakeFiles/demo_leave_listen_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/tm_custom/build/demo/CMakeFiles --progress-num=17,18 "Built target demo_leave_listen_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles --progress-num=17,18 "Built target demo_leave_listen_node"
 .PHONY : CMakeFiles/demo_leave_listen_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/demo_leave_listen_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 2
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/demo_leave_listen_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/tm_custom/build/demo/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rslomron/MoMa/tm_custom/build/demo/CMakeFiles 0
 .PHONY : CMakeFiles/demo_leave_listen_node.dir/rule
 
 # Convenience name for target.

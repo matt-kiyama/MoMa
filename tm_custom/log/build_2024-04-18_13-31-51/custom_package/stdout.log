@@ -1,5 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target tm_send_command[0m
-[ 50%] Built target sub_img
-[ 75%] [32mBuilding CXX object CMakeFiles/tm_send_command.dir/src/send_command.cpp.o[0m
-[100%] [32m[1mLinking CXX executable tm_send_command[0m
-[100%] Built target tm_send_command

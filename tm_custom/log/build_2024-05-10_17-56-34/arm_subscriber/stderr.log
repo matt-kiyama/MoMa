@@ -1,0 +1,5 @@
+  File "/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages/arm_subscriber/safety_node.py", line 6
+    import '/threshold.py' as penis
+           ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+

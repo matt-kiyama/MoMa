@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rslomron/tm_custom/src/custom_package
+CMAKE_SOURCE_DIR = /home/rslomron/MoMa/tm_custom/src/custom_package
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rslomron/tm_custom/build/custom_package
+CMAKE_BINARY_DIR = /home/rslomron/MoMa/tm_custom/build/custom_package
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/rslomron/tm_custom/build/custom_package && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rslomron/tm_custom/src/custom_package /home/rslomron/tm_custom/src/custom_package /home/rslomron/tm_custom/build/custom_package /home/rslomron/tm_custom/build/custom_package /home/rslomron/tm_custom/build/custom_package/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/rslomron/MoMa/tm_custom/build/custom_package && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rslomron/MoMa/tm_custom/src/custom_package /home/rslomron/MoMa/tm_custom/src/custom_package /home/rslomron/MoMa/tm_custom/build/custom_package /home/rslomron/MoMa/tm_custom/build/custom_package /home/rslomron/MoMa/tm_custom/build/custom_package/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

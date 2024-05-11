@@ -1,8 +1,8 @@
-# Install script for directory: /home/rslomron/tm_custom/build/tm_msgs/tm_msgs__py
+# Install script for directory: /home/rslomron/MoMa/tm_custom/build/tm_msgs/tm_msgs__py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/rslomron/tm_custom/install/tm_msgs")
+  set(CMAKE_INSTALL_PREFIX "/home/rslomron/MoMa/tm_custom/install/tm_msgs")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

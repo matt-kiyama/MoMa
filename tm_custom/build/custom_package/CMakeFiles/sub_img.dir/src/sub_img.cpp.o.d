@@ -1,5 +1,5 @@
 CMakeFiles/sub_img.dir/src/sub_img.cpp.o: \
- /home/rslomron/tm_custom/src/custom_package/src/sub_img.cpp \
+ /home/rslomron/MoMa/tm_custom/src/custom_package/src/sub_img.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/cstdio \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

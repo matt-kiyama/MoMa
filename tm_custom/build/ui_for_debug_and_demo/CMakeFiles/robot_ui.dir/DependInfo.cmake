@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/rslomron/tm_custom/build/ui_for_debug_and_demo/robot_ui_autogen/mocs_compilation.cpp" "CMakeFiles/robot_ui.dir/robot_ui_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/robot_ui_autogen/mocs_compilation.cpp.o.d"
-  "/home/rslomron/tm_custom/src/ui_for_debug_and_demo/src/main.cpp" "CMakeFiles/robot_ui.dir/src/main.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/src/main.cpp.o.d"
-  "/home/rslomron/tm_custom/src/ui_for_debug_and_demo/src/ros_page.cpp" "CMakeFiles/robot_ui.dir/src/ros_page.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/src/ros_page.cpp.o.d"
-  "/home/rslomron/tm_custom/src/ui_for_debug_and_demo/src/tm_ros_driver_windows.cpp" "CMakeFiles/robot_ui.dir/src/tm_ros_driver_windows.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/src/tm_ros_driver_windows.cpp.o.d"
+  "/home/rslomron/MoMa/tm_custom/build/ui_for_debug_and_demo/robot_ui_autogen/mocs_compilation.cpp" "CMakeFiles/robot_ui.dir/robot_ui_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/robot_ui_autogen/mocs_compilation.cpp.o.d"
+  "/home/rslomron/MoMa/tm_custom/src/ui_for_debug_and_demo/src/main.cpp" "CMakeFiles/robot_ui.dir/src/main.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/src/main.cpp.o.d"
+  "/home/rslomron/MoMa/tm_custom/src/ui_for_debug_and_demo/src/ros_page.cpp" "CMakeFiles/robot_ui.dir/src/ros_page.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/src/ros_page.cpp.o.d"
+  "/home/rslomron/MoMa/tm_custom/src/ui_for_debug_and_demo/src/tm_ros_driver_windows.cpp" "CMakeFiles/robot_ui.dir/src/tm_ros_driver_windows.cpp.o" "gcc" "CMakeFiles/robot_ui.dir/src/tm_ros_driver_windows.cpp.o.d"
   )
 
 # Targets to which this target links.
