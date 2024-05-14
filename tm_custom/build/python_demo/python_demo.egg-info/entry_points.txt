@@ -1,3 +1,0 @@
-[console_scripts]
-testes = python_demo.testes:main
-

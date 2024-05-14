@@ -1,6 +1,0 @@
-{
-  "package_name": "techman_robot_msgs",
-  "non_idl_tuples": [
-    "/home/rslomron/MoMa/tm_custom/src/techman_robot_msgs:srv/TechmanRobotCommand.srv"
-  ]
-}
