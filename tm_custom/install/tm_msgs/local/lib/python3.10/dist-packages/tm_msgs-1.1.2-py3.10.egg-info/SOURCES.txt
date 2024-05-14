@@ -1,6 +1,0 @@
-setup.py
-tm_msgs/__init__.py
-tm_msgs.egg-info/PKG-INFO
-tm_msgs.egg-info/SOURCES.txt
-tm_msgs.egg-info/dependency_links.txt
-tm_msgs.egg-info/top_level.txt

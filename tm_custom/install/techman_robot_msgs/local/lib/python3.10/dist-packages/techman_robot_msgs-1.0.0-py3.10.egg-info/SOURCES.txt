@@ -1,6 +1,0 @@
-setup.py
-techman_robot_msgs/__init__.py
-techman_robot_msgs.egg-info/PKG-INFO
-techman_robot_msgs.egg-info/SOURCES.txt
-techman_robot_msgs.egg-info/dependency_links.txt
-techman_robot_msgs.egg-info/top_level.txt
