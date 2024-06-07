@@ -1,13 +1,23 @@
 import rclpy
 from rclpy.node import Node
+import math
 
 from tm_msgs.srv import SetPositions
+
+import sys 
+import os
+sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/"))
+from threshold import *
+# sys.path.insert(0, '/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/')
+# from threshold import *
+
 class ArmService(Node):
 
     def __init__(self):
         super().__init__('arm_service')
 
-        self.cli = self.create_client(SetPositions, 'set_positions')
+        #self.cli = self.create_client(SetPositions, 'set_positions')
+        self.cli = self.create_client(SetPositions, 'safety_service')
 
         while not self.cli.wait_for_service(timeout_sec=1.0):
             if(rclpy.ok()):
@@ -20,8 +30,14 @@ class ArmService(Node):
 
         self.req.motion_type = SetPositions.Request.PTP_J
 
-        self.req.positions = [0.174533, -0.005934119, 2.46283411,
-                                -0.00872665, 1.1229448, 0.26284659]
+        desired_joint_positions_degrees = [10, 5, 130, 20, 60, 10] #valid
+        #desired_joint_positions_degrees = [-11, 5, 130, 20, 60, 10] #invalid
+        print(desired_joint_positions_degrees)
+        self.req.positions = [math.radians(angle) for angle in desired_joint_positions_degrees]
+
+        print("self.req.positions")
+        print(self.req.positions)
+        #self.req.positions = [0.174533, -0.005934119, 2.46283411, -0.00872665, 1.1229448, 0.26284659]
         
         self.req.velocity = 3.5
         self.req.acc_time = 0.2
@@ -48,7 +64,7 @@ def main(args=None):
                 arm_service.get_logger().info()
             else:
                 arm_service.get_logger().info(
-                    'Penis: %f' % arm_service.req.velocity
+                    'Velocity: %f' % arm_service.req.velocity
                 )
             break
 

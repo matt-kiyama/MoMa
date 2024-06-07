@@ -1,4 +1,0 @@
-Invoking command in '/home/rslomron/tm_custom/build/tm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_description -- -j8 -l8
-Invoked command in '/home/rslomron/tm_custom/build/tm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/tm_custom/build/tm_description -- -j8 -l8
-Invoking command in '/home/rslomron/tm_custom/build/tm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_description
-Invoked command in '/home/rslomron/tm_custom/build/tm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rslomron/tm_custom/build/tm_description
