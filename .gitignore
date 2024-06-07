@@ -1,4 +1,4 @@
 tm_custom/build/
-tm_custom//install/
-tm_custom//log/
+tm_custom/install/
+tm_custom/log/
 .DS_Store
