@@ -1,4 +1,0 @@
-srv/ArmSafetyService.idl
-srv/ArmSafetyService.srv
-srv/ArmSafetyService_Request.msg
-srv/ArmSafetyService_Response.msg

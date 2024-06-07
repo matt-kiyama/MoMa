@@ -1,8 +1,0 @@
-setup.py
-safety_msgs/__init__.py
-safety_msgs.egg-info/PKG-INFO
-safety_msgs.egg-info/SOURCES.txt
-safety_msgs.egg-info/dependency_links.txt
-safety_msgs.egg-info/top_level.txt
-safety_msgs/srv/__init__.py
-safety_msgs/srv/_arm_safety_service.py

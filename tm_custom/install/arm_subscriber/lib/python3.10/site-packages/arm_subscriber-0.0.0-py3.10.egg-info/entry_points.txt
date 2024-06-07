@@ -1,3 +1,0 @@
-[console_scripts]
-safety = arm_subscriber.safety_node:main
-

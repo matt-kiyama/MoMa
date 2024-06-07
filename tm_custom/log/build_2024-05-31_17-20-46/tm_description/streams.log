@@ -1,2 +1,0 @@
-[0.039s] Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_description': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/tm_description -- -j8 -l8
-[1.430s] Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/tm_description -- -j8 -l8
