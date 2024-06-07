@@ -1,0 +1,48 @@
+[0.019s] Invoking command in '/home/rslomron/MoMa/tm_custom/build/demo': CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/safety_msgs:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/demo -- -j8 -l8
+[0.107s] [  7%] Built target demo_ask_sta
+[0.107s] [ 14%] Built target demo_connect_tm
+[0.107s] [ 25%] Built target demo_set_positions
+[0.108s] [ 35%] Built target demo_set_event
+[0.108s] [ 32%] Built target demo_send_script
+[0.124s] [ 42%] Built target demo_write_item
+[0.124s] [ 50%] Built target demo_ask_item
+[0.124s] [ 57%] Built target demo_set_io
+[0.157s] [ 71%] Built target demo_get_feedback
+[0.157s] [ 71%] Built target demo_get_torque_feedback
+[0.157s] [ 78%] Built target demo_get_sct_response
+[0.161s] [ 85%] Built target demo_get_svr_response
+[0.170s] [ 92%] Built target demo_leave_listen_node
+[0.176s] [100%] Built target demo_get_sta_response
+[0.191s] Invoked command in '/home/rslomron/MoMa/tm_custom/build/demo' returned '0': CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/safety_msgs:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/demo -- -j8 -l8
+[0.274s] Invoking command in '/home/rslomron/MoMa/tm_custom/build/demo': CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/safety_msgs:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/MoMa/tm_custom/build/demo
+[0.285s] -- Install configuration: ""
+[0.285s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_send_script
+[0.286s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_ask_sta
+[0.287s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_connect_tm
+[0.287s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_set_event
+[0.288s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_set_io
+[0.288s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_set_positions
+[0.289s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_write_item
+[0.289s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_ask_item
+[0.290s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_get_feedback
+[0.290s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_get_torque_feedback
+[0.291s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_get_sct_response
+[0.291s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_get_sta_response
+[0.292s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_get_svr_response
+[0.292s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/lib/demo/demo_leave_listen_node
+[0.292s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/ament_index/resource_index/package_run_dependencies/demo
+[0.293s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/ament_index/resource_index/parent_prefix_path/demo
+[0.293s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/environment/ament_prefix_path.sh
+[0.293s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/environment/ament_prefix_path.dsv
+[0.293s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/environment/path.sh
+[0.293s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/environment/path.dsv
+[0.293s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/local_setup.bash
+[0.294s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/local_setup.sh
+[0.294s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/local_setup.zsh
+[0.294s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/local_setup.dsv
+[0.294s] -- Installing: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/package.dsv
+[0.294s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/ament_index/resource_index/packages/demo
+[0.294s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/cmake/demoConfig.cmake
+[0.294s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/cmake/demoConfig-version.cmake
+[0.295s] -- Up-to-date: /home/rslomron/MoMa/tm_custom/install/demo/share/demo/package.xml
+[0.299s] Invoked command in '/home/rslomron/MoMa/tm_custom/build/demo' returned '0': CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/safety_msgs:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/MoMa/tm_custom/build/demo

@@ -1,0 +1,24 @@
+[2.350s] Invoking command in '/home/rslomron/MoMa/tm_custom/src/python_demo': PYTHONPATH=/home/rslomron/MoMa/tm_custom/build/python_demo/prefix_override:/home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/python_demo build --build-base /home/rslomron/MoMa/tm_custom/build/python_demo/build install --record /home/rslomron/MoMa/tm_custom/build/python_demo/install.log --single-version-externally-managed install_data
+[2.972s] running egg_info
+[2.973s] writing ../../build/python_demo/python_demo.egg-info/PKG-INFO
+[2.974s] writing dependency_links to ../../build/python_demo/python_demo.egg-info/dependency_links.txt
+[2.974s] writing entry points to ../../build/python_demo/python_demo.egg-info/entry_points.txt
+[2.984s] writing requirements to ../../build/python_demo/python_demo.egg-info/requires.txt
+[2.985s] writing top-level names to ../../build/python_demo/python_demo.egg-info/top_level.txt
+[2.990s] reading manifest file '../../build/python_demo/python_demo.egg-info/SOURCES.txt'
+[2.991s] writing manifest file '../../build/python_demo/python_demo.egg-info/SOURCES.txt'
+[2.991s] running build
+[2.992s] running build_py
+[2.995s] copying python_demo/testes.py -> /home/rslomron/MoMa/tm_custom/build/python_demo/build/lib/python_demo
+[2.997s] running install
+[2.997s] running install_lib
+[2.999s] copying /home/rslomron/MoMa/tm_custom/build/python_demo/build/lib/python_demo/testes.py -> /home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages/python_demo
+[3.019s] byte-compiling /home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages/python_demo/testes.py to testes.cpython-310.pyc
+[3.019s] running install_data
+[3.019s] running install_egg_info
+[3.019s] removing '/home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages/python_demo-0.0.0-py3.10.egg-info' (and everything under it)
+[3.019s] Copying ../../build/python_demo/python_demo.egg-info to /home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages/python_demo-0.0.0-py3.10.egg-info
+[3.019s] running install_scripts
+[3.065s] Installing testes script to /home/rslomron/MoMa/tm_custom/install/python_demo/lib/python_demo
+[3.065s] writing list of installed files to '/home/rslomron/MoMa/tm_custom/build/python_demo/install.log'
+[3.202s] Invoked command in '/home/rslomron/MoMa/tm_custom/src/python_demo' returned '0': PYTHONPATH=/home/rslomron/MoMa/tm_custom/build/python_demo/prefix_override:/home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/python_demo build --build-base /home/rslomron/MoMa/tm_custom/build/python_demo/build install --record /home/rslomron/MoMa/tm_custom/build/python_demo/install.log --single-version-externally-managed install_data

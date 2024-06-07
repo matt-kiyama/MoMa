@@ -1,0 +1,745 @@
+[0.000000] (-) TimerEvent: {}
+[0.000418] (-) JobUnselected: {'identifier': 'arm_subscriber'}
+[0.000576] (-) JobUnselected: {'identifier': 'custom_package'}
+[0.000677] (-) JobUnselected: {'identifier': 'demo'}
+[0.000777] (-) JobUnselected: {'identifier': 'python_demo'}
+[0.000851] (-) JobUnselected: {'identifier': 'techman_robot_get_status'}
+[0.000951] (-) JobUnselected: {'identifier': 'techman_robot_msgs'}
+[0.000978] (-) JobUnselected: {'identifier': 'tm_description'}
+[0.001003] (-) JobUnselected: {'identifier': 'tm_driver'}
+[0.001038] (-) JobUnselected: {'identifier': 'tm_mod_urdf'}
+[0.001064] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm12'}
+[0.001168] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm12x'}
+[0.001195] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm14'}
+[0.001221] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm14x'}
+[0.001246] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5-700'}
+[0.001297] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5-900'}
+[0.001378] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5x-700'}
+[0.001404] (-) JobUnselected: {'identifier': 'tm_moveit_config_tm5x-900'}
+[0.001429] (-) JobUnselected: {'identifier': 'tm_moveit_cpp_demo'}
+[0.001456] (-) JobUnselected: {'identifier': 'ui_for_debug_and_demo'}
+[0.001493] (tm_msgs) JobQueued: {'identifier': 'tm_msgs', 'dependencies': OrderedDict()}
+[0.001589] (tm_msgs) JobStarted: {'identifier': 'tm_msgs'}
+[0.014283] (tm_msgs) JobProgress: {'identifier': 'tm_msgs', 'progress': 'cmake'}
+[0.014810] (tm_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/rslomron/MoMa/tm_custom/src/tm_msgs', '-DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/tm_msgs'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/tm_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs/lib:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils/lib:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner/lib:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface/lib:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager/lib:/home/rslomron/moveit2_ws/install/moveit_setup_assistant/lib:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_controllers/lib:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_framework/lib:/home/rslomron/moveit2_ws/install/moveit_servo/lib:/home/rslomron/moveit2_ws/install/moveit_ros_visualization/lib:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning/lib:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface/lib:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks/lib:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse/lib:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction/lib:/home/rslomron/moveit2_ws/install/moveit_ros_perception/lib:/home/rslomron/moveit2_ws/install/moveit_ros_move_group/lib:/home/rslomron/moveit2_ws/install/moveit_planners_ompl/lib:/home/rslomron/moveit2_ws/install/moveit_ros_planning/lib:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor/lib:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin/lib:/home/rslomron/moveit2_ws/install/moveit_planners_chomp/lib:/home/rslomron/moveit2_ws/install/moveit_kinematics/lib:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter/lib:/home/rslomron/moveit2_ws/install/chomp_motion_planner/lib:/home/rslomron/moveit2_ws/install/moveit_core/lib:/home/rslomron/moveit2_ws/install/moveit_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install:/home/rslomron/moveit2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/rslomron/moveit2_ws/install/moveit_core/bin:/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1127,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1127'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/bfa0d79c_73c0_4d6f_ada3_51ff5c58a862'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.42AAN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.135'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils:/home/rslomron/moveit2_ws/install/moveit_runtime:/home/rslomron/moveit2_ws/install/moveit:/home/rslomron/moveit2_ws/install/moveit_planners:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface:/home/rslomron/moveit2_ws/install/moveit_plugins:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager:/home/rslomron/moveit2_ws/install/moveit_setup_assistant:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_controllers:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_framework:/home/rslomron/moveit2_ws/install/moveit_servo:/home/rslomron/moveit2_ws/install/moveit_ros:/home/rslomron/moveit2_ws/install/moveit_ros_visualization:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction:/home/rslomron/moveit2_ws/install/moveit_ros_perception:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_pg70_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_moveit_config:/home/rslomron/moveit2_ws/install/moveit_ros_move_group:/home/rslomron/moveit2_ws/install/moveit_planners_ompl:/home/rslomron/moveit2_ws/install/moveit_ros_planning:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin:/home/rslomron/moveit2_ws/install/moveit_resources:/home/rslomron/moveit2_ws/install/moveit_resources_pr2_description:/home/rslomron/moveit2_ws/install/moveit_resources_panda_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_panda_description:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_description:/home/rslomron/moveit2_ws/install/moveit_planners_chomp:/home/rslomron/moveit2_ws/install/moveit_kinematics:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter:/home/rslomron/moveit2_ws/install/chomp_motion_planner:/home/rslomron/moveit2_ws/install/moveit_core:/home/rslomron/moveit2_ws/install/moveit_msgs:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/home/rslomron/moveit2_ws/install/moveit_common:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/tm_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages:/home/rslomron/moveit2_ws/install/moveit_msgs/local/lib/python3.10/dist-packages:/home/rslomron/moveit2_ws/install/moveit_configs_utils/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils:/home/rslomron/moveit2_ws/install/moveit_runtime:/home/rslomron/moveit2_ws/install/moveit:/home/rslomron/moveit2_ws/install/moveit_planners:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface:/home/rslomron/moveit2_ws/install/moveit_plugins:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager:/home/rslomron/moveit2_ws/install/moveit_setup_assistant:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_controllers:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_framework:/home/rslomron/moveit2_ws/install/moveit_servo:/home/rslomron/moveit2_ws/install/moveit_ros:/home/rslomron/moveit2_ws/install/moveit_ros_visualization:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction:/home/rslomron/moveit2_ws/install/moveit_ros_perception:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_pg70_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_moveit_config:/home/rslomron/moveit2_ws/install/moveit_ros_move_group:/home/rslomron/moveit2_ws/install/moveit_planners_ompl:/home/rslomron/moveit2_ws/install/moveit_ros_planning:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin:/home/rslomron/moveit2_ws/install/moveit_resources:/home/rslomron/moveit2_ws/install/moveit_resources_pr2_description:/home/rslomron/moveit2_ws/install/moveit_resources_panda_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_panda_description:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_description:/home/rslomron/moveit2_ws/install/moveit_planners_chomp:/home/rslomron/moveit2_ws/install/moveit_kinematics:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter:/home/rslomron/moveit2_ws/install/chomp_motion_planner:/home/rslomron/moveit2_ws/install/moveit_core:/home/rslomron/moveit2_ws/install/moveit_msgs:/home/rslomron/moveit2_ws/install/moveit_common:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble')]), 'shell': False}
+[0.032154] (tm_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099489] (-) TimerEvent: {}
+[0.181120] (tm_msgs) StdoutLine: {'line': b'-- Found std_msgs: 4.2.3 (/opt/ros/humble/share/std_msgs/cmake)\n'}
+[0.199668] (-) TimerEvent: {}
+[0.209266] (tm_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.212966] (tm_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.219669] (tm_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.233724] (tm_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.252362] (tm_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.299703] (-) TimerEvent: {}
+[0.310416] (tm_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.399826] (-) TimerEvent: {}
+[0.500295] (-) TimerEvent: {}
+[0.600721] (-) TimerEvent: {}
+[0.701171] (-) TimerEvent: {}
+[0.762794] (tm_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[0.801308] (-) TimerEvent: {}
+[0.901701] (-) TimerEvent: {}
+[1.001988] (-) TimerEvent: {}
+[1.102271] (-) TimerEvent: {}
+[1.202651] (-) TimerEvent: {}
+[1.275612] (tm_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.302742] (-) TimerEvent: {}
+[1.403068] (-) TimerEvent: {}
+[1.477137] (tm_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.503214] (-) TimerEvent: {}
+[1.507833] (tm_msgs) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[1.517148] (tm_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[1.550976] (tm_msgs) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[1.551388] (tm_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[1.551590] (tm_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[1.551808] (tm_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[1.579933] (tm_msgs) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[1.603313] (-) TimerEvent: {}
+[1.684773] (tm_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.703426] (-) TimerEvent: {}
+[1.736419] (tm_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[1.738977] (tm_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/rslomron/MoMa/tm_custom/build/tm_msgs\n'}
+[1.747040] (tm_msgs) CommandEnded: {'returncode': 0}
+[1.748233] (tm_msgs) JobProgress: {'identifier': 'tm_msgs', 'progress': 'build'}
+[1.750690] (tm_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rslomron/MoMa/tm_custom/build/tm_msgs', '--', '-j8', '-l8'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/tm_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs/lib:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils/lib:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner/lib:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface/lib:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager/lib:/home/rslomron/moveit2_ws/install/moveit_setup_assistant/lib:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_controllers/lib:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_framework/lib:/home/rslomron/moveit2_ws/install/moveit_servo/lib:/home/rslomron/moveit2_ws/install/moveit_ros_visualization/lib:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning/lib:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface/lib:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks/lib:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse/lib:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction/lib:/home/rslomron/moveit2_ws/install/moveit_ros_perception/lib:/home/rslomron/moveit2_ws/install/moveit_ros_move_group/lib:/home/rslomron/moveit2_ws/install/moveit_planners_ompl/lib:/home/rslomron/moveit2_ws/install/moveit_ros_planning/lib:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor/lib:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin/lib:/home/rslomron/moveit2_ws/install/moveit_planners_chomp/lib:/home/rslomron/moveit2_ws/install/moveit_kinematics/lib:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter/lib:/home/rslomron/moveit2_ws/install/chomp_motion_planner/lib:/home/rslomron/moveit2_ws/install/moveit_core/lib:/home/rslomron/moveit2_ws/install/moveit_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install:/home/rslomron/moveit2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/rslomron/moveit2_ws/install/moveit_core/bin:/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1127,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1127'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/bfa0d79c_73c0_4d6f_ada3_51ff5c58a862'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.42AAN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.135'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils:/home/rslomron/moveit2_ws/install/moveit_runtime:/home/rslomron/moveit2_ws/install/moveit:/home/rslomron/moveit2_ws/install/moveit_planners:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface:/home/rslomron/moveit2_ws/install/moveit_plugins:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager:/home/rslomron/moveit2_ws/install/moveit_setup_assistant:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_controllers:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_framework:/home/rslomron/moveit2_ws/install/moveit_servo:/home/rslomron/moveit2_ws/install/moveit_ros:/home/rslomron/moveit2_ws/install/moveit_ros_visualization:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction:/home/rslomron/moveit2_ws/install/moveit_ros_perception:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_pg70_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_moveit_config:/home/rslomron/moveit2_ws/install/moveit_ros_move_group:/home/rslomron/moveit2_ws/install/moveit_planners_ompl:/home/rslomron/moveit2_ws/install/moveit_ros_planning:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin:/home/rslomron/moveit2_ws/install/moveit_resources:/home/rslomron/moveit2_ws/install/moveit_resources_pr2_description:/home/rslomron/moveit2_ws/install/moveit_resources_panda_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_panda_description:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_description:/home/rslomron/moveit2_ws/install/moveit_planners_chomp:/home/rslomron/moveit2_ws/install/moveit_kinematics:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter:/home/rslomron/moveit2_ws/install/chomp_motion_planner:/home/rslomron/moveit2_ws/install/moveit_core:/home/rslomron/moveit2_ws/install/moveit_msgs:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/home/rslomron/moveit2_ws/install/moveit_common:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/tm_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages:/home/rslomron/moveit2_ws/install/moveit_msgs/local/lib/python3.10/dist-packages:/home/rslomron/moveit2_ws/install/moveit_configs_utils/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils:/home/rslomron/moveit2_ws/install/moveit_runtime:/home/rslomron/moveit2_ws/install/moveit:/home/rslomron/moveit2_ws/install/moveit_planners:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface:/home/rslomron/moveit2_ws/install/moveit_plugins:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager:/home/rslomron/moveit2_ws/install/moveit_setup_assistant:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_controllers:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_framework:/home/rslomron/moveit2_ws/install/moveit_servo:/home/rslomron/moveit2_ws/install/moveit_ros:/home/rslomron/moveit2_ws/install/moveit_ros_visualization:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction:/home/rslomron/moveit2_ws/install/moveit_ros_perception:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_pg70_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_moveit_config:/home/rslomron/moveit2_ws/install/moveit_ros_move_group:/home/rslomron/moveit2_ws/install/moveit_planners_ompl:/home/rslomron/moveit2_ws/install/moveit_ros_planning:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin:/home/rslomron/moveit2_ws/install/moveit_resources:/home/rslomron/moveit2_ws/install/moveit_resources_pr2_description:/home/rslomron/moveit2_ws/install/moveit_resources_panda_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_panda_description:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_description:/home/rslomron/moveit2_ws/install/moveit_planners_chomp:/home/rslomron/moveit2_ws/install/moveit_kinematics:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter:/home/rslomron/moveit2_ws/install/chomp_motion_planner:/home/rslomron/moveit2_ws/install/moveit_core:/home/rslomron/moveit2_ws/install/moveit_msgs:/home/rslomron/moveit2_ws/install/moveit_common:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble')]), 'shell': False}
+[1.803589] (-) TimerEvent: {}
+[1.817770] (tm_msgs) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.832466] (tm_msgs) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.846721] (tm_msgs) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_copy_tm_msgs\n'}
+[1.903697] (-) TimerEvent: {}
+[2.004006] (-) TimerEvent: {}
+[2.104309] (-) TimerEvent: {}
+[2.148049] (tm_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.148710] (tm_msgs) StdoutLine: {'line': b'creating tm_msgs.egg-info\n'}
+[2.148957] (tm_msgs) StdoutLine: {'line': b'writing tm_msgs.egg-info/PKG-INFO\n'}
+[2.149184] (tm_msgs) StdoutLine: {'line': b'writing dependency_links to tm_msgs.egg-info/dependency_links.txt\n'}
+[2.149432] (tm_msgs) StdoutLine: {'line': b'writing top-level names to tm_msgs.egg-info/top_level.txt\n'}
+[2.149720] (tm_msgs) StdoutLine: {'line': b"writing manifest file 'tm_msgs.egg-info/SOURCES.txt'\n"}
+[2.151675] (tm_msgs) StdoutLine: {'line': b"reading manifest file 'tm_msgs.egg-info/SOURCES.txt'\n"}
+[2.152263] (tm_msgs) StdoutLine: {'line': b"writing manifest file 'tm_msgs.egg-info/SOURCES.txt'\n"}
+[2.185743] (tm_msgs) StdoutLine: {'line': b'[  1%] Built target ament_cmake_python_build_tm_msgs_egg\n'}
+[2.204437] (-) TimerEvent: {}
+[2.304768] (-) TimerEvent: {}
+[2.405207] (-) TimerEvent: {}
+[2.505644] (-) TimerEvent: {}
+[2.606065] (-) TimerEvent: {}
+[2.706489] (-) TimerEvent: {}
+[2.806917] (-) TimerEvent: {}
+[2.907343] (-) TimerEvent: {}
+[3.007754] (-) TimerEvent: {}
+[3.108137] (-) TimerEvent: {}
+[3.208567] (-) TimerEvent: {}
+[3.308983] (-) TimerEvent: {}
+[3.409288] (-) TimerEvent: {}
+[3.509634] (-) TimerEvent: {}
+[3.549403] (tm_msgs) StdoutLine: {'line': b'[  1%] Built target tm_msgs__cpp\n'}
+[3.573551] (tm_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[3.574306] (tm_msgs) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[3.600408] (tm_msgs) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[3.609731] (-) TimerEvent: {}
+[3.710035] (-) TimerEvent: {}
+[3.740114] (tm_msgs) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/connect_tm__functions.c.o\x1b[0m\n'}
+[3.740464] (tm_msgs) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/msg/detail/sct_response__functions.c.o\x1b[0m\n'}
+[3.742057] (tm_msgs) StdoutLine: {'line': b'[  6%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/msg/detail/svr_response__functions.c.o\x1b[0m\n'}
+[3.743265] (tm_msgs) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/msg/detail/feedback_state__functions.c.o\x1b[0m\n'}
+[3.747441] (tm_msgs) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/msg/detail/sta_response__functions.c.o\x1b[0m\n'}
+[3.810142] (-) TimerEvent: {}
+[3.819817] (tm_msgs) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/write_item__functions.c.o\x1b[0m\n'}
+[3.833495] (tm_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/ask_item__functions.c.o\x1b[0m\n'}
+[3.841462] (tm_msgs) StdoutLine: {'line': b'[ 10%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/send_script__functions.c.o\x1b[0m\n'}
+[3.868258] (tm_msgs) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/set_event__functions.c.o\x1b[0m\n'}
+[3.875322] (tm_msgs) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/set_io__functions.c.o\x1b[0m\n'}
+[3.910249] (-) TimerEvent: {}
+[3.929059] (tm_msgs) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/set_positions__functions.c.o\x1b[0m\n'}
+[3.942869] (tm_msgs) StdoutLine: {'line': b'[ 13%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_c.dir/rosidl_generator_c/tm_msgs/srv/detail/ask_sta__functions.c.o\x1b[0m\n'}
+[4.010363] (-) TimerEvent: {}
+[4.030365] (tm_msgs) StdoutLine: {'line': b'[ 14%] \x1b[32m\x1b[1mLinking C shared library libtm_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[4.080857] (tm_msgs) StdoutLine: {'line': b'[ 14%] Built target tm_msgs__rosidl_generator_c\n'}
+[4.096820] (tm_msgs) StdoutLine: {'line': b'[ 15%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[4.100048] (tm_msgs) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[4.101981] (tm_msgs) StdoutLine: {'line': b'[ 17%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[4.110482] (-) TimerEvent: {}
+[4.210999] (-) TimerEvent: {}
+[4.311602] (-) TimerEvent: {}
+[4.412138] (-) TimerEvent: {}
+[4.512439] (-) TimerEvent: {}
+[4.612950] (-) TimerEvent: {}
+[4.713452] (-) TimerEvent: {}
+[4.813964] (-) TimerEvent: {}
+[4.914486] (-) TimerEvent: {}
+[5.014996] (-) TimerEvent: {}
+[5.063069] (tm_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/msg/feedback_state__type_support.cpp.o\x1b[0m\n'}
+[5.063870] (tm_msgs) StdoutLine: {'line': b'[ 19%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/msg/svr_response__type_support.cpp.o\x1b[0m\n'}
+[5.066853] (tm_msgs) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/msg/sct_response__type_support.cpp.o\x1b[0m\n'}
+[5.115094] (-) TimerEvent: {}
+[5.215414] (-) TimerEvent: {}
+[5.315760] (-) TimerEvent: {}
+[5.416081] (-) TimerEvent: {}
+[5.516623] (-) TimerEvent: {}
+[5.518109] (tm_msgs) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/msg/sta_response__type_support.cpp.o\x1b[0m\n'}
+[5.533399] (tm_msgs) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/connect_tm__type_support.cpp.o\x1b[0m\n'}
+[5.616723] (-) TimerEvent: {}
+[5.686806] (tm_msgs) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/write_item__type_support.cpp.o\x1b[0m\n'}
+[5.716821] (-) TimerEvent: {}
+[5.817321] (-) TimerEvent: {}
+[5.917827] (-) TimerEvent: {}
+[6.018341] (-) TimerEvent: {}
+[6.038472] (tm_msgs) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/ask_item__type_support.cpp.o\x1b[0m\n'}
+[6.064329] (tm_msgs) StdoutLine: {'line': b'[ 24%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/send_script__type_support.cpp.o\x1b[0m\n'}
+[6.118455] (-) TimerEvent: {}
+[6.218812] (-) TimerEvent: {}
+[6.239385] (tm_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/set_event__type_support.cpp.o\x1b[0m\n'}
+[6.318921] (-) TimerEvent: {}
+[6.419686] (-) TimerEvent: {}
+[6.523688] (-) TimerEvent: {}
+[6.574102] (tm_msgs) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/msg/detail/dds_fastrtps/feedback_state__type_support.cpp.o\x1b[0m\n'}
+[6.582569] (tm_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/set_io__type_support.cpp.o\x1b[0m\n'}
+[6.623797] (-) TimerEvent: {}
+[6.626571] (tm_msgs) StdoutLine: {'line': b'[ 27%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/set_positions__type_support.cpp.o\x1b[0m\n'}
+[6.719326] (tm_msgs) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/tm_msgs/srv/ask_sta__type_support.cpp.o\x1b[0m\n'}
+[6.723892] (-) TimerEvent: {}
+[6.824232] (-) TimerEvent: {}
+[6.902877] (tm_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/msg/feedback_state__type_support.cpp.o\x1b[0m\n'}
+[6.924338] (-) TimerEvent: {}
+[6.985389] (tm_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/msg/svr_response__type_support.cpp.o\x1b[0m\n'}
+[7.024445] (-) TimerEvent: {}
+[7.026634] (tm_msgs) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/msg/detail/feedback_state__type_support.cpp.o\x1b[0m\n'}
+[7.048599] (tm_msgs) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/msg/sct_response__type_support.cpp.o\x1b[0m\n'}
+[7.109887] (tm_msgs) StdoutLine: {'line': b'[ 31%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/msg/sta_response__type_support.cpp.o\x1b[0m\n'}
+[7.124551] (-) TimerEvent: {}
+[7.132678] (tm_msgs) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/msg/detail/sct_response__type_support.cpp.o\x1b[0m\n'}
+[7.139241] (tm_msgs) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/msg/detail/svr_response__type_support.cpp.o\x1b[0m\n'}
+[7.199771] (tm_msgs) StdoutLine: {'line': b'[ 34%] \x1b[32m\x1b[1mLinking CXX shared library libtm_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[7.212940] (tm_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/connect_tm__type_support.cpp.o\x1b[0m\n'}
+[7.224666] (-) TimerEvent: {}
+[7.290488] (tm_msgs) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/write_item__type_support.cpp.o\x1b[0m\n'}
+[7.324997] (-) TimerEvent: {}
+[7.339790] (tm_msgs) StdoutLine: {'line': b'[ 36%] Built target tm_msgs__rosidl_typesupport_cpp\n'}
+[7.389135] (tm_msgs) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/ask_item__type_support.cpp.o\x1b[0m\n'}
+[7.425122] (-) TimerEvent: {}
+[7.485753] (tm_msgs) StdoutLine: {'line': b'[ 37%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/send_script__type_support.cpp.o\x1b[0m\n'}
+[7.498026] (tm_msgs) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/msg/detail/sta_response__type_support.cpp.o\x1b[0m\n'}
+[7.525232] (-) TimerEvent: {}
+[7.583862] (tm_msgs) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/set_event__type_support.cpp.o\x1b[0m\n'}
+[7.625347] (-) TimerEvent: {}
+[7.643392] (tm_msgs) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/msg/detail/feedback_state__type_support.c.o\x1b[0m\n'}
+[7.655295] (tm_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/set_io__type_support.cpp.o\x1b[0m\n'}
+[7.679641] (tm_msgs) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/msg/detail/dds_fastrtps/svr_response__type_support.cpp.o\x1b[0m\n'}
+[7.725469] (-) TimerEvent: {}
+[7.738520] (tm_msgs) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/set_positions__type_support.cpp.o\x1b[0m\n'}
+[7.762920] (tm_msgs) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/msg/detail/feedback_state__type_support_c.cpp.o\x1b[0m\n'}
+[7.809736] (tm_msgs) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/msg/detail/svr_response__type_support.c.o\x1b[0m\n'}
+[7.818059] (tm_msgs) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/msg/detail/dds_fastrtps/sct_response__type_support.cpp.o\x1b[0m\n'}
+[7.825583] (-) TimerEvent: {}
+[7.858933] (tm_msgs) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/tm_msgs/srv/ask_sta__type_support.cpp.o\x1b[0m\n'}
+[7.868163] (tm_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/msg/detail/svr_response__type_support_c.cpp.o\x1b[0m\n'}
+[7.908642] (tm_msgs) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/msg/detail/sct_response__type_support.c.o\x1b[0m\n'}
+[7.925697] (-) TimerEvent: {}
+[7.962063] (tm_msgs) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/connect_tm__type_support.cpp.o\x1b[0m\n'}
+[7.965756] (tm_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking CXX shared library libtm_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[8.025808] (-) TimerEvent: {}
+[8.045222] (tm_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/msg/detail/sta_response__type_support.c.o\x1b[0m\n'}
+[8.058461] (tm_msgs) StdoutLine: {'line': b'[ 51%] Built target tm_msgs__rosidl_typesupport_c\n'}
+[8.089565] (tm_msgs) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/write_item__type_support.cpp.o\x1b[0m\n'}
+[8.125924] (-) TimerEvent: {}
+[8.185431] (tm_msgs) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/connect_tm__type_support.c.o\x1b[0m\n'}
+[8.226033] (-) TimerEvent: {}
+[8.228211] (tm_msgs) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/write_item__type_support.c.o\x1b[0m\n'}
+[8.298970] (tm_msgs) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/msg/detail/dds_fastrtps/sta_response__type_support.cpp.o\x1b[0m\n'}
+[8.320882] (tm_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/ask_item__type_support.c.o\x1b[0m\n'}
+[8.326145] (-) TimerEvent: {}
+[8.383655] (tm_msgs) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/ask_item__type_support.cpp.o\x1b[0m\n'}
+[8.423091] (tm_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/send_script__type_support.c.o\x1b[0m\n'}
+[8.426245] (-) TimerEvent: {}
+[8.521638] (tm_msgs) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/msg/detail/sct_response__type_support_c.cpp.o\x1b[0m\n'}
+[8.523056] (tm_msgs) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/set_io__type_support.c.o\x1b[0m\n'}
+[8.526352] (-) TimerEvent: {}
+[8.529364] (tm_msgs) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/set_event__type_support.c.o\x1b[0m\n'}
+[8.540338] (tm_msgs) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/msg/detail/sta_response__type_support_c.cpp.o\x1b[0m\n'}
+[8.632774] (-) TimerEvent: {}
+[8.660013] (tm_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/ask_sta__type_support.c.o\x1b[0m\n'}
+[8.673741] (tm_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/tm_msgs/srv/detail/set_positions__type_support.c.o\x1b[0m\n'}
+[8.732885] (-) TimerEvent: {}
+[8.746740] (tm_msgs) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/connect_tm__type_support_c.cpp.o\x1b[0m\n'}
+[8.794148] (tm_msgs) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/connect_tm__type_support.cpp.o\x1b[0m\n'}
+[8.795242] (tm_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/send_script__type_support.cpp.o\x1b[0m\n'}
+[8.814078] (tm_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32m\x1b[1mLinking C shared library libtm_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[8.832991] (-) TimerEvent: {}
+[8.933531] (-) TimerEvent: {}
+[8.984935] (tm_msgs) StdoutLine: {'line': b'[ 65%] Built target tm_msgs__rosidl_typesupport_introspection_c\n'}
+[9.005038] (tm_msgs) StdoutLine: {'line': b'[ 65%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/write_item__type_support.cpp.o\x1b[0m\n'}
+[9.033648] (-) TimerEvent: {}
+[9.121891] (tm_msgs) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/ask_item__type_support.cpp.o\x1b[0m\n'}
+[9.133763] (-) TimerEvent: {}
+[9.141512] (tm_msgs) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/set_event__type_support.cpp.o\x1b[0m\n'}
+[9.203005] (tm_msgs) StdoutLine: {'line': b'[ 68%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/send_script__type_support.cpp.o\x1b[0m\n'}
+[9.233875] (-) TimerEvent: {}
+[9.334435] (-) TimerEvent: {}
+[9.363472] (tm_msgs) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/set_event__type_support.cpp.o\x1b[0m\n'}
+[9.434549] (-) TimerEvent: {}
+[9.492143] (tm_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/write_item__type_support_c.cpp.o\x1b[0m\n'}
+[9.535123] (-) TimerEvent: {}
+[9.565763] (tm_msgs) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/set_io__type_support.cpp.o\x1b[0m\n'}
+[9.587207] (tm_msgs) StdoutLine: {'line': b'[ 72%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/ask_item__type_support_c.cpp.o\x1b[0m\n'}
+[9.635242] (-) TimerEvent: {}
+[9.735799] (-) TimerEvent: {}
+[9.810856] (tm_msgs) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/set_positions__type_support.cpp.o\x1b[0m\n'}
+[9.835914] (-) TimerEvent: {}
+[9.889397] (tm_msgs) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/set_io__type_support.cpp.o\x1b[0m\n'}
+[9.890501] (tm_msgs) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/set_positions__type_support.cpp.o\x1b[0m\n'}
+[9.936022] (-) TimerEvent: {}
+[10.003798] (tm_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/send_script__type_support_c.cpp.o\x1b[0m\n'}
+[10.036135] (-) TimerEvent: {}
+[10.119397] (tm_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/tm_msgs/srv/detail/dds_fastrtps/ask_sta__type_support.cpp.o\x1b[0m\n'}
+[10.136245] (-) TimerEvent: {}
+[10.236596] (-) TimerEvent: {}
+[10.243154] (tm_msgs) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/set_event__type_support_c.cpp.o\x1b[0m\n'}
+[10.287691] (tm_msgs) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/tm_msgs/srv/detail/ask_sta__type_support.cpp.o\x1b[0m\n'}
+[10.306590] (tm_msgs) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/set_io__type_support_c.cpp.o\x1b[0m\n'}
+[10.336711] (-) TimerEvent: {}
+[10.437084] (-) TimerEvent: {}
+[10.537452] (-) TimerEvent: {}
+[10.610976] (tm_msgs) StdoutLine: {'line': b'[ 79%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/set_positions__type_support_c.cpp.o\x1b[0m\n'}
+[10.637571] (-) TimerEvent: {}
+[10.672374] (tm_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/tm_msgs/srv/detail/ask_sta__type_support_c.cpp.o\x1b[0m\n'}
+[10.737691] (-) TimerEvent: {}
+[10.838080] (-) TimerEvent: {}
+[10.880779] (tm_msgs) StdoutLine: {'line': b'[ 81%] \x1b[32m\x1b[1mLinking CXX shared library libtm_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[10.938200] (-) TimerEvent: {}
+[10.963067] (tm_msgs) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking CXX shared library libtm_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[11.038330] (-) TimerEvent: {}
+[11.067388] (tm_msgs) StdoutLine: {'line': b'[ 82%] Built target tm_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[11.071316] (tm_msgs) StdoutLine: {'line': b'[ 82%] Built target tm_msgs__rosidl_typesupport_introspection_cpp\n'}
+[11.138446] (-) TimerEvent: {}
+[11.193743] (tm_msgs) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libtm_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[11.238569] (-) TimerEvent: {}
+[11.281178] (tm_msgs) StdoutLine: {'line': b'[ 83%] Built target tm_msgs__rosidl_typesupport_fastrtps_c\n'}
+[11.312639] (tm_msgs) StdoutLine: {'line': b'[ 83%] Built target tm_msgs\n'}
+[11.338703] (-) TimerEvent: {}
+[11.346403] (tm_msgs) StdoutLine: {'line': b'[ 84%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[11.438862] (-) TimerEvent: {}
+[11.539314] (-) TimerEvent: {}
+[11.639764] (-) TimerEvent: {}
+[11.740224] (-) TimerEvent: {}
+[11.840682] (-) TimerEvent: {}
+[11.941118] (-) TimerEvent: {}
+[12.041557] (-) TimerEvent: {}
+[12.142005] (-) TimerEvent: {}
+[12.242436] (-) TimerEvent: {}
+[12.342865] (-) TimerEvent: {}
+[12.443314] (-) TimerEvent: {}
+[12.543770] (-) TimerEvent: {}
+[12.644202] (-) TimerEvent: {}
+[12.744596] (-) TimerEvent: {}
+[12.845056] (-) TimerEvent: {}
+[12.945516] (-) TimerEvent: {}
+[13.045965] (-) TimerEvent: {}
+[13.146426] (-) TimerEvent: {}
+[13.246871] (-) TimerEvent: {}
+[13.347320] (-) TimerEvent: {}
+[13.447773] (-) TimerEvent: {}
+[13.548240] (-) TimerEvent: {}
+[13.648692] (-) TimerEvent: {}
+[13.749148] (-) TimerEvent: {}
+[13.849587] (-) TimerEvent: {}
+[13.950028] (-) TimerEvent: {}
+[14.050471] (-) TimerEvent: {}
+[14.150919] (-) TimerEvent: {}
+[14.251350] (-) TimerEvent: {}
+[14.351753] (-) TimerEvent: {}
+[14.452149] (-) TimerEvent: {}
+[14.517637] (tm_msgs) StdoutLine: {'line': b'[ 84%] Built target tm_msgs__py\n'}
+[14.551012] (tm_msgs) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/msg/_sct_response_s.c.o\x1b[0m\n'}
+[14.551317] (tm_msgs) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_connect_tm_s.c.o\x1b[0m\n'}
+[14.551539] (tm_msgs) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/msg/_sta_response_s.c.o\x1b[0m\n'}
+[14.552015] (tm_msgs) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_ask_item_s.c.o\x1b[0m\n'}
+[14.552162] (-) TimerEvent: {}
+[14.552689] (tm_msgs) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/msg/_svr_response_s.c.o\x1b[0m\n'}
+[14.555049] (tm_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_send_script_s.c.o\x1b[0m\n'}
+[14.555227] (tm_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/msg/_feedback_state_s.c.o\x1b[0m\n'}
+[14.568135] (tm_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_write_item_s.c.o\x1b[0m\n'}
+[14.652303] (-) TimerEvent: {}
+[14.752907] (-) TimerEvent: {}
+[14.753350] (tm_msgs) StdoutLine: {'line': b'[ 91%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_set_io_s.c.o\x1b[0m\n'}
+[14.755146] (tm_msgs) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_set_event_s.c.o\x1b[0m\n'}
+[14.775282] (tm_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_set_positions_s.c.o\x1b[0m\n'}
+[14.792463] (tm_msgs) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_generator_py.dir/rosidl_generator_py/tm_msgs/srv/_ask_sta_s.c.o\x1b[0m\n'}
+[14.853015] (-) TimerEvent: {}
+[14.953536] (-) TimerEvent: {}
+[14.963675] (tm_msgs) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tm_msgs/libtm_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[15.014428] (tm_msgs) StdoutLine: {'line': b'[ 95%] Built target tm_msgs__rosidl_generator_py\n'}
+[15.042909] (tm_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/tm_msgs/_tm_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[15.043175] (tm_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/tm_msgs/_tm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[15.043295] (tm_msgs) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding C object CMakeFiles/tm_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/tm_msgs/_tm_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[15.053660] (-) TimerEvent: {}
+[15.154022] (-) TimerEvent: {}
+[15.212395] (tm_msgs) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tm_msgs/tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[15.215812] (tm_msgs) StdoutLine: {'line': b'[ 99%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tm_msgs/tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[15.223992] (tm_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/tm_msgs/tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[15.254119] (-) TimerEvent: {}
+[15.263359] (tm_msgs) StdoutLine: {'line': b'[100%] Built target tm_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[15.265377] (tm_msgs) StdoutLine: {'line': b'[100%] Built target tm_msgs__rosidl_typesupport_c__pyext\n'}
+[15.273156] (tm_msgs) StdoutLine: {'line': b'[100%] Built target tm_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[15.290613] (tm_msgs) CommandEnded: {'returncode': 0}
+[15.354228] (-) TimerEvent: {}
+[15.454586] (-) TimerEvent: {}
+[15.554835] (-) TimerEvent: {}
+[15.655104] (-) TimerEvent: {}
+[15.755364] (-) TimerEvent: {}
+[15.803511] (tm_msgs) JobProgress: {'identifier': 'tm_msgs', 'progress': 'install'}
+[15.815983] (tm_msgs) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rslomron/MoMa/tm_custom/build/tm_msgs'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/tm_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs/lib:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils/lib:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner/lib:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface/lib:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager/lib:/home/rslomron/moveit2_ws/install/moveit_setup_assistant/lib:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_controllers/lib:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins/lib:/home/rslomron/moveit2_ws/install/moveit_setup_framework/lib:/home/rslomron/moveit2_ws/install/moveit_servo/lib:/home/rslomron/moveit2_ws/install/moveit_ros_visualization/lib:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning/lib:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface/lib:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks/lib:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse/lib:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction/lib:/home/rslomron/moveit2_ws/install/moveit_ros_perception/lib:/home/rslomron/moveit2_ws/install/moveit_ros_move_group/lib:/home/rslomron/moveit2_ws/install/moveit_planners_ompl/lib:/home/rslomron/moveit2_ws/install/moveit_ros_planning/lib:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor/lib:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin/lib:/home/rslomron/moveit2_ws/install/moveit_planners_chomp/lib:/home/rslomron/moveit2_ws/install/moveit_kinematics/lib:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter/lib:/home/rslomron/moveit2_ws/install/chomp_motion_planner/lib:/home/rslomron/moveit2_ws/install/moveit_core/lib:/home/rslomron/moveit2_ws/install/moveit_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '1159'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install:/home/rslomron/moveit2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/rslomron/moveit2_ws/install/moveit_core/bin:/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1127,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1127'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/bfa0d79c_73c0_4d6f_ada3_51ff5c58a862'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.42AAN2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.135'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils:/home/rslomron/moveit2_ws/install/moveit_runtime:/home/rslomron/moveit2_ws/install/moveit:/home/rslomron/moveit2_ws/install/moveit_planners:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface:/home/rslomron/moveit2_ws/install/moveit_plugins:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager:/home/rslomron/moveit2_ws/install/moveit_setup_assistant:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_controllers:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_framework:/home/rslomron/moveit2_ws/install/moveit_servo:/home/rslomron/moveit2_ws/install/moveit_ros:/home/rslomron/moveit2_ws/install/moveit_ros_visualization:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction:/home/rslomron/moveit2_ws/install/moveit_ros_perception:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_pg70_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_moveit_config:/home/rslomron/moveit2_ws/install/moveit_ros_move_group:/home/rslomron/moveit2_ws/install/moveit_planners_ompl:/home/rslomron/moveit2_ws/install/moveit_ros_planning:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin:/home/rslomron/moveit2_ws/install/moveit_resources:/home/rslomron/moveit2_ws/install/moveit_resources_pr2_description:/home/rslomron/moveit2_ws/install/moveit_resources_panda_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_panda_description:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_description:/home/rslomron/moveit2_ws/install/moveit_planners_chomp:/home/rslomron/moveit2_ws/install/moveit_kinematics:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter:/home/rslomron/moveit2_ws/install/chomp_motion_planner:/home/rslomron/moveit2_ws/install/moveit_core:/home/rslomron/moveit2_ws/install/moveit_msgs:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/home/rslomron/moveit2_ws/install/moveit_common:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/tm_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rslomron/MoMa/tm_custom/install/arm_subscriber/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs/local/lib/python3.10/dist-packages:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status/lib/python3.10/site-packages:/home/rslomron/MoMa/tm_custom/install/python_demo/lib/python3.10/site-packages:/home/rslomron/moveit2_ws/install/moveit_msgs/local/lib/python3.10/dist-packages:/home/rslomron/moveit2_ws/install/moveit_configs_utils/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rslomron/MoMa/tm_custom/install/ui_for_debug_and_demo:/home/rslomron/MoMa/tm_custom/install/tm_driver:/home/rslomron/MoMa/tm_custom/install/demo:/home/rslomron/MoMa/tm_custom/install/tm_msgs:/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5x-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-900:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm5-700:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm14:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12x:/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12:/home/rslomron/MoMa/tm_custom/install/tm_description:/home/rslomron/MoMa/tm_custom/install/custom_package:/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner_testutils:/home/rslomron/moveit2_ws/install/moveit_runtime:/home/rslomron/moveit2_ws/install/moveit:/home/rslomron/moveit2_ws/install/moveit_planners:/home/rslomron/moveit2_ws/install/pilz_industrial_motion_planner:/home/rslomron/moveit2_ws/install/moveit_ros_control_interface:/home/rslomron/moveit2_ws/install/moveit_plugins:/home/rslomron/moveit2_ws/install/moveit_simple_controller_manager:/home/rslomron/moveit2_ws/install/moveit_setup_assistant:/home/rslomron/moveit2_ws/install/moveit_setup_srdf_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_core_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_controllers:/home/rslomron/moveit2_ws/install/moveit_setup_app_plugins:/home/rslomron/moveit2_ws/install/moveit_setup_framework:/home/rslomron/moveit2_ws/install/moveit_servo:/home/rslomron/moveit2_ws/install/moveit_ros:/home/rslomron/moveit2_ws/install/moveit_ros_visualization:/home/rslomron/moveit2_ws/install/moveit_hybrid_planning:/home/rslomron/moveit2_ws/install/moveit_ros_planning_interface:/home/rslomron/moveit2_ws/install/moveit_ros_benchmarks:/home/rslomron/moveit2_ws/install/moveit_ros_warehouse:/home/rslomron/moveit2_ws/install/moveit_ros_robot_interaction:/home/rslomron/moveit2_ws/install/moveit_ros_perception:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_pg70_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_moveit_config:/home/rslomron/moveit2_ws/install/moveit_ros_move_group:/home/rslomron/moveit2_ws/install/moveit_planners_ompl:/home/rslomron/moveit2_ws/install/moveit_ros_planning:/home/rslomron/moveit2_ws/install/moveit_ros_occupancy_map_monitor:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_support:/home/rslomron/moveit2_ws/install/moveit_resources_prbt_ikfast_manipulator_plugin:/home/rslomron/moveit2_ws/install/moveit_resources:/home/rslomron/moveit2_ws/install/moveit_resources_pr2_description:/home/rslomron/moveit2_ws/install/moveit_resources_panda_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_panda_description:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_moveit_config:/home/rslomron/moveit2_ws/install/moveit_resources_fanuc_description:/home/rslomron/moveit2_ws/install/moveit_planners_chomp:/home/rslomron/moveit2_ws/install/moveit_kinematics:/home/rslomron/moveit2_ws/install/moveit_chomp_optimizer_adapter:/home/rslomron/moveit2_ws/install/chomp_motion_planner:/home/rslomron/moveit2_ws/install/moveit_core:/home/rslomron/moveit2_ws/install/moveit_msgs:/home/rslomron/moveit2_ws/install/moveit_common:/home/rslomron/MoMa/tm_custom/install/arm_subscriber:/home/rslomron/MoMa/tm_custom/install/tm_mod_urdf:/home/rslomron/MoMa/tm_custom/install/techman_robot_get_status:/home/rslomron/MoMa/tm_custom/install/python_demo:/home/rslomron/moveit2_ws/install/moveit_configs_utils:/opt/ros/humble')]), 'shell': False}
+[15.828509] (tm_msgs) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[15.828747] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/ament_index/resource_index/rosidl_interfaces/tm_msgs\n'}
+[15.828898] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs\n'}
+[15.829035] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg\n'}
+[15.829180] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail\n'}
+[15.829310] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__functions.c\n'}
+[15.829438] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__type_support.h\n'}
+[15.829560] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__functions.c\n'}
+[15.829689] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__functions.h\n'}
+[15.829819] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__functions.c\n'}
+[15.829947] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__functions.h\n'}
+[15.830073] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__functions.h\n'}
+[15.830210] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__struct.h\n'}
+[15.830333] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__type_support.h\n'}
+[15.830460] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__type_support.h\n'}
+[15.830585] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__type_support.h\n'}
+[15.830722] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__struct.h\n'}
+[15.830850] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__functions.c\n'}
+[15.830987] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__functions.h\n'}
+[15.831123] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__struct.h\n'}
+[15.831252] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__struct.h\n'}
+[15.831379] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/sta_response.h\n'}
+[15.831516] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/svr_response.h\n'}
+[15.832010] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/rosidl_generator_c__visibility_control.h\n'}
+[15.832177] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/sct_response.h\n'}
+[15.832308] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/feedback_state.h\n'}
+[15.832440] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv\n'}
+[15.832567] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail\n'}
+[15.832705] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__functions.h\n'}
+[15.832833] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__functions.c\n'}
+[15.832960] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__type_support.h\n'}
+[15.833083] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__type_support.h\n'}
+[15.833208] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__struct.h\n'}
+[15.833346] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__functions.h\n'}
+[15.833484] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__functions.c\n'}
+[15.833613] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__type_support.h\n'}
+[15.833744] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__struct.h\n'}
+[15.833881] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__functions.h\n'}
+[15.834008] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__struct.h\n'}
+[15.834135] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__functions.c\n'}
+[15.834271] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__struct.h\n'}
+[15.834398] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__functions.c\n'}
+[15.834525] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__functions.h\n'}
+[15.834656] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__functions.c\n'}
+[15.834793] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__functions.h\n'}
+[15.834920] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__functions.c\n'}
+[15.835047] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__functions.h\n'}
+[15.835170] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__type_support.h\n'}
+[15.835307] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__struct.h\n'}
+[15.835432] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__type_support.h\n'}
+[15.835555] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__struct.h\n'}
+[15.835706] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__functions.c\n'}
+[15.835822] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__type_support.h\n'}
+[15.835944] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__type_support.h\n'}
+[15.836071] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__type_support.h\n'}
+[15.836194] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__functions.h\n'}
+[15.836305] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__functions.c\n'}
+[15.836411] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__struct.h\n'}
+[15.836519] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__struct.h\n'}
+[15.836627] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__functions.h\n'}
+[15.836791] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/connect_tm.h\n'}
+[15.836928] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/ask_item.h\n'}
+[15.837055] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/ask_sta.h\n'}
+[15.837181] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/write_item.h\n'}
+[15.837318] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/set_io.h\n'}
+[15.837455] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/set_event.h\n'}
+[15.837587] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/set_positions.h\n'}
+[15.837723] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/send_script.h\n'}
+[15.837850] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/library_path.sh\n'}
+[15.837972] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/library_path.dsv\n'}
+[15.838110] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_generator_c.so\n'}
+[15.838220] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_generator_c.so" to ""\n'}
+[15.838458] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs\n'}
+[15.838572] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg\n'}
+[15.838681] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail\n'}
+[15.838855] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__rosidl_typesupport_fastrtps_c.h\n'}
+[15.838983] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__rosidl_typesupport_fastrtps_c.h\n'}
+[15.839110] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__rosidl_typesupport_fastrtps_c.h\n'}
+[15.839235] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__rosidl_typesupport_fastrtps_c.h\n'}
+[15.839362] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[15.839499] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv\n'}
+[15.839632] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail\n'}
+[15.839768] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__rosidl_typesupport_fastrtps_c.h\n'}
+[15.839892] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840020] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840154] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840280] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840406] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840555] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840679] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__rosidl_typesupport_fastrtps_c.h\n'}
+[15.840815] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_fastrtps_c.so\n'}
+[15.840940] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[15.841077] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs\n'}
+[15.841201] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg\n'}
+[15.841335] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail\n'}
+[15.841462] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__struct.hpp\n'}
+[15.841588] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__builder.hpp\n'}
+[15.841713] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__builder.hpp\n'}
+[15.841849] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__struct.hpp\n'}
+[15.841985] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__traits.hpp\n'}
+[15.842113] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__traits.hpp\n'}
+[15.842238] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__builder.hpp\n'}
+[15.842375] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__struct.hpp\n'}
+[15.842503] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__builder.hpp\n'}
+[15.842628] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__traits.hpp\n'}
+[15.842753] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__struct.hpp\n'}
+[15.842900] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__traits.hpp\n'}
+[15.843025] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/sta_response.hpp\n'}
+[15.843152] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/sct_response.hpp\n'}
+[15.843288] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/svr_response.hpp\n'}
+[15.843414] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/feedback_state.hpp\n'}
+[15.843553] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv\n'}
+[15.843690] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail\n'}
+[15.843820] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__builder.hpp\n'}
+[15.843980] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__struct.hpp\n'}
+[15.844108] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__builder.hpp\n'}
+[15.844234] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__struct.hpp\n'}
+[15.844370] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__traits.hpp\n'}
+[15.844506] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__traits.hpp\n'}
+[15.844650] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__traits.hpp\n'}
+[15.844787] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__builder.hpp\n'}
+[15.844914] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__builder.hpp\n'}
+[15.845043] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__struct.hpp\n'}
+[15.845169] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__traits.hpp\n'}
+[15.845306] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__traits.hpp\n'}
+[15.845430] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__struct.hpp\n'}
+[15.845552] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__struct.hpp\n'}
+[15.845662] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__builder.hpp\n'}
+[15.845769] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__traits.hpp\n'}
+[15.845875] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__struct.hpp\n'}
+[15.845983] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__traits.hpp\n'}
+[15.846118] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__builder.hpp\n'}
+[15.846264] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__builder.hpp\n'}
+[15.846389] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__traits.hpp\n'}
+[15.846514] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__struct.hpp\n'}
+[15.846637] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__struct.hpp\n'}
+[15.846765] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__builder.hpp\n'}
+[15.846890] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/set_io.hpp\n'}
+[15.847016] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/set_event.hpp\n'}
+[15.847153] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/ask_item.hpp\n'}
+[15.847291] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/send_script.hpp\n'}
+[15.847415] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/set_positions.hpp\n'}
+[15.847570] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/connect_tm.hpp\n'}
+[15.847721] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/write_item.hpp\n'}
+[15.847829] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/ask_sta.hpp\n'}
+[15.847936] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs\n'}
+[15.848061] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg\n'}
+[15.848183] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail\n'}
+[15.848308] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/dds_fastrtps\n'}
+[15.848434] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.848557] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.848678] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.848802] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.848939] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[15.849067] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv\n'}
+[15.849194] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail\n'}
+[15.849318] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/dds_fastrtps\n'}
+[15.849426] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.849551] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.849659] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.849766] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.849886] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.850013] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.850131] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.850241] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[15.850378] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_fastrtps_cpp.so\n'}
+[15.850518] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[15.850639] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs\n'}
+[15.850768] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg\n'}
+[15.850897] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail\n'}
+[15.851026] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__type_support.c\n'}
+[15.851150] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__rosidl_typesupport_introspection_c.h\n'}
+[15.851287] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__type_support.c\n'}
+[15.851428] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__rosidl_typesupport_introspection_c.h\n'}
+[15.851565] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__type_support.c\n'}
+[15.851720] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__rosidl_typesupport_introspection_c.h\n'}
+[15.851852] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__rosidl_typesupport_introspection_c.h\n'}
+[15.851979] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__type_support.c\n'}
+[15.852104] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[15.852229] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv\n'}
+[15.852354] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail\n'}
+[15.852478] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__type_support.c\n'}
+[15.852602] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__rosidl_typesupport_introspection_c.h\n'}
+[15.852729] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__rosidl_typesupport_introspection_c.h\n'}
+[15.852856] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__type_support.c\n'}
+[15.852982] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__type_support.c\n'}
+[15.853094] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__rosidl_typesupport_introspection_c.h\n'}
+[15.853222] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__rosidl_typesupport_introspection_c.h\n'}
+[15.853346] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__rosidl_typesupport_introspection_c.h\n'}
+[15.853454] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__type_support.c\n'}
+[15.853575] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__type_support.c\n'}
+[15.853683] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__rosidl_typesupport_introspection_c.h\n'}
+[15.853809] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__rosidl_typesupport_introspection_c.h\n'}
+[15.853925] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__type_support.c\n'}
+[15.854033] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__type_support.c\n'}
+[15.854140] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__rosidl_typesupport_introspection_c.h\n'}
+[15.854249] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__type_support.c\n'}
+[15.854357] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_introspection_c.so\n'}
+[15.854478] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_introspection_c.so" to ""\n'}
+[15.854601] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_c.so\n'}
+[15.854710] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_c.so" to ""\n'}
+[15.854818] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs\n'}
+[15.854927] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg\n'}
+[15.855032] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail\n'}
+[15.855155] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__type_support.cpp\n'}
+[15.855280] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__type_support.cpp\n'}
+[15.855397] (-) TimerEvent: {}
+[15.855551] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/feedback_state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.855811] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__type_support.cpp\n'}
+[15.855992] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sta_response__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.856135] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.856269] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/svr_response__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.856429] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/msg/detail/sct_response__type_support.cpp\n'}
+[15.856569] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv\n'}
+[15.856706] (tm_msgs) StdoutLine: {'line': b'-- Up-to-date: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail\n'}
+[15.856844] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.856976] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_positions__type_support.cpp\n'}
+[15.857136] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.857275] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__type_support.cpp\n'}
+[15.857410] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__type_support.cpp\n'}
+[15.857539] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__type_support.cpp\n'}
+[15.857672] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__type_support.cpp\n'}
+[15.857781] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__type_support.cpp\n'}
+[15.857915] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_sta__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.858038] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__type_support.cpp\n'}
+[15.858179] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/send_script__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.858319] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/write_item__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.858482] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_io__type_support.cpp\n'}
+[15.858623] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/ask_item__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.858783] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/connect_tm__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.858920] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/include/tm_msgs/tm_msgs/srv/detail/set_event__rosidl_typesupport_introspection_cpp.hpp\n'}
+[15.859053] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_introspection_cpp.so\n'}
+[15.859217] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[15.859353] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_cpp.so\n'}
+[15.859486] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_typesupport_cpp.so" to ""\n'}
+[15.859652] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/pythonpath.sh\n'}
+[15.859795] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/pythonpath.dsv\n'}
+[15.859942] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs-1.1.2-py3.10.egg-info\n'}
+[15.860103] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs-1.1.2-py3.10.egg-info/top_level.txt\n'}
+[15.860248] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs-1.1.2-py3.10.egg-info/PKG-INFO\n'}
+[15.860377] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs-1.1.2-py3.10.egg-info/dependency_links.txt\n'}
+[15.860521] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs-1.1.2-py3.10.egg-info/SOURCES.txt\n'}
+[15.860631] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs\n'}
+[15.860768] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg\n'}
+[15.860876] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_svr_response_s.c\n'}
+[15.860984] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_sta_response_s.c\n'}
+[15.861089] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_feedback_state_s.c\n'}
+[15.861197] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_sct_response.py\n'}
+[15.861305] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_sta_response.py\n'}
+[15.861412] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/__init__.py\n'}
+[15.861518] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_svr_response.py\n'}
+[15.861625] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_sct_response_s.c\n'}
+[15.861733] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_feedback_state.py\n'}
+[15.861840] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.861957] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/_tm_msgs_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[15.862064] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/libtm_msgs__rosidl_generator_py.so\n'}
+[15.862172] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/_tm_msgs_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[15.862279] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/__init__.py\n'}
+[15.862387] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv\n'}
+[15.862493] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_write_item.py\n'}
+[15.862608] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_ask_item.py\n'}
+[15.862715] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_send_script.py\n'}
+[15.862822] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_positions_s.c\n'}
+[15.862933] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_ask_item_s.c\n'}
+[15.863039] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_io_s.c\n'}
+[15.863146] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_send_script_s.c\n'}
+[15.863253] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_positions.py\n'}
+[15.863360] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_connect_tm_s.c\n'}
+[15.863466] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_event.py\n'}
+[15.863573] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_ask_sta_s.c\n'}
+[15.863712] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_ask_sta.py\n'}
+[15.863823] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_event_s.c\n'}
+[15.863930] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_io.py\n'}
+[15.864055] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/__init__.py\n'}
+[15.864161] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_write_item_s.c\n'}
+[15.864268] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_connect_tm.py\n'}
+[15.864376] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/_tm_msgs_s.ep.rosidl_typesupport_c.c\n'}
+[15.864483] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.864591] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.921594] (tm_msgs) StdoutLine: {'line': b"Listing '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs'...\n"}
+[15.921812] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/__init__.py'...\n"}
+[15.921929] (tm_msgs) StdoutLine: {'line': b"Listing '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg'...\n"}
+[15.922040] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/__init__.py'...\n"}
+[15.922162] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_feedback_state.py'...\n"}
+[15.922281] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_sct_response.py'...\n"}
+[15.922391] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_sta_response.py'...\n"}
+[15.922497] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/msg/_svr_response.py'...\n"}
+[15.922604] (tm_msgs) StdoutLine: {'line': b"Listing '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv'...\n"}
+[15.922712] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/__init__.py'...\n"}
+[15.922819] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_ask_item.py'...\n"}
+[15.922926] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_ask_sta.py'...\n"}
+[15.923032] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_connect_tm.py'...\n"}
+[15.923139] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_send_script.py'...\n"}
+[15.923246] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_event.py'...\n"}
+[15.923351] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_io.py'...\n"}
+[15.923459] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_set_positions.py'...\n"}
+[15.923567] (tm_msgs) StdoutLine: {'line': b"Compiling '/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/srv/_write_item.py'...\n"}
+[15.926468] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.926857] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[15.927126] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.927386] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[15.927588] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[15.928083] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/local/lib/python3.10/dist-packages/tm_msgs/tm_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so" to ""\n'}
+[15.928255] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_generator_py.so\n'}
+[15.928690] (tm_msgs) StdoutLine: {'line': b'-- Set runtime path of "/home/rslomron/MoMa/tm_custom/install/tm_msgs/lib/libtm_msgs__rosidl_generator_py.so" to ""\n'}
+[15.928857] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/FeedbackState.idl\n'}
+[15.929009] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/SvrResponse.idl\n'}
+[15.929165] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/SctResponse.idl\n'}
+[15.929311] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/StaResponse.idl\n'}
+[15.929470] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/ConnectTM.idl\n'}
+[15.929619] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/WriteItem.idl\n'}
+[15.929804] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskItem.idl\n'}
+[15.929941] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SendScript.idl\n'}
+[15.930084] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetEvent.idl\n'}
+[15.930220] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetIO.idl\n'}
+[15.930361] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetPositions.idl\n'}
+[15.930472] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskSta.idl\n'}
+[15.930621] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/FeedbackState.msg\n'}
+[15.930737] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/SvrResponse.msg\n'}
+[15.930897] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/SctResponse.msg\n'}
+[15.931062] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/msg/StaResponse.msg\n'}
+[15.931178] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/ConnectTM.srv\n'}
+[15.931293] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/ConnectTM_Request.msg\n'}
+[15.931453] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/ConnectTM_Response.msg\n'}
+[15.931632] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/WriteItem.srv\n'}
+[15.931760] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/WriteItem_Request.msg\n'}
+[15.931916] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/WriteItem_Response.msg\n'}
+[15.932030] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskItem.srv\n'}
+[15.932200] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskItem_Request.msg\n'}
+[15.932316] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskItem_Response.msg\n'}
+[15.932430] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SendScript.srv\n'}
+[15.932578] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SendScript_Request.msg\n'}
+[15.932744] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SendScript_Response.msg\n'}
+[15.932859] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetEvent.srv\n'}
+[15.933048] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetEvent_Request.msg\n'}
+[15.933164] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetEvent_Response.msg\n'}
+[15.933279] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetIO.srv\n'}
+[15.933394] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetIO_Request.msg\n'}
+[15.933555] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetIO_Response.msg\n'}
+[15.933731] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetPositions.srv\n'}
+[15.933884] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetPositions_Request.msg\n'}
+[15.933999] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/SetPositions_Response.msg\n'}
+[15.934112] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskSta.srv\n'}
+[15.934226] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskSta_Request.msg\n'}
+[15.934379] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/srv/AskSta_Response.msg\n'}
+[15.934579] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/ament_index/resource_index/package_run_dependencies/tm_msgs\n'}
+[15.934696] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/ament_index/resource_index/parent_prefix_path/tm_msgs\n'}
+[15.934811] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/ament_prefix_path.sh\n'}
+[15.934925] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/ament_prefix_path.dsv\n'}
+[15.935076] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/path.sh\n'}
+[15.935236] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/environment/path.dsv\n'}
+[15.935403] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/local_setup.bash\n'}
+[15.935548] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/local_setup.sh\n'}
+[15.935671] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/local_setup.zsh\n'}
+[15.935821] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/local_setup.dsv\n'}
+[15.935967] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/package.dsv\n'}
+[15.936082] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/ament_index/resource_index/packages/tm_msgs\n'}
+[15.936194] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_generator_cExport.cmake\n'}
+[15.936350] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_generator_cExport-noconfig.cmake\n'}
+[15.936520] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[15.936670] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[15.936829] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_generator_cppExport.cmake\n'}
+[15.936943] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[15.937059] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[15.937212] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_introspection_cExport.cmake\n'}
+[15.937382] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[15.937535] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_cExport.cmake\n'}
+[15.937651] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[15.937804] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[15.937985] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[15.938100] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_cppExport.cmake\n'}
+[15.938215] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgs__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[15.938368] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_generator_pyExport.cmake\n'}
+[15.938538] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/export_tm_msgs__rosidl_generator_pyExport-noconfig.cmake\n'}
+[15.938687] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/rosidl_cmake-extras.cmake\n'}
+[15.938833] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[15.938948] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[15.939101] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[15.939252] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[15.939431] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[15.939547] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[15.939720] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgsConfig.cmake\n'}
+[15.939834] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/cmake/tm_msgsConfig-version.cmake\n'}
+[15.939953] (tm_msgs) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_msgs/share/tm_msgs/package.xml\n'}
+[15.942170] (tm_msgs) CommandEnded: {'returncode': 0}
+[15.955874] (-) TimerEvent: {}
+[16.056139] (-) TimerEvent: {}
+[16.156442] (-) TimerEvent: {}
+[16.256750] (-) TimerEvent: {}
+[16.357026] (-) TimerEvent: {}
+[16.457288] (-) TimerEvent: {}
+[16.557554] (-) TimerEvent: {}
+[16.558365] (tm_msgs) JobEnded: {'identifier': 'tm_msgs', 'rc': 0}
+[16.559045] (-) EventReactorShutdown: {}

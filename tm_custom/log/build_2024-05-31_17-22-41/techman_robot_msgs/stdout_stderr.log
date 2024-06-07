@@ -1,0 +1,22 @@
+[  9%] Built target techman_robot_msgs__rosidl_generator_c
+[ 12%] Built target techman_robot_msgs__cpp
+[ 12%] Built target ament_cmake_python_copy_techman_robot_msgs
+[ 22%] Built target techman_robot_msgs__rosidl_typesupport_introspection_c
+[ 32%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_c
+[ 41%] Built target techman_robot_msgs__rosidl_typesupport_c
+[ 51%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_cpp
+[ 61%] Built target techman_robot_msgs__rosidl_typesupport_introspection_cpp
+[ 70%] Built target techman_robot_msgs__rosidl_typesupport_cpp
+[ 70%] Built target techman_robot_msgs
+[ 74%] Built target techman_robot_msgs__py
+[ 80%] Built target techman_robot_msgs__rosidl_generator_py
+[ 87%] Built target techman_robot_msgs__rosidl_typesupport_introspection_c__pyext
+[ 93%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_c__pyext
+[100%] Built target techman_robot_msgs__rosidl_typesupport_c__pyext
+running egg_info
+writing techman_robot_msgs.egg-info/PKG-INFO
+writing dependency_links to techman_robot_msgs.egg-info/dependency_links.txt
+writing top-level names to techman_robot_msgs.egg-info/top_level.txt
+reading manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'
+writing manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_techman_robot_msgs_egg

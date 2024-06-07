@@ -1,0 +1,341 @@
+[0.000000] (-) TimerEvent: {}
+[0.000359] (arm_subscriber) JobQueued: {'identifier': 'arm_subscriber', 'dependencies': OrderedDict()}
+[0.000474] (python_demo) JobQueued: {'identifier': 'python_demo', 'dependencies': OrderedDict()}
+[0.000521] (safety_msgs) JobQueued: {'identifier': 'safety_msgs', 'dependencies': OrderedDict()}
+[0.000553] (techman_robot_get_status) JobQueued: {'identifier': 'techman_robot_get_status', 'dependencies': OrderedDict()}
+[0.000582] (techman_robot_msgs) JobQueued: {'identifier': 'techman_robot_msgs', 'dependencies': OrderedDict()}
+[0.000607] (tm_description) JobQueued: {'identifier': 'tm_description', 'dependencies': OrderedDict()}
+[0.000631] (tm_mod_urdf) JobQueued: {'identifier': 'tm_mod_urdf', 'dependencies': OrderedDict()}
+[0.000654] (tm_moveit_cpp_demo) JobQueued: {'identifier': 'tm_moveit_cpp_demo', 'dependencies': OrderedDict()}
+[0.000678] (tm_msgs) JobQueued: {'identifier': 'tm_msgs', 'dependencies': OrderedDict()}
+[0.000701] (custom_package) JobQueued: {'identifier': 'custom_package', 'dependencies': OrderedDict([('techman_robot_msgs', '/home/rslomron/MoMa/tm_custom/install/techman_robot_msgs')])}
+[0.000730] (demo) JobQueued: {'identifier': 'demo', 'dependencies': OrderedDict([('tm_msgs', '/home/rslomron/MoMa/tm_custom/install/tm_msgs')])}
+[0.000811] (tm_driver) JobQueued: {'identifier': 'tm_driver', 'dependencies': OrderedDict([('tm_msgs', '/home/rslomron/MoMa/tm_custom/install/tm_msgs')])}
+[0.000876] (tm_moveit_config_tm12) JobQueued: {'identifier': 'tm_moveit_config_tm12', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.000905] (tm_moveit_config_tm12x) JobQueued: {'identifier': 'tm_moveit_config_tm12x', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.000932] (tm_moveit_config_tm14) JobQueued: {'identifier': 'tm_moveit_config_tm14', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.000959] (tm_moveit_config_tm14x) JobQueued: {'identifier': 'tm_moveit_config_tm14x', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.001012] (tm_moveit_config_tm5-700) JobQueued: {'identifier': 'tm_moveit_config_tm5-700', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.001059] (tm_moveit_config_tm5-900) JobQueued: {'identifier': 'tm_moveit_config_tm5-900', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.001144] (tm_moveit_config_tm5x-700) JobQueued: {'identifier': 'tm_moveit_config_tm5x-700', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.001177] (tm_moveit_config_tm5x-900) JobQueued: {'identifier': 'tm_moveit_config_tm5x-900', 'dependencies': OrderedDict([('tm_description', '/home/rslomron/MoMa/tm_custom/install/tm_description')])}
+[0.001203] (ui_for_debug_and_demo) JobQueued: {'identifier': 'ui_for_debug_and_demo', 'dependencies': OrderedDict([('tm_msgs', '/home/rslomron/MoMa/tm_custom/install/tm_msgs')])}
+[0.001229] (tm_description) JobStarted: {'identifier': 'tm_description'}
+[0.007973] (tm_msgs) JobStarted: {'identifier': 'tm_msgs'}
+[0.010916] (techman_robot_msgs) JobStarted: {'identifier': 'techman_robot_msgs'}
+[0.014617] (arm_subscriber) JobStarted: {'identifier': 'arm_subscriber'}
+[0.019556] (python_demo) JobStarted: {'identifier': 'python_demo'}
+[0.023360] (safety_msgs) JobStarted: {'identifier': 'safety_msgs'}
+[0.026063] (techman_robot_get_status) JobStarted: {'identifier': 'techman_robot_get_status'}
+[0.031762] (tm_mod_urdf) JobStarted: {'identifier': 'tm_mod_urdf'}
+[0.038232] (tm_description) JobProgress: {'identifier': 'tm_description', 'progress': 'cmake'}
+[0.039234] (tm_description) JobProgress: {'identifier': 'tm_description', 'progress': 'build'}
+[0.039797] (tm_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rslomron/MoMa/tm_custom/build/tm_description', '--', '-j8', '-l8'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/tm_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3629'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1137,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d5d2e45b_1ec1_4bf2_8922_ff0487f38b49'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GECLO2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.106'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/tm_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.042430] (tm_msgs) JobProgress: {'identifier': 'tm_msgs', 'progress': 'cmake'}
+[0.043689] (tm_msgs) JobProgress: {'identifier': 'tm_msgs', 'progress': 'build'}
+[0.044004] (tm_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rslomron/MoMa/tm_custom/build/tm_msgs', '--', '-j8', '-l8'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/tm_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3629'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1137,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d5d2e45b_1ec1_4bf2_8922_ff0487f38b49'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GECLO2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.106'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/tm_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.046250] (techman_robot_msgs) JobProgress: {'identifier': 'techman_robot_msgs', 'progress': 'cmake'}
+[0.047260] (techman_robot_msgs) JobProgress: {'identifier': 'techman_robot_msgs', 'progress': 'build'}
+[0.047839] (techman_robot_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rslomron/MoMa/tm_custom/build/techman_robot_msgs', '--', '-j8', '-l8'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/techman_robot_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3629'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1137,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d5d2e45b_1ec1_4bf2_8922_ff0487f38b49'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GECLO2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.106'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/techman_robot_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099111] (-) TimerEvent: {}
+[0.201041] (-) TimerEvent: {}
+[0.301414] (-) TimerEvent: {}
+[0.401779] (-) TimerEvent: {}
+[0.502422] (-) TimerEvent: {}
+[0.617047] (-) TimerEvent: {}
+[0.717537] (-) TimerEvent: {}
+[0.817904] (-) TimerEvent: {}
+[0.919522] (-) TimerEvent: {}
+[1.021772] (-) TimerEvent: {}
+[1.117028] (safety_msgs) JobProgress: {'identifier': 'safety_msgs', 'progress': 'cmake'}
+[1.119368] (safety_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/rslomron/MoMa/tm_custom/src/safety_msgs', '-DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/safety_msgs'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/safety_msgs', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3629'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1137,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d5d2e45b_1ec1_4bf2_8922_ff0487f38b49'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GECLO2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.106'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/safety_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[1.121854] (-) TimerEvent: {}
+[1.222279] (-) TimerEvent: {}
+[1.322736] (-) TimerEvent: {}
+[1.423190] (-) TimerEvent: {}
+[1.523648] (-) TimerEvent: {}
+[1.624132] (-) TimerEvent: {}
+[1.724514] (-) TimerEvent: {}
+[1.825296] (-) TimerEvent: {}
+[1.929059] (-) TimerEvent: {}
+[2.029441] (-) TimerEvent: {}
+[2.130470] (-) TimerEvent: {}
+[2.235329] (-) TimerEvent: {}
+[2.337047] (-) TimerEvent: {}
+[2.418479] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_generator_c\x1b[0m\n'}
+[2.418757] (tm_msgs) StdoutLine: {'line': b'[  0%] Built target tm_msgs__cpp\n'}
+[2.418908] (tm_msgs) StdoutLine: {'line': b'[ 12%] Built target tm_msgs__rosidl_generator_c\n'}
+[2.419051] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_introspection_cpp\x1b[0m\n'}
+[2.419187] (tm_msgs) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_tm_msgs\n'}
+[2.419325] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_fastrtps_cpp\x1b[0m\n'}
+[2.419458] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_c\x1b[0m\n'}
+[2.419590] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_cpp\x1b[0m\n'}
+[2.419736] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_introspection_c\x1b[0m\n'}
+[2.419872] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_fastrtps_c\x1b[0m\n'}
+[2.420005] (tm_msgs) StdoutLine: {'line': b'[ 24%] Built target tm_msgs__rosidl_typesupport_introspection_cpp\n'}
+[2.420135] (tm_msgs) StdoutLine: {'line': b'[ 36%] Built target tm_msgs__rosidl_typesupport_c\n'}
+[2.420258] (tm_msgs) StdoutLine: {'line': b'[ 47%] Built target tm_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[2.420391] (tm_msgs) StdoutLine: {'line': b'[ 59%] Built target tm_msgs__rosidl_typesupport_introspection_c\n'}
+[2.420525] (tm_msgs) StdoutLine: {'line': b'[ 71%] Built target tm_msgs__rosidl_typesupport_cpp\n'}
+[2.420659] (tm_msgs) StdoutLine: {'line': b'[ 83%] Built target tm_msgs__rosidl_typesupport_fastrtps_c\n'}
+[2.420790] (tm_msgs) StdoutLine: {'line': b'[ 83%] Built target tm_msgs\n'}
+[2.420923] (tm_msgs) StdoutLine: {'line': b'[ 84%] Built target tm_msgs__py\n'}
+[2.421135] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_generator_py\x1b[0m\n'}
+[2.421270] (tm_msgs) StdoutLine: {'line': b'[ 95%] Built target tm_msgs__rosidl_generator_py\n'}
+[2.421406] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[2.422714] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[2.422910] (tm_msgs) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target tm_msgs__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[2.423060] (tm_msgs) StdoutLine: {'line': b'[ 97%] Built target tm_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[2.423201] (tm_msgs) StdoutLine: {'line': b'[ 99%] Built target tm_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.423338] (tm_msgs) StdoutLine: {'line': b'[100%] Built target tm_msgs__rosidl_typesupport_c__pyext\n'}
+[2.423471] (tm_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.423598] (tm_msgs) StdoutLine: {'line': b'writing tm_msgs.egg-info/PKG-INFO\n'}
+[2.423729] (tm_msgs) StdoutLine: {'line': b'writing dependency_links to tm_msgs.egg-info/dependency_links.txt\n'}
+[2.423861] (tm_msgs) StdoutLine: {'line': b'writing top-level names to tm_msgs.egg-info/top_level.txt\n'}
+[2.423993] (tm_msgs) StdoutLine: {'line': b"reading manifest file 'tm_msgs.egg-info/SOURCES.txt'\n"}
+[2.424119] (tm_msgs) StdoutLine: {'line': b"writing manifest file 'tm_msgs.egg-info/SOURCES.txt'\n"}
+[2.424242] (tm_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_tm_msgs_egg\n'}
+[2.425811] (techman_robot_msgs) StdoutLine: {'line': b'[  3%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[2.426066] (techman_robot_msgs) StdoutLine: {'line': b'[  6%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[2.426209] (techman_robot_msgs) StdoutLine: {'line': b'[  6%] Built target ament_cmake_python_copy_techman_robot_msgs\n'}
+[2.427613] (techman_robot_msgs) StdoutLine: {'line': b'[  6%] Built target techman_robot_msgs__cpp\n'}
+[2.427926] (techman_robot_msgs) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/techman_robot_msgs__rosidl_generator_c.dir/rosidl_generator_c/techman_robot_msgs/srv/detail/techman_robot_command__functions.c.o\x1b[0m\n'}
+[2.428178] (techman_robot_msgs) StdoutLine: {'line': b'[ 12%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.428556] (techman_robot_msgs) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.431125] (techman_robot_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[2.431885] (techman_robot_msgs) StdoutLine: {'line': b'creating techman_robot_msgs.egg-info\n'}
+[2.432966] (techman_robot_msgs) StdoutLine: {'line': b'writing techman_robot_msgs.egg-info/PKG-INFO\n'}
+[2.433982] (techman_robot_msgs) StdoutLine: {'line': b'writing dependency_links to techman_robot_msgs.egg-info/dependency_links.txt\n'}
+[2.434151] (techman_robot_msgs) StdoutLine: {'line': b'writing top-level names to techman_robot_msgs.egg-info/top_level.txt\n'}
+[2.434274] (techman_robot_msgs) StdoutLine: {'line': b"writing manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'\n"}
+[2.434386] (techman_robot_msgs) StdoutLine: {'line': b"reading manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'\n"}
+[2.434499] (techman_robot_msgs) StdoutLine: {'line': b"writing manifest file 'techman_robot_msgs.egg-info/SOURCES.txt'\n"}
+[2.434618] (techman_robot_msgs) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[2.434745] (techman_robot_msgs) StdoutLine: {'line': b'[ 19%] Built target ament_cmake_python_build_techman_robot_msgs_egg\n'}
+[2.434868] (techman_robot_msgs) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/techman_robot_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/techman_robot_msgs/srv/techman_robot_command__type_support.cpp.o\x1b[0m\n'}
+[2.434990] (techman_robot_msgs) StdoutLine: {'line': b'[ 25%] \x1b[32m\x1b[1mLinking C shared library libtechman_robot_msgs__rosidl_generator_c.so\x1b[0m\n'}
+[2.435107] (techman_robot_msgs) StdoutLine: {'line': b'[ 25%] Built target techman_robot_msgs__rosidl_generator_c\n'}
+[2.435222] (techman_robot_msgs) StdoutLine: {'line': b'[ 29%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[2.435338] (techman_robot_msgs) StdoutLine: {'line': b'[ 32%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[2.435454] (techman_robot_msgs) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/techman_robot_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/techman_robot_msgs/srv/detail/techman_robot_command__type_support.cpp.o\x1b[0m\n'}
+[2.435589] (techman_robot_msgs) StdoutLine: {'line': b'[ 38%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[2.435705] (techman_robot_msgs) StdoutLine: {'line': b'[ 41%] \x1b[32mBuilding CXX object CMakeFiles/techman_robot_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/techman_robot_msgs/srv/detail/dds_fastrtps/techman_robot_command__type_support.cpp.o\x1b[0m\n'}
+[2.435826] (techman_robot_msgs) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding C object CMakeFiles/techman_robot_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/techman_robot_msgs/srv/detail/techman_robot_command__type_support.c.o\x1b[0m\n'}
+[2.435941] (techman_robot_msgs) StdoutLine: {'line': b'[ 48%] \x1b[32m\x1b[1mLinking CXX shared library libtechman_robot_msgs__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.436059] (techman_robot_msgs) StdoutLine: {'line': b'[ 48%] Built target techman_robot_msgs__rosidl_typesupport_cpp\n'}
+[2.436180] (techman_robot_msgs) StdoutLine: {'line': b'[ 51%] \x1b[32m\x1b[1mLinking C shared library libtechman_robot_msgs__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.436303] (techman_robot_msgs) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/techman_robot_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/techman_robot_msgs/srv/detail/techman_robot_command__type_support_c.cpp.o\x1b[0m\n'}
+[2.436423] (techman_robot_msgs) StdoutLine: {'line': b'[ 58%] \x1b[32mBuilding CXX object CMakeFiles/techman_robot_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/techman_robot_msgs/srv/techman_robot_command__type_support.cpp.o\x1b[0m\n'}
+[2.436541] (techman_robot_msgs) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library libtechman_robot_msgs__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.436656] (techman_robot_msgs) StdoutLine: {'line': b'[ 61%] Built target techman_robot_msgs__rosidl_typesupport_introspection_c\n'}
+[2.436770] (techman_robot_msgs) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking CXX shared library libtechman_robot_msgs__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.436887] (techman_robot_msgs) StdoutLine: {'line': b'[ 64%] Built target techman_robot_msgs__rosidl_typesupport_c\n'}
+[2.437096] (-) TimerEvent: {}
+[2.437321] (techman_robot_msgs) StdoutLine: {'line': b'[ 67%] \x1b[32m\x1b[1mLinking CXX shared library libtechman_robot_msgs__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.437479] (techman_robot_msgs) StdoutLine: {'line': b'[ 67%] Built target techman_robot_msgs__rosidl_typesupport_introspection_cpp\n'}
+[2.437599] (techman_robot_msgs) StdoutLine: {'line': b'[ 67%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[2.437730] (safety_msgs) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[2.437889] (safety_msgs) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[2.438010] (safety_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[2.438127] (safety_msgs) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[2.438241] (safety_msgs) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[2.438356] (safety_msgs) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[2.438469] (safety_msgs) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[2.438582] (safety_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[2.438693] (safety_msgs) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[2.438805] (safety_msgs) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[2.438917] (safety_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[2.439035] (safety_msgs) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[2.439144] (safety_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[2.439267] (tm_description) CommandEnded: {'returncode': 0}
+[2.453044] (tm_msgs) CommandEnded: {'returncode': 0}
+[2.474300] (safety_msgs) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[2.506282] (tm_description) JobProgress: {'identifier': 'tm_description', 'progress': 'install'}
+[2.519685] (tm_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rslomron/MoMa/tm_custom/build/tm_description'], 'cwd': '/home/rslomron/MoMa/tm_custom/build/tm_description', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'rslomron'), ('XDG_SESSION_TYPE', 'wayland'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/rslomron'), ('OLDPWD', '/home/rslomron/MoMa/tm_custom/src'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('SYSTEMD_EXEC_PID', '3629'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rslomron'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rslomron'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/home/rslomron/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rslomron-Precision-Tower-5810:@/tmp/.ICE-unix/1137,unix/rslomron-Precision-Tower-5810:/tmp/.ICE-unix/1137'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/d5d2e45b_1ec1_4bf2_8922_ff0487f38b49'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.GECLO2'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.106'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rslomron/MoMa/tm_custom/build/tm_description'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[2.533548] (tm_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[2.533822] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/ament_index/resource_index/package_run_dependencies/tm_description\n'}
+[2.534407] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/ament_index/resource_index/parent_prefix_path/tm_description\n'}
+[2.535173] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/environment/ament_prefix_path.sh\n'}
+[2.535738] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/environment/ament_prefix_path.dsv\n'}
+[2.536388] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/environment/path.sh\n'}
+[2.536915] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/environment/path.dsv\n'}
+[2.537173] (-) TimerEvent: {}
+[2.537862] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/local_setup.bash\n'}
+[2.538423] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/local_setup.sh\n'}
+[2.539081] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/local_setup.zsh\n'}
+[2.539614] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/local_setup.dsv\n'}
+[2.540171] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/package.dsv\n'}
+[2.541102] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/ament_index/resource_index/packages/tm_description\n'}
+[2.541633] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/cmake/tm_descriptionConfig.cmake\n'}
+[2.542213] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/cmake/tm_descriptionConfig-version.cmake\n'}
+[2.542845] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/package.xml\n'}
+[2.543307] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes\n'}
+[2.543668] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700\n'}
+[2.544014] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/collision\n'}
+[2.544375] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/collision/tm5-700_arm2_c.stl\n'}
+[2.545217] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/collision/tm5-700_arm1_c.stl\n'}
+[2.546062] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual\n'}
+[2.546449] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual/tm5-700_arm1.stl\n'}
+[2.577558] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual/tm5-700_arm1.mtl\n'}
+[2.581294] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual/tm5-700_arm2.stl\n'}
+[2.593813] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual/tm5-700_arm1.obj\n'}
+[2.622949] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual/tm5-700_arm2.obj\n'}
+[2.637598] (-) TimerEvent: {}
+[2.643531] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-700/visual/tm5-700_arm2.mtl\n'}
+[2.644234] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12\n'}
+[2.644623] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/collision\n'}
+[2.644976] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/collision/tm12-arm1_c.stl\n'}
+[2.645895] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/collision/tmr_750w_01_c.stl\n'}
+[2.648189] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/collision/tm12-base_c.stl\n'}
+[2.649380] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/collision/tm12-arm2_c.stl\n'}
+[2.650123] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual\n'}
+[2.650512] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-arm1.mtl\n'}
+[2.651028] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-base.mtl\n'}
+[2.651591] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-base.obj\n'}
+[2.656199] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-base.stl\n'}
+[2.659167] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-arm2.stl\n'}
+[2.663881] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-arm2.obj\n'}
+[2.681288] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-arm2.mtl\n'}
+[2.682382] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tmr_750w_01.obj\n'}
+[2.697103] (techman_robot_msgs) StdoutLine: {'line': b'[ 70%] \x1b[32m\x1b[1mLinking CXX shared library libtechman_robot_msgs__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.709837] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-arm1.stl\n'}
+[2.725356] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tm12-arm1.obj\n'}
+[2.737708] (-) TimerEvent: {}
+[2.762388] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tmr_750w_01.stl\n'}
+[2.781549] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm12/visual/tmr_750w_01.mtl\n'}
+[2.784298] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900\n'}
+[2.784706] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision\n'}
+[2.785069] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tm5-900_arm1_c.stl\n'}
+[2.785735] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tmr_400w_01_c.stl\n'}
+[2.786338] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tmr_iox_c.stl\n'}
+[2.787941] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tmr_100w_01_c.stl\n'}
+[2.789317] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tm5-900_arm2_c.stl\n'}
+[2.791311] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tmr_100w_02_c.stl\n'}
+[2.801653] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tmr_ee_c.stl\n'}
+[2.821460] (safety_msgs) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:30 (rosidl_generate_interfaces):\n'}
+[2.821734] (safety_msgs) StderrLine: {'line': b'  Unknown CMake command "rosidl_generate_interfaces".\n'}
+[2.821866] (safety_msgs) StderrLine: {'line': b'\n'}
+[2.822000] (safety_msgs) StderrLine: {'line': b'\x1b[0m\n'}
+[2.822294] (safety_msgs) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[2.822443] (safety_msgs) StdoutLine: {'line': b'See also "/home/rslomron/MoMa/tm_custom/build/safety_msgs/CMakeFiles/CMakeOutput.log".\n'}
+[2.829470] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/collision/tm5-base_c.stl\n'}
+[2.842084] (safety_msgs) CommandEnded: {'returncode': 1}
+[2.842773] (-) TimerEvent: {}
+[2.842998] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual\n'}
+[2.843177] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_100w_02.stl\n'}
+[2.843335] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_100w_02.mtl\n'}
+[2.843480] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_100w_01.obj\n'}
+[2.870147] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_iox.stl\n'}
+[2.880480] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_100w_01.stl\n'}
+[2.889129] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_400w_01.stl\n'}
+[2.892917] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_ee.mtl\n'}
+[2.893123] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_400w_01.obj\n'}
+[2.901250] (safety_msgs) JobEnded: {'identifier': 'safety_msgs', 'rc': 1}
+[2.922308] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-900_arm1.stl\n'}
+[2.930591] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_100w_02.obj\n'}
+[2.938116] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-900_arm1.mtl\n'}
+[2.938834] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-900_arm2.stl\n'}
+[2.943036] (-) TimerEvent: {}
+[2.943386] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-base.stl\n'}
+[2.945235] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_400w_01.mtl\n'}
+[2.945843] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-base.mtl\n'}
+[2.946434] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-900_arm2.mtl\n'}
+[2.947099] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_ee.stl\n'}
+[2.953654] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_iox.obj\n'}
+[2.966256] (techman_robot_msgs) StdoutLine: {'line': b'[ 70%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_c\n'}
+[2.969058] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-base.obj\n'}
+[2.975048] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_ee.obj\n'}
+[2.996631] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_100w_01.mtl\n'}
+[2.997751] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tmr_iox.mtl\n'}
+[2.997938] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-900_arm1.obj\n'}
+[3.016420] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm5-900/visual/tm5-900_arm2.obj\n'}
+[3.025667] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14\n'}
+[3.025969] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/collision\n'}
+[3.026144] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/collision/tm14_arm1_c.stl\n'}
+[3.026610] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/collision/tm14_arm2_c.stl\n'}
+[3.028207] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual\n'}
+[3.028408] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual/tm14_arm2.mtl\n'}
+[3.028549] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual/tm14_arm2.stl\n'}
+[3.031655] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual/tm14_arm1.obj\n'}
+[3.043136] (-) TimerEvent: {}
+[3.054154] (techman_robot_msgs) StdoutLine: {'line': b'[ 70%] Built target techman_robot_msgs\n'}
+[3.054401] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual/tm14_arm2.obj\n'}
+[3.062919] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual/tm14_arm1.stl\n'}
+[3.068339] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/meshes/tm14/visual/tm14_arm1.mtl\n'}
+[3.068633] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf\n'}
+[3.068809] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm14x-nominal.urdf\n'}
+[3.069151] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm12x-nominal.urdf\n'}
+[3.069542] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm5-700-nominal.urdf\n'}
+[3.072928] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm5x-900-nominal.urdf\n'}
+[3.073189] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm5x-700-nominal.urdf\n'}
+[3.073329] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm12-nominal.urdf\n'}
+[3.073458] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm5-900-nominal.urdf\n'}
+[3.073585] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm14-nominal.urdf\n'}
+[3.080109] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/urdf/tm5-900.urdf\n'}
+[3.080376] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro\n'}
+[3.080518] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm12x.urdf.xacro\n'}
+[3.080667] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm12-nominal.urdf.xacro\n'}
+[3.080803] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.inertial.xacro\n'}
+[3.080933] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm5-900.urdf.xacro\n'}
+[3.081080] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm5-900-nominal.urdf.xacro\n'}
+[3.081214] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm5x-900.urdf.xacro\n'}
+[3.081349] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm5-700.urdf.xacro\n'}
+[3.081486] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm14x.urdf.xacro\n'}
+[3.081684] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm5x-700-nominal.urdf.xacro\n'}
+[3.081824] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm5-700-nominal.urdf.xacro\n'}
+[3.082005] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm12x-nominal.urdf.xacro\n'}
+[3.082182] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.materials.xacro\n'}
+[3.083357] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm5x-900-nominal.urdf.xacro\n'}
+[3.083555] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm14-nominal.urdf.xacro\n'}
+[3.083789] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm12.urdf.xacro\n'}
+[3.083924] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.gazebo.xacro\n'}
+[3.084320] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm14.urdf.xacro\n'}
+[3.085300] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.tm14x-nominal.urdf.xacro\n'}
+[3.085571] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/tm5x-700.urdf.xacro\n'}
+[3.085894] (tm_description) StdoutLine: {'line': b'-- Installing: /home/rslomron/MoMa/tm_custom/install/tm_description/share/tm_description/xacro/macro.transmission.xacro\n'}
+[3.093642] (tm_description) JobEnded: {'identifier': 'tm_description', 'rc': 'SIGINT'}
+[3.096464] (techman_robot_msgs) StdoutLine: {'line': b'[ 74%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[3.143224] (-) TimerEvent: {}
+[3.243574] (-) TimerEvent: {}
+[3.332561] (techman_robot_get_status) JobEnded: {'identifier': 'techman_robot_get_status', 'rc': 'SIGINT'}
+[3.334275] (python_demo) JobEnded: {'identifier': 'python_demo', 'rc': 'SIGINT'}
+[3.335060] (arm_subscriber) JobEnded: {'identifier': 'arm_subscriber', 'rc': 'SIGINT'}
+[3.340829] (tm_mod_urdf) JobEnded: {'identifier': 'tm_mod_urdf', 'rc': 'SIGINT'}
+[3.343999] (-) TimerEvent: {}
+[3.404989] (tm_msgs) JobEnded: {'identifier': 'tm_msgs', 'rc': 'SIGINT'}
+[3.444100] (-) TimerEvent: {}
+[3.544480] (-) TimerEvent: {}
+[3.644895] (-) TimerEvent: {}
+[3.719119] (techman_robot_msgs) StdoutLine: {'line': b'[ 74%] Built target techman_robot_msgs__py\n'}
+[3.742150] (techman_robot_msgs) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding C object CMakeFiles/techman_robot_msgs__rosidl_generator_py.dir/rosidl_generator_py/techman_robot_msgs/srv/_techman_robot_command_s.c.o\x1b[0m\n'}
+[3.745002] (-) TimerEvent: {}
+[3.845341] (-) TimerEvent: {}
+[3.861094] (techman_robot_msgs) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/techman_robot_msgs/libtechman_robot_msgs__rosidl_generator_py.so\x1b[0m\n'}
+[3.898934] (techman_robot_msgs) StdoutLine: {'line': b'[ 80%] Built target techman_robot_msgs__rosidl_generator_py\n'}
+[3.923776] (techman_robot_msgs) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding C object CMakeFiles/techman_robot_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/techman_robot_msgs/_techman_robot_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[3.926610] (techman_robot_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/techman_robot_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/techman_robot_msgs/_techman_robot_msgs_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[3.926912] (techman_robot_msgs) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/techman_robot_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/techman_robot_msgs/_techman_robot_msgs_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[3.945452] (-) TimerEvent: {}
+[4.030641] (techman_robot_msgs) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.045572] (-) TimerEvent: {}
+[4.064065] (techman_robot_msgs) StdoutLine: {'line': b'[ 93%] Built target techman_robot_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[4.080433] (techman_robot_msgs) StdoutLine: {'line': b'[ 96%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.086785] (techman_robot_msgs) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/techman_robot_msgs/techman_robot_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[4.126095] (techman_robot_msgs) StdoutLine: {'line': b'[100%] Built target techman_robot_msgs__rosidl_typesupport_c__pyext\n'}
+[4.135402] (techman_robot_msgs) StdoutLine: {'line': b'[100%] Built target techman_robot_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[4.145665] (-) TimerEvent: {}
+[4.147074] (techman_robot_msgs) JobEnded: {'identifier': 'techman_robot_msgs', 'rc': 'SIGINT'}
+[4.157905] (tm_moveit_cpp_demo) JobSkipped: {'identifier': 'tm_moveit_cpp_demo'}
+[4.158043] (custom_package) JobSkipped: {'identifier': 'custom_package'}
+[4.158150] (demo) JobSkipped: {'identifier': 'demo'}
+[4.158220] (tm_driver) JobSkipped: {'identifier': 'tm_driver'}
+[4.158259] (tm_moveit_config_tm12) JobSkipped: {'identifier': 'tm_moveit_config_tm12'}
+[4.158294] (tm_moveit_config_tm12x) JobSkipped: {'identifier': 'tm_moveit_config_tm12x'}
+[4.158330] (tm_moveit_config_tm14) JobSkipped: {'identifier': 'tm_moveit_config_tm14'}
+[4.158361] (tm_moveit_config_tm14x) JobSkipped: {'identifier': 'tm_moveit_config_tm14x'}
+[4.158385] (tm_moveit_config_tm5-700) JobSkipped: {'identifier': 'tm_moveit_config_tm5-700'}
+[4.158402] (tm_moveit_config_tm5-900) JobSkipped: {'identifier': 'tm_moveit_config_tm5-900'}
+[4.158419] (tm_moveit_config_tm5x-700) JobSkipped: {'identifier': 'tm_moveit_config_tm5x-700'}
+[4.158436] (tm_moveit_config_tm5x-900) JobSkipped: {'identifier': 'tm_moveit_config_tm5x-900'}
+[4.158452] (ui_for_debug_and_demo) JobSkipped: {'identifier': 'ui_for_debug_and_demo'}
+[4.158470] (-) EventReactorShutdown: {}

@@ -1,0 +1,6 @@
+Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rslomron/MoMa/tm_custom/src/tm_moveit_cpp_demo -DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo
+Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rslomron/MoMa/tm_custom/src/tm_moveit_cpp_demo -DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/tm_moveit_cpp_demo
+Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo -- -j8 -l8
+Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo -- -j8 -l8
+Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo
+Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rslomron/MoMa/tm_custom/build/tm_moveit_cpp_demo

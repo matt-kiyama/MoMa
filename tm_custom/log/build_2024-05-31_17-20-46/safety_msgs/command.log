@@ -1,0 +1,2 @@
+Invoking command in '/home/rslomron/MoMa/tm_custom/build/safety_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rslomron/MoMa/tm_custom/src/safety_msgs -DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/safety_msgs
+Invoked command in '/home/rslomron/MoMa/tm_custom/build/safety_msgs' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rslomron/MoMa/tm_custom/src/safety_msgs -DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/safety_msgs

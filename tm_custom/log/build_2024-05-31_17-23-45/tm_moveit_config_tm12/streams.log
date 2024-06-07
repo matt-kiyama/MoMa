@@ -1,0 +1,49 @@
+[0.136s] Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12': AMENT_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake /home/rslomron/MoMa/tm_custom/src/tm_moveit_config_tm12 -DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12
+[0.294s] -- The C compiler identification is GNU 11.4.0
+[0.486s] -- The CXX compiler identification is GNU 11.4.0
+[0.517s] -- Detecting C compiler ABI info
+[0.687s] -- Detecting C compiler ABI info - done
+[0.700s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.700s] -- Detecting C compile features
+[0.701s] -- Detecting C compile features - done
+[0.706s] -- Detecting CXX compiler ABI info
+[0.878s] -- Detecting CXX compiler ABI info - done
+[0.894s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.894s] -- Detecting CXX compile features
+[0.895s] -- Detecting CXX compile features - done
+[0.898s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.350s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.955s] -- Configuring done
+[1.972s] -- Generating done
+[1.973s] -- Build files have been written to: /home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12
+[2.034s] Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12' returned '0': AMENT_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake /home/rslomron/MoMa/tm_custom/src/tm_moveit_config_tm12 -DCMAKE_INSTALL_PREFIX=/home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12
+[2.035s] Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12': AMENT_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12 -- -j8 -l8
+[2.197s] Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12' returned '0': AMENT_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --build /home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12 -- -j8 -l8
+[2.392s] Invoking command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12': AMENT_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12
+[2.421s] -- Install configuration: ""
+[2.441s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/ament_index/resource_index/package_run_dependencies/tm_moveit_config_tm12
+[2.441s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/ament_index/resource_index/parent_prefix_path/tm_moveit_config_tm12
+[2.441s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/environment/ament_prefix_path.sh
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/environment/ament_prefix_path.dsv
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/environment/path.sh
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/environment/path.dsv
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/local_setup.bash
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/local_setup.sh
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/local_setup.zsh
+[2.442s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/local_setup.dsv
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/package.dsv
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/ament_index/resource_index/packages/tm_moveit_config_tm12
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/cmake/tm_moveit_config_tm12Config.cmake
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/cmake/tm_moveit_config_tm12Config-version.cmake
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/package.xml
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config
+[2.443s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/tm12.srdf
+[2.446s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/ros_controllers.yaml
+[2.447s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/fake_controllers.yaml
+[2.474s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/stomp_planning.yaml
+[2.475s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/ompl_planning.yaml
+[2.475s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/chomp_planning.yaml
+[2.475s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/sensors_3d.yaml
+[2.475s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/kinematics.yaml
+[2.475s] -- Installing: /home/rslomron/MoMa/tm_custom/install/tm_moveit_config_tm12/share/tm_moveit_config_tm12/config/joint_limits.yaml
+[2.507s] Invoked command in '/home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12' returned '0': AMENT_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/rslomron/MoMa/tm_custom/install/tm_description:/opt/ros/humble /usr/bin/cmake --install /home/rslomron/MoMa/tm_custom/build/tm_moveit_config_tm12
