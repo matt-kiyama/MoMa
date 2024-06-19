@@ -6,7 +6,7 @@ from tm_msgs.srv import SetPositions
 
 import sys 
 import os
-sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/"))
+sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety/"))
 from threshold import *
 # sys.path.insert(0, '/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/')
 # from threshold import *
@@ -16,8 +16,10 @@ class ArmService(Node):
     def __init__(self):
         super().__init__('arm_service')
 
-        #self.cli = self.create_client(SetPositions, 'set_positions')
-        self.cli = self.create_client(SetPositions, 'safety_service')
+        self.declare_parameter('angle', 91.0)
+
+        self.cli = self.create_client(SetPositions, 'set_positions')
+        #self.cli = self.create_client(SetPositions, 'safety_service')
 
         while not self.cli.wait_for_service(timeout_sec=1.0):
             if(rclpy.ok()):
@@ -29,8 +31,9 @@ class ArmService(Node):
     def send_requests(self):
 
         self.req.motion_type = SetPositions.Request.PTP_J
+        my_param = self.get_parameter('angle').get_parameter_value().double_value
 
-        desired_joint_positions_degrees = [10, 5, 130, 20, 60, 10] #valid
+        desired_joint_positions_degrees = [10, 0, 90, 0, my_param, 10] #valid
         #desired_joint_positions_degrees = [-11, 5, 130, 20, 60, 10] #invalid
         print(desired_joint_positions_degrees)
         self.req.positions = [math.radians(angle) for angle in desired_joint_positions_degrees]
