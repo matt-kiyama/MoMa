@@ -11,7 +11,8 @@ sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety
 from threshold import *
 from config_loader import *
 
-path_to_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/arm_thresholds.yaml'
+path_to_arm_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/arm_thresholds.yaml'
+path_to_base_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/base_thresholds.yaml'
 
 class SafetyNode(Node):
 
@@ -37,7 +38,7 @@ class SafetyNode(Node):
         self.safety_lock_publisher = self.create_publisher(Bool, 'safety_lock', 10)
 
         #initialize thresholds for each joint from config file
-        self.joint_thresholds = create_dict_of_tuples(path_to_yaml)
+        self.joint_thresholds = create_dict_of_tuples(path_to_arm_yaml)
         
         #initialize feedback flag
         self.feedback_valid = False
@@ -47,7 +48,11 @@ class SafetyNode(Node):
 
         #LD250
 
+        self.base_thresholds = create_dict_of_tuples(path_to_base_yaml)
+        print(self.base_thresholds)
+
         #variables to hold the odometry information reported by the LD250
+
         self.base_x_pos = None
         self.base_y_pos = None
         self.base_z_pos = None
@@ -163,6 +168,8 @@ class SafetyNode(Node):
             print(f"Linear Velocity: X: {self.base_x_vel_linear}, Y: {self.base_y_vel_linear}, Z: {self.base_z_vel_linear}\n")
             
             print(f"Angular Velocity: X: {self.base_x_vel_angular}, Y: {self.base_y_vel_angular}, Z: {self.base_z_vel_angular}\n")
+        
+        check_base_speed(self, msg)
             
 
 def main(args=None):
