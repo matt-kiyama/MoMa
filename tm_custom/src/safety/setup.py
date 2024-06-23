@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'arm_subscriber'
+package_name = 'safety'
 
 setup(
     name=package_name,
@@ -19,7 +19,7 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['safety = arm_subscriber.safety_node:main',
+        'console_scripts': ['safety = safety.safety_node:main',
         ],
     },
 )
