@@ -19,11 +19,6 @@ sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety
 from threshold import *
 # sys.path.insert(0, '/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/')
 
-def map_range(x, x_min, x_max, y_min, y_max):
-        m = (y_max - y_min) / (x_max - x_min)
-        b = y_min - m * x_min
-        return m * x + b
-
 
 class ArmService(Node):
 

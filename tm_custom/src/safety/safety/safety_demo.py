@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 import numpy as np 
-
+import rospy
 from std_msgs.msg import Bool
 from tm_msgs.msg import FeedbackState
 from nav_msgs.msg import Odometry
@@ -12,6 +12,7 @@ import os
 sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety/"))
 from threshold import *
 from config_loader import *
+from geometry_msgs.msg import Twist
 
 
 path_to_arm_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/arm_thresholds.yaml'
@@ -30,6 +31,73 @@ def mm_to_in(mm):
     # 1 millimeter is equal to 0.0393701 inches
     inches = mm * 0.0393701
     return inches
+
+class BaseAndArmController:
+    def __init__(self):
+        super().__init__('base_and_arm_controller')
+
+        #client of setPositions which goes to arm
+        self.cli = self.create_client(SetPositions, 'set_positions')
+
+        #Publisher for velocities being sent to base
+        self.twist_publisher = self.create_publisher(
+            Twist,
+            'ld250_cmd_vel',
+            10
+        )
+
+        self.current_twist = Twist()
+
+        # Subscribers for feedback
+        #subscribe to FeedbackState 
+        self.feedback_subscription = self.create_subscription(
+            FeedbackState,
+            'feedback_states',
+            self.arm_feedback_callback,
+            10)
+        self.feedback_subscription  # prevent unused variable warning
+
+        self.LD250_odom_subsrciption = self.create_subscription(
+            Odometry,
+            'ld250_pose',
+            self.base_feedback_callback,
+            10)
+        self.LD250_odom_subsrciption  # prevent unused variable warning
+
+        # Target positions
+        self.target_base_position = rospy.get_param('~target_base_position', [0.0, 0.0, 0.0])  # [x, y, theta]
+        self.target_arm_position = rospy.get_param('~target_arm_position', 0.0)  # Example for single joint
+
+        self.req = SetPositions.Request()
+        self.arm_feedback = None
+
+        self.rate = rospy.Rate(10)  # 10 Hz
+
+    def base_feedback_callback(self, msg):
+        self.base_feedback = msg
+
+    def arm_feedback_callback(self, msg):
+        self.arm_feedback = msg
+
+    def move_base(self):
+        if self.base_feedback:
+            twist = Twist()
+            # Implement your control logic here to move the base
+            # Example: twist.linear.x = desired_velocity
+            self.base_cmd_pub.publish(twist)
+
+    def move_arm(self):
+        if self.arm_feedback:
+            command = Float64()
+            # Implement your control logic here to move the arm
+            # Example: command.data = desired_position
+            self.arm_cmd_pub.publish(command)
+
+    def run(self):
+        while not rospy.is_shutdown():
+            self.move_base()
+            self.move_arm()
+            self.rate.sleep()
 
 class SafetyNode(Node):
 
@@ -109,6 +177,8 @@ class SafetyNode(Node):
         print("Base X: %5.2fin, Base Y: %5.2fin, Base Z: %5.2fin" % (mm_to_in(self.base_x_pos), mm_to_in(self.base_y_pos), mm_to_in(self.base_z_pos))) 
         print("Arm X: %5.2fin, Arm Y: %5.2fin, Arm Z: %5.2fin" % (mm_to_in(self.cur_pos_cartesian[0]), mm_to_in(self.cur_pos_cartesian[1]), mm_to_in(self.cur_pos_cartesian[2])))
         print("Combined X: %5.2fin, Combined Y: %5.2fin, Combined Z: %5.2fin" % (mm_to_in(self.combined_x_pos), mm_to_in(self.combined_y_pos), mm_to_in(self.combined_z_pos))) 
+
+
 
         
     def feedback_callback(self, msg):
@@ -193,7 +263,7 @@ class SafetyNode(Node):
         self.base_y_vel_angular = msg.twist.twist.angular.y
         self.base_z_vel_angular = msg.twist.twist.angular.z
 
-        print_on = True
+        print_on = False
 
         if (print_on):
             print(f"Position: X: {self.base_x_pos}, Y: {self.base_y_pos}, Z: {self.base_z_pos}\n")
