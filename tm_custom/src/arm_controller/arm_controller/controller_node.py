@@ -136,12 +136,13 @@ class ArmService(Node):
         elif self.tcp_force[0] < force_min:
             self.tcp_force[0] = force_min
 
-        #if force is < 10N in either direction
+        #if force is < 1N in either direction
         if abs(self.tcp_force[0] - 0) < 1.0: 
             self.tcp_force[0] = 0.0
 
         #control law
         self.current_twist.linear.x = gain * self.tcp_force[0]
+        print("linear X: ", self.current_twist.linear.x)
         
         # keep velocity of the base within a range
         if self.current_twist.linear.x > vel_max:
@@ -267,7 +268,7 @@ class ArmService(Node):
     def control_law_tool(self, axis):
         # gain = 0.0025
         tcp_threshold = 10.0 #Newtons
-        gain = 0.0025
+        gain = 0.01
         if abs(self.tcp_force[axis]) < tcp_threshold : 
             self.tcp_force[axis] = 0.0
             print("setting tcp force to 0")

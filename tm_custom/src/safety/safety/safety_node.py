@@ -88,12 +88,12 @@ class SafetyNode(Node):
         self.combined_z_pos = 0.0
 
         #subscribe to Odometry 
-        self.LD250_odom_subsrciption = self.create_subscription(
+        self.LD250_odom_subscription = self.create_subscription(
             Odometry,
             'ld250_pose',
             self.odometry_callback,
             10)
-        self.LD250_odom_subsrciption  # prevent unused variable warning
+        self.LD250_odom_subscription  # prevent unused variable warning
         
     
     def new_feedback_callback(self, msg):
@@ -102,13 +102,13 @@ class SafetyNode(Node):
         self.combined_y_pos = self.base_y_pos + (1000 * self.cur_pos_cartesian[1]) + arm_y_offset_mm
         self.combined_z_pos = self.base_z_pos + (1000 * self.cur_pos_cartesian[2]) + arm_z_offset_mm
 
-        # print("Base X: %5.2fmm, Base Y: %5.2fmm, Base Z: %5.2fmm" % (self.base_x_pos, self.base_y_pos, self.base_z_pos)) 
-        # print("Arm X: %5.2fmm, Arm Y: %5.2fmm, Arm Z: %5.2fmm" % (self.cur_pos_cartesian[0], self.cur_pos_cartesian[1], self.cur_pos_cartesian[2])) 
-        # print("Combined X: %5.2fmm, Combined Y: %5.2fmm, Combined Z: %5.2fmm" % (self.combined_x_pos, self.combined_y_pos, self.combined_z_pos)) 
+        print("Base X: %5.2fmm, Base Y: %5.2fmm, Base Z: %5.2fmm" % (self.base_x_pos, self.base_y_pos, self.base_z_pos)) 
+        print("Arm X: %5.2fmm, Arm Y: %5.2fmm, Arm Z: %5.2fmm" % (self.cur_pos_cartesian[0], self.cur_pos_cartesian[1], self.cur_pos_cartesian[2])) 
+        print("Combined X: %5.2fmm, Combined Y: %5.2fmm, Combined Z: %5.2fmm" % (self.combined_x_pos, self.combined_y_pos, self.combined_z_pos)) 
 
-        print("Base X: %5.2fin, Base Y: %5.2fin, Base Z: %5.2fin" % (mm_to_in(self.base_x_pos), mm_to_in(self.base_y_pos), mm_to_in(self.base_z_pos))) 
-        print("Arm X: %5.2fin, Arm Y: %5.2fin, Arm Z: %5.2fin" % (mm_to_in(self.cur_pos_cartesian[0]), mm_to_in(self.cur_pos_cartesian[1]), mm_to_in(self.cur_pos_cartesian[2])))
-        print("Combined X: %5.2fin, Combined Y: %5.2fin, Combined Z: %5.2fin" % (mm_to_in(self.combined_x_pos), mm_to_in(self.combined_y_pos), mm_to_in(self.combined_z_pos))) 
+        # print("Base X: %5.2fin, Base Y: %5.2fin, Base Z: %5.2fin" % (mm_to_in(self.base_x_pos), mm_to_in(self.base_y_pos), mm_to_in(self.base_z_pos))) 
+        # print("Arm X: %5.2fin, Arm Y: %5.2fin, Arm Z: %5.2fin" % (mm_to_in(self.cur_pos_cartesian[0]), mm_to_in(self.cur_pos_cartesian[1]), mm_to_in(self.cur_pos_cartesian[2])))
+        # print("Combined X: %5.2fin, Combined Y: %5.2fin, Combined Z: %5.2fin" % (mm_to_in(self.combined_x_pos), mm_to_in(self.combined_y_pos), mm_to_in(self.combined_z_pos))) 
 
         
     def feedback_callback(self, msg):
