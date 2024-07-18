@@ -1,0 +1,15 @@
+# first term is min angle
+# second term is max angle
+# in degrees
+0:
+  - 0.0
+1:
+  - 0.0
+2:
+  - 90.0
+3:
+  - 0.0
+4:
+  - 90.0
+5:
+  - 90.0
