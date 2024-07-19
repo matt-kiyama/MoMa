@@ -12,19 +12,87 @@ import os
 sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety/"))
 from threshold import *
 from config_loader import *
-
+from dataclasses import dataclass, field
+from typing import Optional, Any
 
 path_to_arm_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/arm_thresholds.yaml'
 path_to_base_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/base_thresholds.yaml'
 
-arm_x_offset_in = 12.0
-arm_x_offset_mm = 304.8
+@dataclass
+class Mobile_Manipulator_Arm_Offsets:
+    x_in: float = 12.0
+    x_mm: float = 304.8 
+    y_in: float = 0.0
+    y_mm: float = 0.0
+    z_in: float = 15.25
+    z_mm: float = 387.35
 
-arm_y_offset_in = 0.0
-arm_y_offset_mm = 0.0
+@dataclass
+class Mobile_Manipulator_Arm_Feedback:
+    tm_feedback: Any
 
-arm_z_offset_in = 15.25
-arm_z_offset_mm = 387.35
+@dataclass
+class Mobile_Manipulator_Arm_Thresholds:
+    joint_1_min: float
+    joint_1_max: float
+    joint_2_min: float
+    joint_2_max: float
+    joint_3_min: float
+    joint_3_max: float
+    joint_4_min: float
+    joint_4_max: float
+    joint_5_min: float
+    joint_5_max: float
+    joint_6_min: float
+    joint_6_max: float
+
+@dataclass
+class Mobile_Manipulator_Arm:
+    Offsets: Mobile_Manipulator_Arm_Offsets
+    Thresholds: Mobile_Manipulator_Arm_Thresholds
+    Feedback: Mobile_Manipulator_Arm_Feedback
+
+@dataclass
+class Mobile_Manipulator_Base_Odometry:
+    pos_x_mm = 0.0
+    pos_y_mm = 0.0
+    pos_z_mm = 0.0
+    orientation_x = None
+    orientation_y = None
+    orientation_z = None
+    vel_linear_x = None
+    vel_linear_y = None
+    vel_linear_z = None
+    vel_angular_x = None
+    vel_angular_y = None
+    vel_angular_z = None
+    error_x_mm = None
+
+@dataclass
+class Mobile_Manipulator_Base_Thresholds:
+    x_linear_min: float
+    x_linear_max: float
+    y_linear_min: float
+    y_linear_max: float
+    z_linear_min: float
+    z_linear_max: float
+    x_angular_min: float
+    x_angular_max: float
+    y_angular_min: float
+    y_angular_max: float
+    z_angular_min: float
+    z_angular_max: float
+
+@dataclass 
+class Mobile_Manipulator_Base:
+    Odometry: Mobile_Manipulator_Base_Odometry
+    Thresholds:Mobile_Manipulator_Base_Thresholds
+
+@dataclass
+class Mobile_Manipulator_Robot:
+    Arm: Mobile_Manipulator_Arm
+    Base: Mobile_Manipulator_Base
+
 
 def mm_to_in(mm):
     # 1 millimeter is equal to 0.0393701 inches
@@ -37,6 +105,16 @@ class SafetyNode(Node):
         super().__init__('safety_node')
 
         #ARM
+        self.arm_offsets = Mobile_Manipulator_Arm_Offsets()
+        self.arm_thresholds = load_arm_thresholds_from_yaml(path_to_arm_yaml)
+        self.arm_feedback = None
+
+        self.arm = Mobile_Manipulator_Arm(
+            Offsets = self.arm_offsets,
+            Thresholds = self.arm_thresholds,
+            Feedback = self.arm_feedback
+            )
+
         #safety service that arm controller will use     
         self.srv = self.create_service(SetPositions, 'safety_service', self.safety_service_callback)
         
@@ -47,9 +125,33 @@ class SafetyNode(Node):
         self.feedback_subscription = self.create_subscription(
             FeedbackState,
             'feedback_states',
-            self.new_feedback_callback,
+            self.class_feedback_callback,
             10)
         self.feedback_subscription  # prevent unused variable warning
+
+        #LD250
+        self.ld250_odometry = Mobile_Manipulator_Base_Odometry()
+        self.ld250_threshold = load_base_thresholds_from_yaml(path_to_base_yaml)
+        
+        self.ld250 = Mobile_Manipulator_Base(
+            Odometry = self.ld250_odometry,
+            Thresholds = self.ld250_threshold
+        )
+        
+        # print(self.ld250.Thresholds)
+
+        #subscribe to Odometry topic
+        self.LD250_odom_subscription = self.create_subscription(
+            Odometry,
+            'ld250_pose',
+            self.class_odometry_callback,
+            10)
+        self.LD250_odom_subscription  # prevent unused variable warning
+
+        #Entire Robot and safety stuff
+        self.combined_x_pos = 0.0
+        self.combined_y_pos = 0.0
+        self.combined_z_pos = 0.0
 
         #publish safety_lock topic that other nodes can use to see safety state of arm
         self.safety_lock_publisher = self.create_publisher(Bool, 'safety_lock', 10)
@@ -59,48 +161,19 @@ class SafetyNode(Node):
         
         #initialize feedback flag
         self.feedback_valid = False
-
         #initialize request flag
         self.safety_request_valid = False
-
-        #LD250
-
-        self.base_thresholds = create_dict_of_tuples(path_to_base_yaml)
-        print(self.base_thresholds)
-
-        #variables to hold the odometry information reported by the LD250
-
-        self.base_x_pos = 0.0
-        self.base_y_pos = 0.0
-        self.base_z_pos = 0.0
-        self.base_x_orientation = None
-        self.base_y_orientation = None
-        self.base_z_orientation = None
-        self.base_x_vel_linear = None
-        self.base_y_vel_linear = None
-        self.base_z_vel_linear = None
-        self.base_x_vel_angular = None
-        self.base_y_vel_angular = None
-        self.base_z_vel_angular = None
-
-        self.combined_x_pos = 0.0
-        self.combined_y_pos = 0.0
-        self.combined_z_pos = 0.0
-
-        #subscribe to Odometry 
-        self.LD250_odom_subscription = self.create_subscription(
-            Odometry,
-            'ld250_pose',
-            self.odometry_callback,
-            10)
-        self.LD250_odom_subscription  # prevent unused variable warning
-        
     
+    def class_feedback_callback(self, msg):
+        self.arm.Feedback = msg
+        # print("Joint 2 Max: ", self.arm.Thresholds.joint_2_max)
+        # print("Joint 2 Pos: ", self.arm.Feedback.joint_pos[1])
+
     def new_feedback_callback(self, msg):
         self.cur_pos_cartesian = np.asarray(msg.tool_pose)
-        self.combined_x_pos = self.base_x_pos + (1000 * self.cur_pos_cartesian[0]) + arm_x_offset_mm
-        self.combined_y_pos = self.base_y_pos + (1000 * self.cur_pos_cartesian[1]) + arm_y_offset_mm
-        self.combined_z_pos = self.base_z_pos + (1000 * self.cur_pos_cartesian[2]) + arm_z_offset_mm
+        self.combined_x_pos = self.base_x_pos + (1000 * self.cur_pos_cartesian[0]) + self.arm_offsets.x_mm
+        self.combined_y_pos = self.base_y_pos + (1000 * self.cur_pos_cartesian[1]) + self.arm_offsets.y_mm
+        self.combined_z_pos = self.base_z_pos + (1000 * self.cur_pos_cartesian[2]) + self.arm_offsets.z_mm
 
         print("Base X: %5.2fmm, Base Y: %5.2fmm, Base Z: %5.2fmm" % (self.base_x_pos, self.base_y_pos, self.base_z_pos)) 
         print("Arm X: %5.2fmm, Arm Y: %5.2fmm, Arm Z: %5.2fmm" % (self.cur_pos_cartesian[0], self.cur_pos_cartesian[1], self.cur_pos_cartesian[2])) 
@@ -205,6 +278,35 @@ class SafetyNode(Node):
             print(f"Angular Velocity: X: {self.base_x_vel_angular}, Y: {self.base_y_vel_angular}, Z: {self.base_z_vel_angular}\n")
         
         check_base_speed(self, msg)
+    
+    def class_odometry_callback(self, msg):
+        self.ld250.Odometry.pos_x_mm = msg.pose.pose.position.x
+        self.ld250.Odometry.pos_y_mm = msg.pose.pose.position.y
+        self.ld250.Odometry.pos_z_mm = msg.pose.pose.position.z
+
+        self.ld250.Odometry.orientation_x = msg.pose.pose.orientation.x
+        self.ld250.Odometry.orientation_y = msg.pose.pose.orientation.y
+        self.ld250.Odometry.orientation_z = msg.pose.pose.orientation.z
+
+        self.ld250.Odometry.vel_linear_x = msg.twist.twist.linear.x
+        self.ld250.Odometry.vel_linear_y = msg.twist.twist.linear.y
+        self.ld250.Odometry.vel_linear_z = msg.twist.twist.linear.z
+
+        self.ld250.Odometry.vel_angular_x = msg.twist.twist.angular.x
+        self.ld250.Odometry.vel_angular_y = msg.twist.twist.angular.y
+        self.ld250.Odometry.vel_angular_z = msg.twist.twist.angular.z
+
+        print_on = False
+
+        if (print_on):
+            print(f"Position: X: {self.ld250.Odometry.pos_x_mm}, Y: {self.ld250.Odometry.pos_y_mm}, Z: {self.ld250.Odometry.pos_z_mm}\n")
+            
+            print(f"Orientation: X: {self.ld250.Odometry.orientation_x}, Y: {self.ld250.Odometry.orientation_y}, Z: {self.ld250.Odometry.orientation_z}\n")
+
+            print(f"Linear Velocity: X: {self.ld250.Odometry.vel_linear_x}, Y: {self.ld250.Odometry.vel_linear_y}, Z: {self.ld250.Odometry.vel_linear_z}\n")
+            
+            print(f"Angular Velocity: X: {self.ld250.Odometry.vel_angular_x}, Y: {self.ld250.Odometry.vel_angular_y}, Z: {self.ld250.Odometry.vel_angular_z}\n")
+
             
 
 def main(args=None):
