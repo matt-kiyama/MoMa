@@ -92,6 +92,11 @@ class Mobile_Manipulator_Base:
 class Mobile_Manipulator_Robot:
     Arm: Mobile_Manipulator_Arm
     Base: Mobile_Manipulator_Base
+    tcp_x_mm: float
+    tcp_y_mm: float
+    tcp_z_mm: float
+    tcp_velocity: float
+    
 
 
 def mm_to_in(mm):
@@ -114,7 +119,6 @@ class SafetyNode(Node):
             Thresholds = self.arm_thresholds,
             Feedback = self.arm_feedback
             )
-
         #safety service that arm controller will use     
         self.srv = self.create_service(SetPositions, 'safety_service', self.safety_service_callback)
         
@@ -148,11 +152,8 @@ class SafetyNode(Node):
             10)
         self.LD250_odom_subscription  # prevent unused variable warning
 
-        #Entire Robot and safety stuff
-        self.combined_x_pos = 0.0
-        self.combined_y_pos = 0.0
-        self.combined_z_pos = 0.0
-
+        
+        #Safety Node Stuff
         #publish safety_lock topic that other nodes can use to see safety state of arm
         self.safety_lock_publisher = self.create_publisher(Bool, 'safety_lock', 10)
 
@@ -166,9 +167,9 @@ class SafetyNode(Node):
     
     def class_feedback_callback(self, msg):
         self.arm.Feedback = msg
-        # print("Joint 2 Max: ", self.arm.Thresholds.joint_2_max)
-        # print("Joint 2 Pos: ", self.arm.Feedback.joint_pos[1])
-
+        print("Joint 2 Max: ", self.arm.Thresholds.joint_2_max)
+        print("Joint 2 Pos: ", self.arm.Feedback.joint_pos[1])
+ 
     def new_feedback_callback(self, msg):
         self.cur_pos_cartesian = np.asarray(msg.tool_pose)
         self.combined_x_pos = self.base_x_pos + (1000 * self.cur_pos_cartesian[0]) + self.arm_offsets.x_mm
@@ -212,6 +213,18 @@ class SafetyNode(Node):
     def safety_service_callback(self, request, response):
         # Perform safety checks
         callback_success = False
+        
+        match request.motion_type:
+            case SetPositions.PTP_J:
+                print("JOINT MOVE")
+                #check joint angles
+            case SetPositions.PTP_T:
+                print("TCP MOVE")
+                #check tcp position
+            case _:
+                print("WEIRD MOVE")
+
+
         if self.is_safe(request):
             self.get_logger().info('Request is safe, checking feedback')
             if self.feedback_valid:
@@ -231,7 +244,6 @@ class SafetyNode(Node):
         angle_check_result = check_joint_angles(self, request.positions)
         if angle_check_result[1]:
             self.safety_request_valid = True
-
             self.get_logger().info('Valid Request: "%s"' % self.safety_request_valid)
         else:
             self.safety_request_valid = False
@@ -306,8 +318,6 @@ class SafetyNode(Node):
             print(f"Linear Velocity: X: {self.ld250.Odometry.vel_linear_x}, Y: {self.ld250.Odometry.vel_linear_y}, Z: {self.ld250.Odometry.vel_linear_z}\n")
             
             print(f"Angular Velocity: X: {self.ld250.Odometry.vel_angular_x}, Y: {self.ld250.Odometry.vel_angular_y}, Z: {self.ld250.Odometry.vel_angular_z}\n")
-
-            
 
 def main(args=None):
     rclpy.init(args=args)
