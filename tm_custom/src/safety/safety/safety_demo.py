@@ -37,7 +37,8 @@ class BaseAndArmController(Node):
     def __init__(self):
         super().__init__('base_and_arm_controller')
         #client of setPositions which goes to arm
-        self.cli = self.create_client(SetPositions, 'set_positions')
+        # self.cli = self.create_client(SetPositions, 'set_positions')
+        self.cli = self.create_client(SetPositions, 'safety_service')
 
         #Publisher for velocities being sent to base
         self.twist_publisher = self.create_publisher(
@@ -225,7 +226,7 @@ class BaseAndArmController(Node):
             #     self.current_twist.linear.x = vel_max
             # elif self.current_twist.linear.x < vel_min:
             #     self.current_twist.linear.x = vel_min
-            self.twist_publisher.publish(self.current_twist)
+            # self.twist_publisher.publish(self.current_twist)
 
 
     def control_loop(self):

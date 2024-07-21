@@ -13,7 +13,7 @@ sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety
 from threshold import *
 from config_loader import *
 from dataclasses import dataclass, field
-from typing import Optional, Any
+from typing import Any, List
 
 path_to_arm_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/arm_thresholds.yaml'
 path_to_base_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/base_thresholds.yaml'
@@ -33,18 +33,32 @@ class Mobile_Manipulator_Arm_Feedback:
 
 @dataclass
 class Mobile_Manipulator_Arm_Thresholds:
-    joint_1_min: float
-    joint_1_max: float
-    joint_2_min: float
-    joint_2_max: float
-    joint_3_min: float
-    joint_3_max: float
-    joint_4_min: float
-    joint_4_max: float
-    joint_5_min: float
-    joint_5_max: float
-    joint_6_min: float
-    joint_6_max: float
+    @dataclass
+    class JointThresholds:
+        joint_1_min: float
+        joint_1_max: float
+        joint_2_min: float
+        joint_2_max: float
+        joint_3_min: float
+        joint_3_max: float
+        joint_4_min: float
+        joint_4_max: float
+        joint_5_min: float
+        joint_5_max: float
+        joint_6_min: float
+        joint_6_max: float
+
+    @dataclass
+    class XYZThresholds:
+        x_min: float
+        x_max: float
+        y_min: float
+        y_max: float
+        z_min: float
+        z_max: float
+
+    joint_thresholds: JointThresholds
+    xyz_thresholds: XYZThresholds
 
 @dataclass
 class Mobile_Manipulator_Arm:
@@ -54,9 +68,9 @@ class Mobile_Manipulator_Arm:
 
 @dataclass
 class Mobile_Manipulator_Base_Odometry:
-    pos_x_mm = 0.0
-    pos_y_mm = 0.0
-    pos_z_mm = 0.0
+    pos_x_mm: float = 0.0
+    pos_y_mm: float = 0.0
+    pos_z_mm: float = 0.0
     orientation_x = None
     orientation_y = None
     orientation_z = None
@@ -96,7 +110,6 @@ class Mobile_Manipulator_Robot:
     tcp_y_mm: float
     tcp_z_mm: float
     tcp_velocity: float
-    
 
 
 def mm_to_in(mm):
@@ -123,7 +136,7 @@ class SafetyNode(Node):
         self.srv = self.create_service(SetPositions, 'safety_service', self.safety_service_callback)
         
         #client of setPositions which goes to arm
-        self.cli = self.create_client(SetPositions, 'set_positions')
+        self.set_positions_client = self.create_client(SetPositions, 'set_positions')
 
         #subscribe to FeedbackState 
         self.feedback_subscription = self.create_subscription(
@@ -151,14 +164,10 @@ class SafetyNode(Node):
             self.class_odometry_callback,
             10)
         self.LD250_odom_subscription  # prevent unused variable warning
-
         
         #Safety Node Stuff
         #publish safety_lock topic that other nodes can use to see safety state of arm
         self.safety_lock_publisher = self.create_publisher(Bool, 'safety_lock', 10)
-
-        #initialize thresholds for each joint from config file
-        self.joint_thresholds = create_dict_of_tuples(path_to_arm_yaml)
         
         #initialize feedback flag
         self.feedback_valid = False
@@ -167,8 +176,8 @@ class SafetyNode(Node):
     
     def class_feedback_callback(self, msg):
         self.arm.Feedback = msg
-        print("Joint 2 Max: ", self.arm.Thresholds.joint_2_max)
-        print("Joint 2 Pos: ", self.arm.Feedback.joint_pos[1])
+        # print("Joint 2 Max: ", self.arm.Thresholds.joint_thresholds.joint_2_max)
+        # print("Joint 2 Pos: ", self.arm.Feedback.joint_pos[1])
  
     def new_feedback_callback(self, msg):
         self.cur_pos_cartesian = np.asarray(msg.tool_pose)
@@ -209,55 +218,73 @@ class SafetyNode(Node):
         safety_lock_msg.data = self.feedback_valid
         print(safety_lock_msg.data)
         self.safety_lock_publisher.publish(safety_lock_msg)
+    
+
+    def adjust_joint_angles_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_angles: List[float]) -> List[float]:
+        if not len(requested_angles) == 6:
+            raise ValueError("There must be exactly 6 requested angles")
+
+        print("Requested angles", requested_angles)
+
+        joint_thresholds = arm.Thresholds.joint_thresholds
+
+        adjusted_angles = [
+            max(joint_thresholds.joint_1_min, min(joint_thresholds.joint_1_max, requested_angles[0])),
+            max(joint_thresholds.joint_2_min, min(joint_thresholds.joint_2_max, requested_angles[1])),
+            max(joint_thresholds.joint_3_min, min(joint_thresholds.joint_3_max, requested_angles[2])),
+            max(joint_thresholds.joint_4_min, min(joint_thresholds.joint_4_max, requested_angles[3])),
+            max(joint_thresholds.joint_5_min, min(joint_thresholds.joint_5_max, requested_angles[4])),
+            max(joint_thresholds.joint_6_min, min(joint_thresholds.joint_6_max, requested_angles[5]))
+        ]
+
+        print("Adjusted angles", adjusted_angles)
+        return adjusted_angles
+
+    def adjust_xyz_positions_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_positions: List[float]) -> List[float]:
+        if not len(requested_positions) == 6:
+            raise ValueError("There must be exactly x,y,z,rx,ry,rz")
+
+        print("Requested Position: ", requested_positions)
+
+        xyz_thresholds = arm.Thresholds.xyz_thresholds
+        adjusted_positions = [
+            max(xyz_thresholds.x_min, min(xyz_thresholds.x_max, requested_positions[0])),
+            max(xyz_thresholds.y_min, min(xyz_thresholds.y_max, requested_positions[1])),
+            max(xyz_thresholds.z_min, min(xyz_thresholds.z_max, requested_positions[2])),
+            requested_positions[3],
+            requested_positions[4],
+            requested_positions[5],
+        ]
+
+        print("Adjusted Position: ", adjusted_positions)
+        return adjusted_positions
+
+    def forward_request_to_move_service(self, request):
+        while not self.set_positions_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('move_service not available, waiting...')
+        self.set_positions_client.call_async(request)
+        self.get_logger().info('Return from forward_request_callback')
+
 
     def safety_service_callback(self, request, response):
         # Perform safety checks
-        callback_success = False
-        
+        print("Entering Safety Service Callback")
+        print("request.motion_type: ", request.motion_type)
         match request.motion_type:
-            case SetPositions.PTP_J:
+            case 1: #SetPositions.PTP_J
                 print("JOINT MOVE")
                 #check joint angles
-            case SetPositions.PTP_T:
+                request.positions = self.adjust_joint_angles_to_thresholds(arm=self.arm, requested_angles=request.positions)
+                self.forward_request_to_move_service(request)
+            case 2: #SetPositions.PTP_T
                 print("TCP MOVE")
                 #check tcp position
+                request.positions = self.adjust_xyz_positions_to_thresholds(arm=self.arm, requested_positions=request.positions)
+                self.forward_request_to_move_service(request)
             case _:
                 print("WEIRD MOVE")
-
-
-        if self.is_safe(request):
-            self.get_logger().info('Request is safe, checking feedback')
-            if self.feedback_valid:
-                self.get_logger().info('Feedback is safe, forwarding to move_service')
-                callback_success = True
-                self.forward_request_to_move_service(request)
-        else:
-            self.get_logger().info('Request is not safe')
-            # If request is bad, don't make request. Maybe add sending a corrected request later.
-            callback_success = False
-        self.get_logger().info('Return from safety_service_callback')
-        return callback_success
-
-    def is_safe(self, request):
-        # Implement your safety checks here
-        # Check if request is out of bounds
-        angle_check_result = check_joint_angles(self, request.positions)
-        if angle_check_result[1]:
-            self.safety_request_valid = True
-            self.get_logger().info('Valid Request: "%s"' % self.safety_request_valid)
-        else:
-            self.safety_request_valid = False
-            self.get_logger().info('Invalid Request: "%s"' % self.safety_request_valid)
-        return self.safety_request_valid
-    
-    def forward_request_to_move_service(self, request):
-        while not self.cli.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('move_service not available, waiting...')
-        future = self.cli.call_async(request)
-        self.get_logger().info('Return from forward_request_callback')
-        return
-        rclpy.spin_until_future_complete(self, future)
-        #return future.result()
+        print("Leaving Safety Service Callback")
+        return response
     
     def odometry_callback(self, msg):
         

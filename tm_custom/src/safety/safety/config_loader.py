@@ -46,7 +46,7 @@ def load_arm_thresholds_from_yaml(file_path: str) -> Mobile_Manipulator_Arm_Thre
     with open(file_path, 'r') as file:
         data = yaml.safe_load(file)
 
-    return Mobile_Manipulator_Arm_Thresholds(
+    joint_thresholds = Mobile_Manipulator_Arm_Thresholds.JointThresholds(
         joint_1_min=data['joint_1'][0],
         joint_1_max=data['joint_1'][1],
         joint_2_min=data['joint_2'][0],
@@ -59,6 +59,20 @@ def load_arm_thresholds_from_yaml(file_path: str) -> Mobile_Manipulator_Arm_Thre
         joint_5_max=data['joint_5'][1],
         joint_6_min=data['joint_6'][0],
         joint_6_max=data['joint_6'][1]
+    )
+
+    xyz_thresholds = Mobile_Manipulator_Arm_Thresholds.XYZThresholds(
+        x_min=(data['x_range'][0]) / 1000.0,
+        x_max=(data['x_range'][1]) / 1000.0,
+        y_min=(data['y_range'][0]) / 1000.0,
+        y_max=(data['y_range'][1]) / 1000.0,
+        z_min=(data['z_range'][0]) / 1000.0,
+        z_max=(data['z_range'][1]) / 1000.0
+    )
+
+    return Mobile_Manipulator_Arm_Thresholds(
+        joint_thresholds=joint_thresholds,
+        xyz_thresholds=xyz_thresholds
     )
 
 if __name__ == "__main__":
