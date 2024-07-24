@@ -6,7 +6,9 @@ import numpy as np
 from std_msgs.msg import Bool
 from tm_msgs.msg import FeedbackState
 from nav_msgs.msg import Odometry
-from tm_msgs.srv import SetPositions
+from tm_msgs.srv import SetPositions, SetEvent
+from geometry_msgs.msg import Twist
+
 import sys 
 import os
 sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety/"))
@@ -57,8 +59,14 @@ class Mobile_Manipulator_Arm_Thresholds:
         z_min: float
         z_max: float
 
+    @dataclass
+    class VelocityThresholds:
+        joint_velocity: float
+        tcp_velocity: float
+
     joint_thresholds: JointThresholds
     xyz_thresholds: XYZThresholds
+    velocity_thresholds: VelocityThresholds
 
 @dataclass
 class Mobile_Manipulator_Arm:
@@ -100,7 +108,8 @@ class Mobile_Manipulator_Base_Thresholds:
 @dataclass 
 class Mobile_Manipulator_Base:
     Odometry: Mobile_Manipulator_Base_Odometry
-    Thresholds:Mobile_Manipulator_Base_Thresholds
+    Thresholds: Mobile_Manipulator_Base_Thresholds
+    Current_Twist: Twist
 
 @dataclass
 class Mobile_Manipulator_Robot:
@@ -137,6 +146,12 @@ class SafetyNode(Node):
         
         #client of setPositions which goes to arm
         self.set_positions_client = self.create_client(SetPositions, 'set_positions')
+        
+        #create client of setEvent which will be used for sending stop and clear message
+        self.event_client = self.create_client(SetEvent, 'set_event')
+
+        self.stop_and_clear_event = SetEvent.Request()
+        self.stop_and_clear_event.func = SetEvent.Request.STOP
 
         #subscribe to FeedbackState 
         self.feedback_subscription = self.create_subscription(
@@ -146,16 +161,30 @@ class SafetyNode(Node):
             10)
         self.feedback_subscription  # prevent unused variable warning
 
+
         #LD250
         self.ld250_odometry = Mobile_Manipulator_Base_Odometry()
         self.ld250_threshold = load_base_thresholds_from_yaml(path_to_base_yaml)
         
         self.ld250 = Mobile_Manipulator_Base(
             Odometry = self.ld250_odometry,
-            Thresholds = self.ld250_threshold
+            Thresholds = self.ld250_threshold,
+            Current_Twist = Twist()
         )
         
-        # print(self.ld250.Thresholds)
+        #Publisher for velocities being sent to base
+        self.ld250_cmd_vel_publisher = self.create_publisher(
+            Twist,
+            'ld250_cmd_vel',
+            10
+        )
+
+        self.LD250_safety_vel_subscription = self.create_subscription(
+            Twist,
+            'ld250_safety_cmd_vel',
+            self.safety_cmd_vel_callback,
+            10)
+        self.LD250_safety_vel_subscription  # prevent unused variable warning
 
         #subscribe to Odometry topic
         self.LD250_odom_subscription = self.create_subscription(
@@ -164,18 +193,24 @@ class SafetyNode(Node):
             self.class_odometry_callback,
             10)
         self.LD250_odom_subscription  # prevent unused variable warning
-        
-        #Safety Node Stuff
-        #publish safety_lock topic that other nodes can use to see safety state of arm
-        self.safety_lock_publisher = self.create_publisher(Bool, 'safety_lock', 10)
-        
-        #initialize feedback flag
-        self.feedback_valid = False
-        #initialize request flag
-        self.safety_request_valid = False
     
+
+    def feedback_check(self, msg):
+        tcp_xyz = [msg.tool_pose[0], msg.tool_pose[1], msg.tool_pose[2]]
+        are_within_thresholds = self.check_joint_angles_and_tcp_position_within_thresholds(
+            arm=self.arm,
+            requested_angles=msg.joint_pos,
+            requested_tcp_position=tcp_xyz
+        )
+        if are_within_thresholds == False:
+            self.event_client.call_async(self.stop_and_clear_event)
+        
+        return
+
     def class_feedback_callback(self, msg):
         self.arm.Feedback = msg
+        self.feedback_check(self.arm.Feedback)
+        # run feedback check for the arm
         # print("Joint 2 Max: ", self.arm.Thresholds.joint_thresholds.joint_2_max)
         # print("Joint 2 Pos: ", self.arm.Feedback.joint_pos[1])
  
@@ -193,32 +228,44 @@ class SafetyNode(Node):
         # print("Arm X: %5.2fin, Arm Y: %5.2fin, Arm Z: %5.2fin" % (mm_to_in(self.cur_pos_cartesian[0]), mm_to_in(self.cur_pos_cartesian[1]), mm_to_in(self.cur_pos_cartesian[2])))
         # print("Combined X: %5.2fin, Combined Y: %5.2fin, Combined Z: %5.2fin" % (mm_to_in(self.combined_x_pos), mm_to_in(self.combined_y_pos), mm_to_in(self.combined_z_pos))) 
 
-        
-    def feedback_callback(self, msg):
-        
-        joint_select = 4
-        self.get_logger().info(f"Joint: {joint_select+1}, Position: {msg.joint_pos[joint_select]}")
-        self.get_logger().info(f"Joint: {joint_select+1}, Velocity: {msg.joint_vel[joint_select]}")
-        self.get_logger().info(f"Joint: {joint_select+1}, Torque: {msg.joint_tor[joint_select]}")
-        # for index, element in enumerate(msg.joint_tor):
-        #     self.get_logger().info(f"Joint: {index}, Torque: {element}")
+    def check_joint_angles_and_tcp_position_within_thresholds(self, arm: Mobile_Manipulator_Arm, requested_angles: List[float], requested_tcp_position: List[float]) -> bool:
+        if not len(requested_angles) == 6:
+            raise ValueError("There must be exactly 6 requested angles")
 
-        safety_lock_msg = Bool()
+        if not len(requested_tcp_position) == 3:
+            raise ValueError("There must be exactly 3 requested TCP position values (x, y, z)")
 
-        angle_check_result = check_joint_angles(self, msg.joint_pos)
-        print(angle_check_result)
-        if angle_check_result[1]:
-            self.feedback_valid = True
-            #self.get_logger().info('Valid feedback: "%s"' % self.feedback_valid)
-        else:
-            self.feedback_valid = False
-            #self.get_logger().info('Invalid feedback: "%s"' % self.feedback_valid)
+        print("Requested angles:", requested_angles)
+        print("Requested TCP position:", requested_tcp_position)
 
-        # Publish safety lock for other nodes to see or use
-        safety_lock_msg.data = self.feedback_valid
-        print(safety_lock_msg.data)
-        self.safety_lock_publisher.publish(safety_lock_msg)
-    
+        joint_thresholds = arm.Thresholds.joint_thresholds
+        xyz_thresholds = arm.Thresholds.xyz_thresholds
+
+        # Check joint angles
+        for i, (angle, min_threshold, max_threshold) in enumerate(zip(
+            requested_angles,
+            [joint_thresholds.joint_1_min, joint_thresholds.joint_2_min, joint_thresholds.joint_3_min, 
+            joint_thresholds.joint_4_min, joint_thresholds.joint_5_min, joint_thresholds.joint_6_min],
+            [joint_thresholds.joint_1_max, joint_thresholds.joint_2_max, joint_thresholds.joint_3_max,
+            joint_thresholds.joint_4_max, joint_thresholds.joint_5_max, joint_thresholds.joint_6_max]
+        )):
+            if not (min_threshold <= angle <= max_threshold):
+                print(f"Angle {i + 1} out of range: {angle} not in ({min_threshold}, {max_threshold})")
+                return False
+
+        # Check TCP position
+        for i, (position, min_threshold, max_threshold) in enumerate(zip(
+            requested_tcp_position,
+            [xyz_thresholds.x_min, xyz_thresholds.y_min, xyz_thresholds.z_min],
+            [xyz_thresholds.x_max, xyz_thresholds.y_max, xyz_thresholds.z_max]
+        )):
+            if not (min_threshold <= position <= max_threshold):
+                axis = ['x', 'y', 'z'][i]
+                print(f"TCP {axis}-position out of range: {position} not in ({min_threshold}, {max_threshold})")
+                return False
+
+        print("All angles and TCP position within range")
+        return True
 
     def adjust_joint_angles_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_angles: List[float]) -> List[float]:
         if not len(requested_angles) == 6:
@@ -228,6 +275,7 @@ class SafetyNode(Node):
 
         joint_thresholds = arm.Thresholds.joint_thresholds
 
+        # add velocity and acc_time checks
         adjusted_angles = [
             max(joint_thresholds.joint_1_min, min(joint_thresholds.joint_1_max, requested_angles[0])),
             max(joint_thresholds.joint_2_min, min(joint_thresholds.joint_2_max, requested_angles[1])),
@@ -240,12 +288,21 @@ class SafetyNode(Node):
         print("Adjusted angles", adjusted_angles)
         return adjusted_angles
 
+    def adjust_joint_velocities_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_velocity: float) -> float:
+        print("Requested velocities", requested_velocity)
+
+        joint_velocity_thresholds = arm.Thresholds.velocity_thresholds.joint_velocity
+        adjusted_joint_velocity = min(joint_velocity_thresholds, requested_velocity)
+
+        print("Adjusted joint velocity: ", adjusted_joint_velocity)
+        return adjusted_joint_velocity
+    
     def adjust_xyz_positions_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_positions: List[float]) -> List[float]:
         if not len(requested_positions) == 6:
             raise ValueError("There must be exactly x,y,z,rx,ry,rz")
 
         print("Requested Position: ", requested_positions)
-
+        # add velocity and acc_time checks  
         xyz_thresholds = arm.Thresholds.xyz_thresholds
         adjusted_positions = [
             max(xyz_thresholds.x_min, min(xyz_thresholds.x_max, requested_positions[0])),
@@ -258,6 +315,16 @@ class SafetyNode(Node):
 
         print("Adjusted Position: ", adjusted_positions)
         return adjusted_positions
+    
+    def adjust_xyz_velocities_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_velocity: float) -> float:
+        print("Requested velocities", requested_velocity)
+
+        tcp_velocity_thresholds = arm.Thresholds.velocity_thresholds.tcp_velocity
+        adjusted_tcp_velocity = min(tcp_velocity_thresholds, requested_velocity)
+
+        print("Adjusted joint velocity: ", adjusted_tcp_velocity)
+        return adjusted_tcp_velocity
+
 
     def forward_request_to_move_service(self, request):
         while not self.set_positions_client.wait_for_service(timeout_sec=1.0):
@@ -270,54 +337,25 @@ class SafetyNode(Node):
         # Perform safety checks
         print("Entering Safety Service Callback")
         print("request.motion_type: ", request.motion_type)
+        print("Request Type: ", type(request))
         match request.motion_type:
             case 1: #SetPositions.PTP_J
                 print("JOINT MOVE")
                 #check joint angles
                 request.positions = self.adjust_joint_angles_to_thresholds(arm=self.arm, requested_angles=request.positions)
+                request.velocity = self.adjust_joint_velocities_to_thresholds(arm=self.arm, requested_velocity=request.velocity)
                 self.forward_request_to_move_service(request)
             case 2: #SetPositions.PTP_T
                 print("TCP MOVE")
                 #check tcp position
                 request.positions = self.adjust_xyz_positions_to_thresholds(arm=self.arm, requested_positions=request.positions)
+                request.velocity = self.adjust_xyz_velocities_to_thresholds(arm=self.arm, requested_velocity=request.velocity)
                 self.forward_request_to_move_service(request)
             case _:
                 print("WEIRD MOVE")
         print("Leaving Safety Service Callback")
         return response
-    
-    def odometry_callback(self, msg):
-        
-        #store new odometry information
-        self.base_x_pos = msg.pose.pose.position.x
-        self.base_y_pos = msg.pose.pose.position.y
-        self.base_z_pos = msg.pose.pose.position.z
-
-        self.base_x_orientation = msg.pose.pose.orientation.x
-        self.base_y_orientation = msg.pose.pose.orientation.x
-        self.base_z_orientation = msg.pose.pose.orientation.x
-
-        self.base_x_vel_linear = msg.twist.twist.linear.x
-        self.base_y_vel_linear = msg.twist.twist.linear.y
-        self.base_z_vel_linear = msg.twist.twist.linear.z
-
-        self.base_x_vel_angular = msg.twist.twist.angular.x
-        self.base_y_vel_angular = msg.twist.twist.angular.y
-        self.base_z_vel_angular = msg.twist.twist.angular.z
-
-        print_on = True
-
-        if (print_on):
-            print(f"Position: X: {self.base_x_pos}, Y: {self.base_y_pos}, Z: {self.base_z_pos}\n")
-            
-            print(f"Orientation: X: {self.base_x_orientation}, Y: {self.base_y_orientation}, Z: {self.base_z_orientation}\n")
-
-            print(f"Linear Velocity: X: {self.base_x_vel_linear}, Y: {self.base_y_vel_linear}, Z: {self.base_z_vel_linear}\n")
-            
-            print(f"Angular Velocity: X: {self.base_x_vel_angular}, Y: {self.base_y_vel_angular}, Z: {self.base_z_vel_angular}\n")
-        
-        check_base_speed(self, msg)
-    
+      
     def class_odometry_callback(self, msg):
         self.ld250.Odometry.pos_x_mm = msg.pose.pose.position.x
         self.ld250.Odometry.pos_y_mm = msg.pose.pose.position.y
@@ -345,6 +383,41 @@ class SafetyNode(Node):
             print(f"Linear Velocity: X: {self.ld250.Odometry.vel_linear_x}, Y: {self.ld250.Odometry.vel_linear_y}, Z: {self.ld250.Odometry.vel_linear_z}\n")
             
             print(f"Angular Velocity: X: {self.ld250.Odometry.vel_angular_x}, Y: {self.ld250.Odometry.vel_angular_y}, Z: {self.ld250.Odometry.vel_angular_z}\n")
+
+    def adjust_base_velocities_to_thresholds(self, base: Mobile_Manipulator_Base, requested_velocity: float) -> float:
+        print("Requested velocities", requested_velocity)
+
+        adjusted_base_velocity = max(base.Thresholds.x_linear_min, min(base.Thresholds.x_linear_max, requested_velocity))
+        
+        print("adjusted base velocity: ", adjusted_base_velocity)
+        return adjusted_base_velocity
+    
+    def adjust_base_velocities_to_thresholds(self, base: Mobile_Manipulator_Base, requested_linear_x_vel: float, requested_angular_z_vel: float) -> tuple:
+        print("Requested linear x velocity:", requested_linear_x_vel)
+        print("Requested angular z velocity:", requested_angular_z_vel)
+
+        adjusted_linear_x_vel = max(base.Thresholds.x_linear_min, min(base.Thresholds.x_linear_max, requested_linear_x_vel))
+        adjusted_angular_z_vel = max(base.Thresholds.z_angular_min, min(base.Thresholds.z_angular_max, requested_angular_z_vel))
+
+        print("Adjusted linear x velocity:", adjusted_linear_x_vel)
+        print("Adjusted angular z velocity:", adjusted_angular_z_vel)
+        
+        return adjusted_linear_x_vel, adjusted_angular_z_vel
+
+    def safety_cmd_vel_callback(self, msg):
+        requested_linear_x_vel = msg.linear.x
+        requested_angular_z_vel = msg.angular.z
+
+        adjusted_linear_x_vel, adjusted_angular_z_vel = self.adjust_base_velocities_to_thresholds(
+            base=self.ld250,
+            requested_linear_x_vel=requested_linear_x_vel,
+            requested_angular_z_vel=requested_angular_z_vel
+        )
+
+        self.ld250.Current_Twist.linear.x = adjusted_linear_x_vel / 1000.0  # Adjusting the unit if needed
+        self.ld250.Current_Twist.angular.z = adjusted_angular_z_vel / 1000.0 # Adjusting the unit if needed
+
+        self.ld250_cmd_vel_publisher.publish(self.ld250.Current_Twist)
 
 def main(args=None):
     rclpy.init(args=args)

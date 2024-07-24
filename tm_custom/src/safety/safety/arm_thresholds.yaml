@@ -2,6 +2,9 @@
 # second term is max angle
 # in radians
 # cartesian ranges are in mm
+# joint vel in rad/s
+# tcp vel in m/s
+# Note: If you think the arm is moving too slow, increase the project speed on the arm control box before adjusting the max speed here
 joint_1:
   - -0.174533
   - 1.74533
@@ -29,6 +32,10 @@ y_range:
 z_range:
   - 150.0
   - 800.0
+joint_vel:
+  - 2.14
+tcp_vel:
+  - 2.0
 
 #in degrees
 # joint_1:

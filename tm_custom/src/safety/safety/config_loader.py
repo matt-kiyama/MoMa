@@ -70,9 +70,15 @@ def load_arm_thresholds_from_yaml(file_path: str) -> Mobile_Manipulator_Arm_Thre
         z_max=(data['z_range'][1]) / 1000.0
     )
 
+    velocity_thresholds = Mobile_Manipulator_Arm_Thresholds.VelocityThresholds(
+        joint_velocity=data['joint_vel'][0],
+        tcp_velocity=data['tcp_vel'][0]
+    )
+
     return Mobile_Manipulator_Arm_Thresholds(
         joint_thresholds=joint_thresholds,
-        xyz_thresholds=xyz_thresholds
+        xyz_thresholds=xyz_thresholds,
+        velocity_thresholds=velocity_thresholds
     )
 
 if __name__ == "__main__":
