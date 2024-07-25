@@ -1,6 +1,6 @@
 import yaml
 import numpy as np
-from dataclass_package.dataclass_definitions import Mobile_Manipulator_Base_Thresholds, Mobile_Manipulator_Arm_Thresholds
+from safety_node import *
 
 def read_yaml(file_path):
     with open(file_path, 'r') as file:
