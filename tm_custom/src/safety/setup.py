@@ -11,7 +11,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
     ],
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'dataclass_package'],
     zip_safe=True,
     maintainer='rslomron',
     maintainer_email='mkiyama@scu.edu',
