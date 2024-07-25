@@ -43,7 +43,7 @@ class BaseAndArmController(Node):
         #Publisher for velocities being sent to base
         self.twist_publisher = self.create_publisher(
             Twist,
-            'ld250_cmd_vel',
+            'ld250_safety_cmd_vel',
             10
         )
 
@@ -104,7 +104,9 @@ class BaseAndArmController(Node):
         #z_max 900 
         #z_min -18
         # self.arm_range = np.array([950, 0, ])
-        self.arm_range_x = 400 #mm
+        self.arm_range_x = 600 #mm
+        self.arm_stow_range_x = 300 #mm
+        self.arm_stow_z_pos_tcp = 327 #mm
         self.arm_offset_mm = np.array([arm_x_offset_mm, arm_y_offset_mm, arm_z_offset_mm])
         self.target_arm_position = np.array([])
 
@@ -165,30 +167,26 @@ class BaseAndArmController(Node):
     
     def control_law(self):
         global plan
-        self.delta_goal_base = np.subtract(self.target_tcp_position, self.base_x_pos)
-        self.delta_goal_arm = np.subtract(self.delta_goal_base, self.arm_offset_mm)
-        # print("delta goal base: ", self.delta_goal_base)
-        # print("delta_x : ", self.delta_goal_base[0])
-        # print("base_x : ", self.base_x_pos)
-
-        # print("delta goal arm: ", self.delta_goal_arm)
-        # print("arm_range_x : ", self.arm_range_x)
-        
-        #mm = mm - mm
-        self.base_setpoint = self.delta_goal_base[0] - self.arm_range_x
-        print("base setpoint: ", self.base_setpoint)
-
-        print("base_x : ", self.base_x_pos)
-        self.base_error_x = self.base_setpoint - self.base_x_pos
-        print("base_error_x: ", self.base_error_x)
-        
 
         gain = 0.3
 
-        # vel_max = 200.0 # mm/s
-        # vel_min = -200.0 # mm/s
-
         if plan == 0: #initial
+            self.delta_goal_base = np.subtract(self.target_tcp_position, self.base_x_pos)
+            self.delta_goal_arm = np.subtract(self.delta_goal_base, self.arm_offset_mm)
+            # print("delta goal base: ", self.delta_goal_base)
+            print("delta_x : ", self.delta_goal_base[0])
+            # print("base_x : ", self.base_x_pos)
+
+            # print("delta goal arm: ", self.delta_goal_arm)
+            # print("arm_range_x : ", self.arm_range_x)
+            
+            #mm = mm - mm
+            print("offset + range: ", self.arm_offset_mm + self.arm_range_x)
+            self.base_setpoint = self.delta_goal_base[0] - (self.arm_range_x + arm_x_offset_mm)
+            self.base_stow_setpoint = self.delta_goal_base[0] - (self.arm_stow_range_x + arm_x_offset_mm)
+            print("base setpoint: ", self.base_setpoint)
+            print("base stow setpoint: ", self.base_stow_setpoint)
+
             if self.arm_range_x > self.delta_goal_arm[0]:
                 #set plan 1
                 print("plan 1")
@@ -209,15 +207,20 @@ class BaseAndArmController(Node):
             #move base and arm
             print("move base and arm")
 
+            print("base_x : ", self.base_x_pos)
+            self.base_error_x = self.base_setpoint - self.base_x_pos
+            print("base_error_x: ", self.base_error_x)
+
             #move arm to full extension in x
+            # self.target_arm_position = [self.arm_range_x, -156.0, self.target_tcp_position[2]]
             self.target_arm_position = [self.arm_range_x, -156.0, self.target_tcp_position[2]]
             self.move_arm()
-            
-            
-            print("gain * base_error_x: (mm/s)", gain * self.base_error_x)
+            # print("publish twist")
+            # print("gain * base_error_x: (mm/s)", gain * self.base_error_x)
 
-            if abs(self.base_error_x) < 1.0:
+            if abs(self.base_error_x) < 20.0:
                 self.current_twist.linear.x = 0.0
+                plan = 3
             else:
                 self.current_twist.linear.x = (gain * self.base_error_x) / 1000.0 
 
@@ -226,8 +229,26 @@ class BaseAndArmController(Node):
             #     self.current_twist.linear.x = vel_max
             # elif self.current_twist.linear.x < vel_min:
             #     self.current_twist.linear.x = vel_min
-            # self.twist_publisher.publish(self.current_twist)
+            self.twist_publisher.publish(self.current_twist)
 
+        if plan == 3:
+            #move base and arm
+            print("move base and arm stow")
+
+            print("base_x : ", self.base_x_pos)
+
+            self.base_stow_error_x = self.base_stow_setpoint - self.base_x_pos
+            print("base_stow_error_x: ", self.base_stow_error_x)
+
+            self.target_arm_position = [self.arm_stow_range_x, -156.0, self.arm_stow_z_pos_tcp]
+            self.move_arm()
+
+            if abs(self.base_stow_error_x) < 8.0:
+                self.current_twist.linear.x = 0.0
+            else:
+                self.current_twist.linear.x = (gain * self.base_stow_error_x) / 1000.0 
+            
+            self.twist_publisher.publish(self.current_twist)
 
     def control_loop(self):
         self.control_law()

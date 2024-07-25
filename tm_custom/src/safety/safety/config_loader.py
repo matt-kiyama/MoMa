@@ -1,6 +1,6 @@
 import yaml
 import numpy as np
-from safety_node import *
+from robot_dataclass import *
 
 def read_yaml(file_path):
     with open(file_path, 'r') as file:
