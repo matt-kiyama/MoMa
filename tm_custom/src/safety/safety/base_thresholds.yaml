@@ -1,9 +1,9 @@
 # first term is min velocity
 # second term is max velocity
-# in meters/second
+# in mm/second
 x_linear:
   - -1.5
-  - 2.0
+  - 0.5
 y_linear:
   - -1.5
   - 2.0

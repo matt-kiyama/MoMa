@@ -16,7 +16,7 @@ class ServiceClient(Node):
     def __init__(self):
         super().__init__('set_positions_client')
         self.cli = self.create_client(SetPositions, 'set_positions')
-        self.cli = self.create_client(SetPositions, 'safety_service')
+        # self.cli = self.create_client(SetPositions, 'safety_service')
         while not self.cli.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Service not available, waiting again...')
         self.req = SetPositions.Request()

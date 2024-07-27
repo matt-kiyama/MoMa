@@ -42,7 +42,7 @@ class SafetyNode(Node):
         self.srv = self.create_service(SetPositions, 'safety_service', self.safety_service_callback)
         
         #client of setPositions which goes to arm
-        self.set_positions_client = self.create_client(SetPositions, 'set_positions')
+        # self.set_positions_client = self.create_client(SetPositions, 'set_positions')
         
         #create client of setEvent which will be used for sending stop and clear message
         self.event_client = self.create_client(SetEvent, 'set_event')
@@ -72,14 +72,14 @@ class SafetyNode(Node):
         self.ld250_cmd_vel_publisher = self.create_publisher(
             Twist,
             'ld250_cmd_vel',
-            10
+            100
         )
 
         self.LD250_safety_vel_subscription = self.create_subscription(
             Twist,
             'ld250_safety_cmd_vel',
             self.safety_cmd_vel_callback,
-            10)
+            100)
         self.LD250_safety_vel_subscription  # prevent unused variable warning
 
         #subscribe to Odometry topic
@@ -131,8 +131,8 @@ class SafetyNode(Node):
         if not len(requested_tcp_position) == 3:
             raise ValueError("There must be exactly 3 requested TCP position values (x, y, z)")
 
-        print("Requested angles:", requested_angles)
-        print("Requested TCP position:", requested_tcp_position)
+        # print("Requested angles:", requested_angles)
+        # print("Requested TCP position:", requested_tcp_position)
 
         joint_thresholds = arm.Thresholds.joint_thresholds
         xyz_thresholds = arm.Thresholds.xyz_thresholds
@@ -160,7 +160,7 @@ class SafetyNode(Node):
                 # print(f"TCP {axis}-position out of range: {position} not in ({min_threshold}, {max_threshold})")
                 return False
 
-        print("All angles and TCP position within range")
+        # print("All angles and TCP position within range")
         return True
 
     def adjust_joint_angles_to_thresholds(self, arm: Mobile_Manipulator_Arm, requested_angles: List[float]) -> List[float]:
@@ -240,13 +240,13 @@ class SafetyNode(Node):
                 #check joint angles
                 request.positions = self.adjust_joint_angles_to_thresholds(arm=self.arm, requested_angles=request.positions)
                 request.velocity = self.adjust_joint_velocities_to_thresholds(arm=self.arm, requested_velocity=request.velocity)
-                self.forward_request_to_move_service(request)
+                # self.forward_request_to_move_service(request)
             case 2: #SetPositions.PTP_T
                 print("TCP MOVE")
                 #check tcp position
                 request.positions = self.adjust_xyz_positions_to_thresholds(arm=self.arm, requested_positions=request.positions)
                 request.velocity = self.adjust_xyz_velocities_to_thresholds(arm=self.arm, requested_velocity=request.velocity)
-                self.forward_request_to_move_service(request)
+                # self.forward_request_to_move_service(request)
             case _:
                 print("WEIRD MOVE")
         print("Leaving Safety Service Callback")
@@ -310,8 +310,8 @@ class SafetyNode(Node):
             requested_angular_z_vel=requested_angular_z_vel
         )
 
-        self.ld250.Current_Twist.linear.x = adjusted_linear_x_vel / 1000.0  # Adjusting the unit if needed
-        self.ld250.Current_Twist.angular.z = adjusted_angular_z_vel / 1000.0 # Adjusting the unit if needed
+        self.ld250.Current_Twist.linear.x = adjusted_linear_x_vel  # Adjusting the unit if needed
+        self.ld250.Current_Twist.angular.z = adjusted_angular_z_vel# Adjusting the unit if needed
 
         self.ld250_cmd_vel_publisher.publish(self.ld250.Current_Twist)
 

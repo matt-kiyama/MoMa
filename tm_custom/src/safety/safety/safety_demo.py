@@ -37,8 +37,8 @@ class BaseAndArmController(Node):
     def __init__(self):
         super().__init__('base_and_arm_controller')
         #client of setPositions which goes to arm
-        # self.cli = self.create_client(SetPositions, 'set_positions')
-        self.cli = self.create_client(SetPositions, 'safety_service')
+        self.cli = self.create_client(SetPositions, 'set_positions')
+        # self.cli = self.create_client(SetPositions, 'safety_service')
 
         #Publisher for velocities being sent to base
         self.twist_publisher = self.create_publisher(
@@ -169,6 +169,7 @@ class BaseAndArmController(Node):
         global plan
 
         gain = 0.3
+        print("gain: ", gain)
 
         if plan == 0: #initial
             self.delta_goal_base = np.subtract(self.target_tcp_position, self.base_x_pos)
@@ -216,7 +217,7 @@ class BaseAndArmController(Node):
             self.target_arm_position = [self.arm_range_x, -156.0, self.target_tcp_position[2]]
             self.move_arm()
             # print("publish twist")
-            # print("gain * base_error_x: (mm/s)", gain * self.base_error_x)
+            print("gain * base_error_x: (m/s)", (gain * self.base_error_x) / 1000.0)
 
             if abs(self.base_error_x) < 20.0:
                 self.current_twist.linear.x = 0.0
@@ -239,6 +240,8 @@ class BaseAndArmController(Node):
 
             self.base_stow_error_x = self.base_stow_setpoint - self.base_x_pos
             print("base_stow_error_x: ", self.base_stow_error_x)
+
+            print("gain * base_error_x: (mm/s)", (gain * self.base_stow_error_x) / 1000.0)
 
             self.target_arm_position = [self.arm_stow_range_x, -156.0, self.arm_stow_z_pos_tcp]
             self.move_arm()
