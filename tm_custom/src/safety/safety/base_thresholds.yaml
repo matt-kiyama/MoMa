@@ -1,21 +1,21 @@
 # first term is min velocity
 # second term is max velocity
-# in meters/second
+# in mm/second
 x_linear:
   - -1.5
-  - 2
+  - 0.5
 y_linear:
   - -1.5
-  - 2
+  - 2.0
 z_linear:
   - -1.5
-  - 2
+  - 2.0
 x_angular:
-  - -1
-  - 1
+  - -1.0
+  - 1.0
 y_angular:
-  - -1
-  - 1
+  - -1.0
+  - 1.0
 z_angular:
-  - -1
-  - 1
+  - -1.0
+  - 1.0

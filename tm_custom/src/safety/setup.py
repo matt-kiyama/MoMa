@@ -19,7 +19,7 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['safety = safety.safety_node:main',
+        'console_scripts': ['safety1 = safety.safety_node:main',
                             'demo = safety.safety_demo:main',
                             'stow_safety = safety.safety_demo_stow:main',
                             'stow_controller = safety.controller_demo_stow:main',

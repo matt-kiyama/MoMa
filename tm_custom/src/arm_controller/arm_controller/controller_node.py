@@ -19,6 +19,18 @@ sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety
 from threshold import *
 # sys.path.insert(0, '/home/rslomron/MoMa/tm_custom/src/arm_subscriber/arm_subscriber/')
 
+class EMA:
+    def __init__(self, alpha):
+        self.alpha = alpha
+        self.value = 0.0
+
+    def update(self, new_value):
+        self.value = self.alpha * new_value + (1.0 - self.alpha) * self.value
+        return self.value
+
+# Create EMA objects
+linear_x_ema = EMA(alpha=0.1)
+angular_z_ema = EMA(alpha=0.1)
 
 class ArmService(Node):
 
@@ -30,7 +42,7 @@ class ArmService(Node):
             FeedbackState,
             'feedback_states',
             self.feedback_callback,
-            10)
+            1000)
         self.feedback_subscription  # prevent unused variable warning
 
         self.sta_subscription = self.create_subscription(
@@ -98,17 +110,19 @@ class ArmService(Node):
         self.sta_response_val = False
 
         self.current_tag = 0
+        self.zero_vels_count = 0
 
     def feedback_callback(self, msg):
         self.cur_pos_cartesian = np.asarray(msg.tool_pose)
         self.tcp_force = np.asarray(msg.tcp_force)
         # print("TCP Force: ", msg.tcp_force)
-        print("Tool Position: ", self.cur_pos_cartesian)
-        print("Tool Pose: ", self.tool_pose)
-        print("TCP Force X: ", self.tcp_force[0])
+        # print("Tool Position: ", self.cur_pos_cartesian)
+        # print("Tool Pose: ", self.tool_pose)
+        # print("TCP Force X: ", self.tcp_force[0])
+        # print("TCP Force Y: ", self.tcp_force[1])
         self.stiff_arm_control()
         # self.send_requests_tool()
-        #self.cur_pos = np.asarray([math.degrees(angle) for angle in msg.joint_pos])
+        # self.cur_pos = np.asarray([math.degrees(angle) for angle in msg.joint_pos])
         # self.cur_torques = np.array(msg.joint_tor)
         # if(self.previous_torques.size == 0): #if previous_torques is empty
         #     print("setting previous torques to current")
@@ -125,30 +139,79 @@ class ArmService(Node):
     def stiff_arm_control(self):
         force_max = 60.0 #newtons
         force_min = -60.0 #newtons
-        vel_max = 80.0 # mm/s
-        vel_min = -80.0 # mm/s
+        vel_max_z = 130.0 / 1000.0     # mm/s
+        vel_min_z = -130.0 / 1000.0    # mm/s
+        vel_max_x = 100.0 / 1000.0        # mm/s
+        vel_min_x = -100.0 / 1000.0        # mm/s
 
-        gain = 3.0
+        gain_linear_x = 0.15
 
-        # keep velocity of the base within a range
+        gain_angular_z = 1.8
+
+        # keep force from the arm within a range
         if self.tcp_force[0] > force_max:
             self.tcp_force[0] = force_max
         elif self.tcp_force[0] < force_min:
             self.tcp_force[0] = force_min
 
-        #if force is < 10N in either direction
-        if abs(self.tcp_force[0] - 0) < 1.0: 
+        if self.tcp_force[1] > force_max:
+            self.tcp_force[1] = force_max
+        elif self.tcp_force[1] < force_min:
+            self.tcp_force[1] = force_min
+
+        #if force is < 1N in either direction
+        if abs(self.tcp_force[0] - 0) < 0.4:
             self.tcp_force[0] = 0.0
 
-        #control law
-        self.current_twist.linear.x = gain * self.tcp_force[0]
-        
-        # keep velocity of the base within a range
-        if self.current_twist.linear.x > vel_max:
-            self.current_twist.linear.x = vel_max
-        elif self.current_twist.linear.x < vel_min:
-            self.current_twist.linear.x = vel_min
+        if abs(self.tcp_force[1] - 0) < 0.1:
+            self.tcp_force[1] = 0.0
 
+        #control law
+        self.current_twist.linear.x = gain_linear_x * self.tcp_force[0]
+
+        if (self.current_twist.linear.x != 0.0):
+            print("Linear X: ", self.current_twist.linear.x)
+
+        # self.current_twist.angular.z = gain_angular_z * self.tcp_force[1]
+        
+        # if (self.current_twist.angular.z != 0.0):
+        #     print("Tool Position: ", self.cur_pos_cartesian)
+        #     print("Tool Pose: ", self.tool_pose)
+        #     print("TCP Force X: ", self.tcp_force[0])
+        #     print("TCP Force Y: ", self.tcp_force[1])
+        #     print("Angular Z Before Limit: ", self.current_twist.angular.z)
+        #     print("abcdefghi")
+        # else:
+        #     self.zero_vels_count += 1
+        
+        # In your control loop
+        # smoothed_linear_x = linear_x_ema.update(self.tcp_force[0] * gain_linear_x)
+        smoothed_angular_z = angular_z_ema.update(self.tcp_force[1] * gain_angular_z)
+        # self.current_twist.angular.z = smoothed_angular_z
+
+        # keep velocity of the base within a range
+        if self.current_twist.linear.x > vel_max_x:
+            print("hitting lin x  vel max")
+            self.current_twist.linear.x = vel_max_x
+        elif self.current_twist.linear.x < vel_min_x:
+            print("hitting lin x vel min")
+            self.current_twist.linear.x = vel_min_x
+ 
+        if self.current_twist.angular.z > vel_max_z:
+            # print("hitting ang z vel max")
+            self.current_twist.angular.z = vel_max_z
+        elif self.current_twist.angular.z < vel_min_z:
+            # print("hitting ang z vel min")
+            self.current_twist.angular.z = vel_min_z
+
+        if (self.current_twist.linear.x != 0.0):
+            print("Linear X After Limit: ", self.current_twist.linear.x)
+
+        if (self.current_twist.angular.z != 0.0):
+            # print("Vel Max: ", vel_max)
+            # print("Angular Z After Limit: ", self.current_twist.angular.z)
+            # print("Zeroes sent in between: ", self.zero_vels_count)
+            self.zero_vels_count = 0
         # publish the velocity
         self.twist_publisher.publish(self.current_twist)
 
@@ -267,7 +330,7 @@ class ArmService(Node):
     def control_law_tool(self, axis):
         # gain = 0.0025
         tcp_threshold = 10.0 #Newtons
-        gain = 0.0025
+        gain = 0.01
         if abs(self.tcp_force[axis]) < tcp_threshold : 
             self.tcp_force[axis] = 0.0
             print("setting tcp force to 0")
