@@ -1,11 +1,11 @@
 from setuptools import find_packages, setup
 
-package_name = 'safety'
+package_name = 'open_manipiluator_demo'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']), 
+    packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -19,11 +19,7 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['safety1 = safety.safety_node:main',
-                            'demo = safety.safety_demo:main',
-                            'stow_safety = safety.safety_demo_stow:main',
-                            'stow_controller = safety.controller_demo_stow:main',
+        'console_scripts': ['safety = open_manipulator_demo.safety_demo_port:main'
         ],
     },
 )
-

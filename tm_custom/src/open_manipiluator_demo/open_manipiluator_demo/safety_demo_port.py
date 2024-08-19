@@ -3,7 +3,9 @@ from rclpy.node import Node
 
 import numpy as np 
 from std_msgs.msg import Bool
-from tm_msgs.msg import FeedbackState
+from open_manipulator_msgs.msg import KinematicsPose, OpenManipulatorState
+from open_manipulator_msgs.srv import SetJointPosition, SetKinematicsPose
+from sensor_msgs.msg import JointState
 from nav_msgs.msg import Odometry
 from tm_msgs.srv import SetPositions
 import sys 
@@ -49,14 +51,36 @@ class BaseAndArmController(Node):
 
         self.current_twist = Twist()
 
-        # Subscribers for feedback
-        #subscribe to FeedbackState 
-        self.feedback_subscription = self.create_subscription(
-            FeedbackState,
-            'feedback_states',
-            self.arm_feedback_callback,
-            10)
-        self.feedback_subscription  # prevent unused variable warning
+        # Open Manipulator
+        # Create joint_states subscriber
+        self.joint_state_subscription = self.create_subscription(
+            JointState,
+            'joint_states',
+            self.joint_state_callback,
+            self.qos)
+        self.joint_state_subscription
+
+        # Create kinematics_pose subscriber
+        self.kinematics_pose_subscription = self.create_subscription(
+            KinematicsPose,
+            'kinematics_pose',
+            self.kinematics_pose_callback,
+            self.qos)
+        self.kinematics_pose_subscription
+
+        # Create manipulator state subscriber
+        self.open_manipulator_state_subscription = self.create_subscription(
+            OpenManipulatorState,
+            'states',
+            self.open_manipulator_state_callback,
+            self.qos)
+        self.open_manipulator_state_subscription
+
+        # Create Service Clients
+        self.goal_joint_space = self.create_client(SetJointPosition, 'goal_joint_space_path')
+        self.goal_task_space = self.create_client(SetKinematicsPose, 'goal_task_space_path')
+        self.goal_joint_space_req = SetJointPosition.Request()
+        self.goal_task_space_req = SetKinematicsPose.Request()
 
         self.LD250_odom_subscription = self.create_subscription(
             Odometry,
