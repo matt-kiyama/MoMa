@@ -38,19 +38,6 @@ def mm_to_in(mm):
 class BaseAndArmController(Node):
     def __init__(self):
         super().__init__('base_and_arm_controller')
-        #client of setPositions which goes to arm
-        self.cli = self.create_client(SetPositions, 'set_positions')
-        # self.cli = self.create_client(SetPositions, 'safety_service')
-
-        #Publisher for velocities being sent to base
-        self.twist_publisher = self.create_publisher(
-            Twist,
-            'ld250_safety_cmd_vel',
-            10
-        )
-
-        self.current_twist = Twist()
-
         # Open Manipulator
         # Create joint_states subscriber
         self.joint_state_subscription = self.create_subscription(
@@ -82,15 +69,6 @@ class BaseAndArmController(Node):
         self.goal_joint_space_req = SetJointPosition.Request()
         self.goal_task_space_req = SetKinematicsPose.Request()
 
-        self.LD250_odom_subscription = self.create_subscription(
-            Odometry,
-            'ld250_pose',
-            self.base_feedback_callback,
-            10)
-        self.LD250_odom_subscription  # prevent unused variable warning
-
-        # self.base_feedback = None
-        # self.arm_feedback = None
 
         # Target position for tcp in mm (referenced from base)
         self.declare_parameter('target_tcp_position', [1400.0, -156.0, 600.0])
@@ -120,19 +98,14 @@ class BaseAndArmController(Node):
         self.base_error_x = None
 
         #arm
-        self.cur_tcp_pos_cartesian = None
-        #x_max 950
-        #x_min 
-        #y_max 0
-        #y_min 0
-        #z_max 900 
-        #z_min -18
-        # self.arm_range = np.array([950, 0, ])
         self.arm_range_x = 600 #mm
         self.arm_stow_range_x = 300 #mm
         self.arm_stow_z_pos_tcp = 327 #mm
         self.arm_offset_mm = np.array([arm_x_offset_mm, arm_y_offset_mm, arm_z_offset_mm])
-        self.target_arm_position = np.array([])
+
+        self.present_kinematics_pose = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        self.goal_kinematics_pose = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        self.path_time = 0.5  # second
 
         self.combined_x_pos = 0.0
         self.combined_y_pos = 0.0
@@ -141,8 +114,14 @@ class BaseAndArmController(Node):
         self.timer = self.create_timer(0.1, self.control_loop)  # 10 Hz
         self.timer = self.create_timer(1.0, self.count_time)
 
-    def count_time(self):
-        self.seconds_elapsed += 1
+    def kinematics_pose_callback(self, msg):
+        self.present_kinematics_pose[0] = msg.pose.position.x
+        self.present_kinematics_pose[1] = msg.pose.position.y
+        self.present_kinematics_pose[2] = msg.pose.position.z
+        self.present_kinematics_pose[3] = msg.pose.orientation.w
+        self.present_kinematics_pose[4] = msg.pose.orientation.x
+        self.present_kinematics_pose[5] = msg.pose.orientation.y
+        self.present_kinematics_pose[6] = msg.pose.orientation.z
 
     def base_feedback_callback(self, msg):
         self.base_x_pos = msg.pose.pose.position.x * 1000.0
@@ -161,33 +140,31 @@ class BaseAndArmController(Node):
         self.base_y_vel_angular = msg.twist.twist.angular.y
         self.base_z_vel_angular = msg.twist.twist.angular.z
 
-    def arm_feedback_callback(self, msg):
-        self.cur_tcp_pos_cartesian = np.asarray(msg.tool_pose)
-
     def calculate_current_combined_pos(self):
-        self.combined_x_pos = self.base_x_pos + (1000 * self.cur_pos_cartesian[0]) + arm_x_offset_mm
-        self.combined_y_pos = self.base_y_pos + (1000 * self.cur_pos_cartesian[1]) + arm_y_offset_mm
-        self.combined_z_pos = self.base_z_pos + (1000 * self.cur_pos_cartesian[2]) + arm_z_offset_mm
+        self.combined_x_pos = self.base_x_pos + (1000 * self.present_kinematics_pose[0]) + arm_x_offset_mm
+        self.combined_y_pos = self.base_y_pos + (1000 * self.present_kinematics_pose[1]) + arm_y_offset_mm
+        self.combined_z_pos = self.base_z_pos + (1000 * self.present_kinematics_pose[2]) + arm_z_offset_mm
+
+    def send_goal_task_space(self):
+        self.goal_task_space_req.end_effector_name = 'gripper'
+        self.goal_task_space_req.kinematics_pose.pose.position.x = self.goal_kinematics_pose[0]
+        self.goal_task_space_req.kinematics_pose.pose.position.y = self.goal_kinematics_pose[1]
+        self.goal_task_space_req.kinematics_pose.pose.position.z = self.goal_kinematics_pose[2]
+        self.goal_task_space_req.kinematics_pose.pose.orientation.w = self.goal_kinematics_pose[3]
+        self.goal_task_space_req.kinematics_pose.pose.orientation.x = self.goal_kinematics_pose[4]
+        self.goal_task_space_req.kinematics_pose.pose.orientation.y = self.goal_kinematics_pose[5]
+        self.goal_task_space_req.kinematics_pose.pose.orientation.z = self.goal_kinematics_pose[6]
+        self.goal_task_space_req.path_time = self.path_time
+
+        try:
+            send_goal_task = self.goal_task_space.call_async(self.goal_task_space_req)
+        except Exception as e:
+            self.get_logger().info('Sending Goal Kinematic Pose failed %r' % (e,))
 
     def move_base(self):
         if self.base_feedback:
             self.current_twist.linear.x
             self.twist_publisher.publish(self.current_twist)
-
-    def move_arm(self):
-        self.req.motion_type = SetPositions.Request.PTP_T
-
-        self.req.positions = [self.target_arm_position[0]/1000, self.target_arm_position[1]/1000, self.target_arm_position[2]/1000, 3.14, 0.0, 0.0]
-        
-        print(self.req.positions)
-
-        self.req.velocity = 4.0
-        self.req.acc_time = 0.1
-        self.req.blend_percentage = 20
-        self.req.fine_goal = False
-
-        self.future = self.cli.call_async(self.req)
-        return
     
     def control_law(self):
         global plan
