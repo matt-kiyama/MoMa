@@ -14,6 +14,7 @@ sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety
 from threshold import *
 from config_loader import *
 from geometry_msgs.msg import Twist
+from rclpy.qos import QoSProfile
 
 
 path_to_arm_yaml = '/home/rslomron/MoMa/tm_custom/src/safety/safety/arm_thresholds.yaml'
@@ -28,7 +29,7 @@ arm_y_offset_mm = 0.0
 arm_z_offset_in = 15.25
 arm_z_offset_mm = 387.35
 
-plan = 0
+plan = 1
 
 def mm_to_in(mm):
     # 1 millimeter is equal to 0.0393701 inches
@@ -39,6 +40,8 @@ class BaseAndArmController(Node):
     def __init__(self):
         super().__init__('base_and_arm_controller')
         # Open Manipulator
+        self.qos = QoSProfile(depth=10)
+
         # Create joint_states subscriber
         self.joint_state_subscription = self.create_subscription(
             JointState,
@@ -62,6 +65,8 @@ class BaseAndArmController(Node):
             self.open_manipulator_state_callback,
             self.qos)
         self.open_manipulator_state_subscription
+
+        self.cmd_vel_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
 
         # Create Service Clients
         self.goal_joint_space = self.create_client(SetJointPosition, 'goal_joint_space_path')
@@ -112,7 +117,19 @@ class BaseAndArmController(Node):
         self.combined_z_pos = 0.0
 
         self.timer = self.create_timer(0.1, self.control_loop)  # 10 Hz
-        self.timer = self.create_timer(1.0, self.count_time)
+
+    def open_manipulator_state_callback(self, msg):
+        if msg.open_manipulator_moving_state == 'STOPPED':
+            for index in range(0, 7):
+                self.goal_kinematics_pose[index] = self.present_kinematics_pose[index]
+            for index in range(0, 4):
+                self.goal_joint_angle[index] = self.present_joint_angle[index]
+
+    def joint_state_callback(self, msg):
+        self.present_joint_angle[0] = msg.position[0]
+        self.present_joint_angle[1] = msg.position[1]
+        self.present_joint_angle[2] = msg.position[2]
+        self.present_joint_angle[3] = msg.position[3]
 
     def kinematics_pose_callback(self, msg):
         self.present_kinematics_pose[0] = msg.pose.position.x
@@ -162,10 +179,31 @@ class BaseAndArmController(Node):
             self.get_logger().info('Sending Goal Kinematic Pose failed %r' % (e,))
 
     def move_base(self):
-        if self.base_feedback:
-            self.current_twist.linear.x
-            self.twist_publisher.publish(self.current_twist)
+        self.publish_cmd_vel()
+        # if self.base_feedback:
+        #     self.current_twist.linear.x
+        #     self.twist_publisher.publish(self.current_twist)
     
+    def publish_cmd_vel(self):
+        # Example array containing linear [x, y, z] and angular [x, y, z] velocities
+        linear_vel = [0.5, 0.0, 0.0]  # Linear velocities in x, y, z
+        angular_vel = [0.0, 0.0, 0.0]  # Angular velocities in x, y, z
+
+        # Create a Twist message
+        twist = Twist()
+
+        # Assign the linear velocities
+        twist.linear.x = linear_vel[0]
+        twist.linear.y = linear_vel[1]
+        twist.linear.z = linear_vel[2]
+
+        # Assign the angular velocities
+        twist.angular.x = angular_vel[0]
+        twist.angular.y = angular_vel[1]
+        twist.angular.z = angular_vel[2]
+
+        self.cmd_vel_publisher.publish(twist)        
+
     def control_law(self):
         global plan
 
@@ -201,10 +239,12 @@ class BaseAndArmController(Node):
         if plan == 1:
             #move only arm
             print("move only arm")
-            self.target_arm_position = self.delta_goal_arm
-            print("arm_offset_mm: ", self.arm_offset_mm)
-            print("target arm_position", self.target_arm_position)
+            # self.target_arm_position = self.delta_goal_arm
+            # print("arm_offset_mm: ", self.arm_offset_mm)
+            # print("target arm_position", self.target_arm_position)
+            self.move_base()
             self.move_arm()
+            
         if plan == 2:
             #move base and arm
             print("move base and arm")
@@ -253,6 +293,22 @@ class BaseAndArmController(Node):
                 self.current_twist.linear.x = (gain * self.base_stow_error_x) / 1000.0 
             
             self.twist_publisher.publish(self.current_twist)
+
+    def test_open_manip(self):
+        global plan
+        if plan == 1:
+            self.goal_kinematics_pose = [-0.534, 0.014, 0.520, -0.390, -0.001, 0.912, 0.129]
+            self.send_goal_task_space()
+            plan = 2
+        
+    def move_arm(self):
+        global plan
+        if plan == 1:
+            self.goal_kinematics_pose = [-0.405, 0.252, 0.419, 0.386, 0.432, -0.221, 0.784]
+            self.send_goal_task_space()
+
+            plan = 4
+
 
     def control_loop(self):
         self.control_law()

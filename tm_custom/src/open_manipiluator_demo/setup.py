@@ -19,7 +19,7 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['safety = open_manipulator_demo.safety_demo_port:main'
+        'console_scripts': ['safety = open_manipiluator_demo.safety_demo_port:main'
         ],
     },
 )
