@@ -2,13 +2,15 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>custom_package</name>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <description>get image data</description>
-  <maintainer email="mkiyama@scu.edu">rslomron</maintainer>
-  <license>BSD</license>
+
+  <maintainer email="leo.wu@tm-robot.com">leo wu</maintainer>
+  <maintainer email="yh.wang@tm-robot.com">Yh Wang</maintainer>
+
+  <license>BSD-3-Clause</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-
   <build_depend>libopencv-dev</build_depend>
   <build_depend>rclcpp</build_depend>
   <build_depend>rclcpp_components</build_depend>

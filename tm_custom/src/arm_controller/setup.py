@@ -19,7 +19,8 @@ setup(
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
-        'console_scripts': ['controller = arm_controller.controller_node:main'
+        'console_scripts': ['controller = arm_controller.controller_node:main',
+                            'controller_refactor = arm_controller.controller_node_refactor:main'
         ],
     },
 )
