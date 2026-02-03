@@ -9,18 +9,6 @@ from tm_msgs.msg import StaResponse
 from dataclasses import dataclass
 import numpy as np
 
-class EMA:
-    def __init__(self, alpha):
-        self.alpha = alpha
-        self.value = 0.0
-
-    def update(self, new_value):
-        self.value = self.alpha * new_value + (1.0 - self.alpha) * self.value
-        return self.value
-
-# Create EMA objects
-linear_x_ema = EMA(alpha=0.1)
-angular_z_ema = EMA(alpha=0.1)
 
 @dataclass
 class StiffArmParams:
