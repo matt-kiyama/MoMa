@@ -19,6 +19,7 @@ class EMA:
         return self.value
 
 # Create EMA objects
+linear_x_ema = EMA(alpha=0.1)
 angular_z_ema = EMA(alpha=0.1)
 
 @dataclass
@@ -33,6 +34,10 @@ class StiffArmParams:
     vel_min_x: float = -0.020  # m/s
     gain_linear_x: float = 0.15
     gain_angular_z: float = 1.8
+
+    # NEW: acceleration limits
+    acc_limit_x: float = 0.05      # m/s^2
+    acc_limit_z: float = 0.3       # rad/s^2
 
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -72,6 +77,18 @@ class ArmService(Node):
 
         self.declare_parameter("angle", 91.0)
 
+        # Acceleration limiting variables
+        self.prev_vx = 0.0
+        self.prev_wz = 0.0
+        self.prev_time = self.get_clock().now()
+
+    def limit_rate(self, desired, previous, rate_limit, dt):
+        max_delta = rate_limit * dt
+        delta = desired - previous
+        delta = clamp(delta, -max_delta, max_delta)
+        return previous + delta
+
+
     def feedback_callback(self, msg):
         self.cur_pos_cartesian = np.asarray(msg.tool_pose)
         self.tcp_force = np.asarray(msg.tcp_force)
@@ -92,28 +109,55 @@ class ArmService(Node):
         p = self.params
         current_twist = Twist()
 
+        # --- Time step calculation ---
+        now = self.get_clock().now()
+        dt = (now - self.prev_time).nanoseconds * 1e-9
+        self.prev_time = now
+
+        # Guard against bad timing (startup / pauses)
+        if dt <= 0.0 or dt > 0.1:
+            dt = 0.01
+
+        # --- Force processing ---
         tcp_fx = clamp(self.tcp_force[0], p.force_min, p.force_max)
+        tcp_fy = clamp(self.tcp_force[1], p.force_min, p.force_max)
 
-        # Create a deadband
-        if abs(tcp_fx - 0) < 0.4:
+        # Deadband to prevent drift
+        if abs(tcp_fx) < 0.4:
             tcp_fx = 0.0
+        if abs(tcp_fy) < 0.4:
+            tcp_fy = 0.0
 
-        # control law
-        vx = p.gain_linear_x * tcp_fx
-        wz = angular_z_ema.update(self.tcp_force[1] * p.gain_angular_z)
-        # print(f"pre: {vx}")
+        # --- Desired velocity from force ---
+        vx_des = tcp_fx * p.gain_linear_x
+        wz_des = tcp_fy * p.gain_angular_z
+
+        # --- Acceleration limiting (slew rate) ---
+        vx = self.limit_rate(
+            desired=vx_des,
+            previous=self.prev_vx,
+            rate_limit=p.acc_limit_x,
+            dt=dt
+        )
+
+        wz = self.limit_rate(
+            desired=wz_des,
+            previous=self.prev_wz,
+            rate_limit=p.acc_limit_z,
+            dt=dt
+        )
+
+        # --- Velocity limits ---
         vx = clamp(vx, p.vel_min_x, p.vel_max_x)
         wz = clamp(wz, p.vel_min_z, p.vel_max_z)
-        # print(f"post: {vx}")
+
+        # Save for next cycle
+        self.prev_vx = vx
+        self.prev_wz = wz
+
+        # --- Publish ---
         current_twist.linear.x = vx
         current_twist.angular.z = wz
-
-        if vx != 0.0:
-            print("Linear X After Limit: ", current_twist.linear.x)
-        # if wz != 0.0:
-        #     self.zero_vels_count = 0
-
-        # print(f"Current Twist: {current_twist}")
         self.twist_publisher.publish(current_twist)
 
 
