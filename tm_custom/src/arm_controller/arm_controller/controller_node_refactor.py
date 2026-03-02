@@ -11,6 +11,7 @@ import numpy as np
 
 import csv
 import os
+import datetime
 
 
 @dataclass
@@ -22,16 +23,19 @@ class StiffArmParams:
     vel_max_z: float = 0.030  # m/s
     vel_min_z: float = -0.030  # m/s
     vel_max_x: float = 0.040  # m/s
-    vel_min_x: float = -0.060  # m/s
+    vel_min_x: float = -0.040  # m/s
     gain_linear_x: float = 0.18
     gain_angular_z: float = 1.8
 
     # NEW: acceleration limits
-    acc_limit_x: float = 0.2      # m/s^2
+    acc_limit_x = 0.3      # m/s^2
+    dec_limit_x = 0.072     # m/s^2
+    reversal_limit = 0.30
+
     acc_limit_z: float = 0.3       # rad/s^2
 
     # NEW: virtual damping
-    damping_linear_x: float = 7.0     # N / (m/s)
+    damping_linear_x: float =  0.12    # N / (m/s)
     damping_angular_z: float = 3.0    # N / (rad/s)
 
 
@@ -52,8 +56,7 @@ class ArmService(Node):
         # -----------------------------
         log_dir = os.path.expanduser("~/stiff_arm_logs")
         os.makedirs(log_dir, exist_ok=True)
-
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         log_path = os.path.join(
             log_dir,
             f"stiff_arm_log_{timestamp}.csv"
@@ -131,9 +134,9 @@ class ArmService(Node):
         p = self.params
         current_twist = Twist()
 
-        # -----------------------------
+        # -------------------------------------------------
         # Time step
-        # -----------------------------
+        # -------------------------------------------------
         now = self.get_clock().now()
         dt = (now - self.prev_time).nanoseconds * 1e-9
         self.prev_time = now
@@ -144,127 +147,115 @@ class ArmService(Node):
         print("\n--- Stiff Arm Control Cycle ---")
         print("dt:", dt)
 
-        # -----------------------------
+        # -------------------------------------------------
         # Force input
-        # -----------------------------
+        # -------------------------------------------------
         tcp_fx = clamp(self.tcp_force[0], p.force_min, p.force_max)
-        tcp_fy = clamp(self.tcp_force[1], p.force_min, p.force_max)
 
-        # Deadband
+        # Deadband to prevent drift
         if abs(tcp_fx) < 0.4:
             tcp_fx = 0.0
-        if abs(tcp_fy) < 0.4:
-            tcp_fy = 0.0
 
-        print("TCP Force (x, y):", tcp_fx, tcp_fy)
-        print("Previous velocities (vx, wz):", self.prev_vx, self.prev_wz)
+        print("TCP Force:", tcp_fx)
+        print("Previous velocity:", self.prev_vx)
 
-        # -----------------------------
-        # Virtual damping (direction-aware)
-        # -----------------------------
-        if tcp_fx * self.prev_vx > 0.0:
-            damped_fx = tcp_fx - p.damping_linear_x * self.prev_vx
-            damping_x_active = True
-        else:
-            damped_fx = tcp_fx
-            damping_x_active = False
+        # -------------------------------------------------
+        # Proper admittance control
+        # v = gain * force − damping * velocity
+        # -------------------------------------------------
+        vx_force = p.gain_linear_x * tcp_fx
+        vx_damping = p.damping_linear_x * self.prev_vx
 
-        if tcp_fy * self.prev_wz > 0.0:
-            damped_fy = tcp_fy - p.damping_angular_z * self.prev_wz
-            damping_z_active = True
-        else:
-            damped_fy = tcp_fy
-            damping_z_active = False
+        vx_des = vx_force - vx_damping
 
-        print(
-            "Damped Force (x, y):",
-            damped_fx, damped_fy,
-            "| damping active (x, z):",
-            damping_x_active, damping_z_active
-        )
+        print("Force contribution:", vx_force)
+        print("Damping contribution:", vx_damping)
+        print("Desired velocity:", vx_des)
 
-        # -----------------------------
-        # Force → desired velocity
-        # -----------------------------
-        vx_des = damped_fx * p.gain_linear_x
-        wz_des = damped_fy * p.gain_angular_z
-
-        print("Desired velocities (vx_des, wz_des):", vx_des, wz_des)
-
-        # -----------------------------
-        # Asymmetric acceleration limiting
-        # -----------------------------
-        acc_limit_x = p.acc_limit_x
-        acc_limit_z = p.acc_limit_z
-
+        # -------------------------------------------------
+        # Separate accel / decel / reversal limits
+        # -------------------------------------------------
         reversing_x = tcp_fx * self.prev_vx < 0.0
 
-        reversing_z = wz_des * self.prev_wz < 0.0
+        acc_limit_x = p.acc_limit_x
+        dec_limit_x = p.acc_limit_x * 0.4
+        reverse_boost = 2.5
 
         if reversing_x:
-            acc_limit_x *= 4.0
-        if reversing_z:
-            acc_limit_z *= 2.5
+            rate_limit_x = acc_limit_x * reverse_boost
+            limit_type = "REVERSAL"
 
-        print(
-            "Accel limits (x, z):",
-            acc_limit_x, acc_limit_z,
-            "| reversing (x, z):",
-            reversing_x, reversing_z
-        )
+        elif abs(vx_des) < abs(self.prev_vx):
+            rate_limit_x = dec_limit_x
+            limit_type = "DECEL"
 
+        else:
+            rate_limit_x = acc_limit_x
+            limit_type = "ACCEL"
+
+        print("Limit type:", limit_type)
+        print("Rate limit:", rate_limit_x)
+
+        # -------------------------------------------------
+        # Apply rate limiting
+        # -------------------------------------------------
         vx = self.limit_rate(
             desired=vx_des,
             previous=self.prev_vx,
-            rate_limit=acc_limit_x,
+            rate_limit=rate_limit_x,
             dt=dt
         )
 
-        wz = self.limit_rate(
-            desired=wz_des,
-            previous=self.prev_wz,
-            rate_limit=acc_limit_z,
-            dt=dt
-        )
+        print("Rate-limited velocity:", vx)
 
-        print("Rate-limited velocities (vx, wz):", vx, wz)
-
-        # -----------------------------
-        # Velocity limits
-        # -----------------------------
+        # -------------------------------------------------
+        # Velocity clamp
+        # -------------------------------------------------
         vx = clamp(vx, p.vel_min_x, p.vel_max_x)
-        wz = clamp(wz, p.vel_min_z, p.vel_max_z)
 
-        print("Clamped velocities (vx, wz):", vx, wz)
+        print("Clamped velocity:", vx)
 
-        # -----------------------------
-        # CSV logging (offline tuning)
-        # -----------------------------
+        # -------------------------------------------------
+        # Velocity deadband (removes micro-shudder near stop)
+        # -------------------------------------------------
+        if abs(vx) < 0.0005:
+            vx = 0.0
+            print("Velocity deadband applied")
+
+        # -------------------------------------------------
+        # CSV logging
+        # -------------------------------------------------
         t = (now - self.start_time).nanoseconds * 1e-9
 
         self.csv_writer.writerow([
             t,
             tcp_fx,
             self.prev_vx,
-            damped_fx,
+            vx_force,
+            vx_damping,
             vx_des,
             vx,
-            acc_limit_x,
-            reversing_x
+            rate_limit_x,
+            reversing_x,
+            limit_type
         ])
 
-        # -----------------------------
-        # Save state
-        # -----------------------------
-        self.prev_vx = vx
-        self.prev_wz = wz
+        # Flush occasionally
+        if int(t * 50) % 50 == 0:
+            self.csv_file.flush()
 
-        # -----------------------------
+        # -------------------------------------------------
+        # Save state
+        # -------------------------------------------------
+        self.prev_vx = vx
+
+        # -------------------------------------------------
         # Publish
-        # -----------------------------
+        # -------------------------------------------------
         current_twist.linear.x = vx
-        # current_twist.angular.z = wz
         self.twist_publisher.publish(current_twist)
+
+        print("Published velocity:", vx)
 
 
 def main(args=None):
