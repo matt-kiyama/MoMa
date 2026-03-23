@@ -27,7 +27,7 @@ class StiffArmParams:
     vel_min_x: float = -0.040        # m/s
 
     gain_linear_x: float = 0.18
-    gain_angular_z: float = 0.95
+    gain_angular_z: float = 1.1
 
     acc_limit_x: float = 0.3         # m/s^2
     dec_limit_x: float = 0.072       # m/s^2
