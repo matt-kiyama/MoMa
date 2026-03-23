@@ -18,26 +18,25 @@ import datetime
 class StiffArmParams:
     """Parameters for the stiff-arm control behavior."""
 
-    force_max: float = 60.0  # newtons
-    force_min: float = -80.0  # newtons
-    vel_max_z: float = 0.030  # m/s
-    vel_min_z: float = -0.030  # m/s
-    vel_max_x: float = 0.040  # m/s
-    vel_min_x: float = -0.040  # m/s
+    force_max: float = 60.0          # newtons
+    force_min: float = -80.0         # newtons
+
+    vel_max_z: float = 0.050         # rad/s
+    vel_min_z: float = -0.050        # rad/s
+    vel_max_x: float = 0.040         # m/s
+    vel_min_x: float = -0.040        # m/s
+
     gain_linear_x: float = 0.18
-    gain_angular_z: float = 1.8
+    gain_angular_z: float = 1.1
 
-    # NEW: acceleration limits
-    acc_limit_x = 0.3      # m/s^2
-    dec_limit_x = 0.072     # m/s^2
-    reversal_limit = 0.30
+    acc_limit_x: float = 0.3         # m/s^2
+    dec_limit_x: float = 0.072       # m/s^2
+    reversal_limit: float = 0.30     # m/s^2 or multiplier depending on usage
 
-    acc_limit_z: float = 0.3       # rad/s^2
+    acc_limit_z: float = 0.35        # rad/s^2
 
-    # NEW: virtual damping
-    damping_linear_x: float =  0.12    # N / (m/s)
-    damping_angular_z: float = 3.0    # N / (rad/s)
-
+    damping_linear_x: float = 0.12   # N / (m/s)
+    damping_angular_z: float = 0.65   # N*m / (rad/s)
 
 def clamp(value: float, lower: float, upper: float) -> float:
     """Clamp a value between lower and upper bounds."""
@@ -107,6 +106,8 @@ class ArmService(Node):
         self.prev_wz = 0.0
         self.prev_time = self.get_clock().now()
 
+        self.filtered_fy = 0.0
+
     def limit_rate(self, desired, previous, rate_limit, dt):
         max_delta = rate_limit * dt
         delta = desired - previous
@@ -151,30 +152,29 @@ class ArmService(Node):
         # Force input
         # -------------------------------------------------
         tcp_fx = clamp(self.tcp_force[0], p.force_min, p.force_max)
+        tcp_fy = clamp(self.tcp_force[1], p.force_min, p.force_max)
 
-        # Deadband to prevent drift
+        alpha_fy = 0.2
+        self.filtered_fy = alpha_fy * tcp_fy + (1.0 - alpha_fy) * self.filtered_fy
+        tcp_fy = self.filtered_fy
+
+        # Deadbands
         if abs(tcp_fx) < 0.4:
             tcp_fx = 0.0
+        if abs(tcp_fy) < 0.4:
+            tcp_fy = 0.0
 
-        print("TCP Force:", tcp_fx)
-        print("Previous velocity:", self.prev_vx)
+        print("TCP Force X:", tcp_fx)
+        print("TCP Force Y:", tcp_fy)
 
-        # -------------------------------------------------
-        # Proper admittance control
-        # v = gain * force − damping * velocity
-        # -------------------------------------------------
+        # =================================================
+        # ===== LINEAR X (UNCHANGED — YOUR GOOD LOGIC) =====
+        # =================================================
+
         vx_force = p.gain_linear_x * tcp_fx
         vx_damping = p.damping_linear_x * self.prev_vx
-
         vx_des = vx_force - vx_damping
 
-        print("Force contribution:", vx_force)
-        print("Damping contribution:", vx_damping)
-        print("Desired velocity:", vx_des)
-
-        # -------------------------------------------------
-        # Separate accel / decel / reversal limits
-        # -------------------------------------------------
         reversing_x = tcp_fx * self.prev_vx < 0.0
 
         acc_limit_x = p.acc_limit_x
@@ -183,47 +183,76 @@ class ArmService(Node):
 
         if reversing_x:
             rate_limit_x = acc_limit_x * reverse_boost
-            limit_type = "REVERSAL"
-
+            limit_type_x = "REVERSAL"
         elif abs(vx_des) < abs(self.prev_vx):
             rate_limit_x = dec_limit_x
-            limit_type = "DECEL"
-
+            limit_type_x = "DECEL"
         else:
             rate_limit_x = acc_limit_x
-            limit_type = "ACCEL"
+            limit_type_x = "ACCEL"
 
-        print("Limit type:", limit_type)
-        print("Rate limit:", rate_limit_x)
+        vx = self.limit_rate(vx_des, self.prev_vx, rate_limit_x, dt)
+        vx = clamp(vx, p.vel_min_x, p.vel_max_x)
 
-        # -------------------------------------------------
-        # Apply rate limiting
-        # -------------------------------------------------
-        vx = self.limit_rate(
-            desired=vx_des,
-            previous=self.prev_vx,
-            rate_limit=rate_limit_x,
+        if abs(vx) < 0.0005:
+            vx = 0.0
+
+        # =================================================
+        # ============ ANGULAR Z (REGENERATED) ============
+        # =================================================
+
+        wz_force = p.gain_angular_z * tcp_fy
+        wz_damping = p.damping_angular_z * self.prev_wz
+        wz_des = wz_force - wz_damping
+
+        print("Z Force contribution:", wz_force)
+        print("Z Damping contribution:", wz_damping)
+        print("Z Desired velocity:", wz_des)
+
+        reversing_z = tcp_fy * self.prev_wz < 0.0
+
+        acc_limit_z = p.acc_limit_z
+        dec_limit_z = p.acc_limit_z * 0.35
+        reverse_boost_z = 1.5
+
+        if reversing_z:
+            rate_limit_z = acc_limit_z * reverse_boost_z
+            limit_type_z = "REVERSAL"
+        elif abs(wz_des) < abs(self.prev_wz):
+            rate_limit_z = dec_limit_z
+            limit_type_z = "DECEL"
+        else:
+            rate_limit_z = acc_limit_z
+            limit_type_z = "ACCEL"
+
+        print("Z Limit type:", limit_type_z)
+        print("Z Rate limit:", rate_limit_z)
+
+        wz = self.limit_rate(
+            desired=wz_des,
+            previous=self.prev_wz,
+            rate_limit=rate_limit_z,
             dt=dt
         )
 
-        print("Rate-limited velocity:", vx)
+        print("Z Rate-limited velocity:", wz)
+
+        wz_before_clamp = wz
+        wz = clamp(wz, p.vel_min_z, p.vel_max_z)
+
+        if wz != wz_before_clamp:
+            print("Angular velocity clamped!")
+
+        print("Z Clamped velocity:", wz)
+
+        if abs(wz) < 0.0005:
+            wz = 0.0
+            print("Z Velocity deadband applied")
+
+        print("Final wz:", wz)
 
         # -------------------------------------------------
-        # Velocity clamp
-        # -------------------------------------------------
-        vx = clamp(vx, p.vel_min_x, p.vel_max_x)
-
-        print("Clamped velocity:", vx)
-
-        # -------------------------------------------------
-        # Velocity deadband (removes micro-shudder near stop)
-        # -------------------------------------------------
-        if abs(vx) < 0.0005:
-            vx = 0.0
-            print("Velocity deadband applied")
-
-        # -------------------------------------------------
-        # CSV logging
+        # CSV logging (extended)
         # -------------------------------------------------
         t = (now - self.start_time).nanoseconds * 1e-9
 
@@ -237,10 +266,17 @@ class ArmService(Node):
             vx,
             rate_limit_x,
             reversing_x,
-            limit_type
+            limit_type_x,
+            tcp_fy,
+            self.prev_wz,
+            wz_force,
+            wz_damping,
+            wz_des,
+            wz,
+            rate_limit_z,
+            limit_type_z
         ])
 
-        # Flush occasionally
         if int(t * 50) % 50 == 0:
             self.csv_file.flush()
 
@@ -248,14 +284,17 @@ class ArmService(Node):
         # Save state
         # -------------------------------------------------
         self.prev_vx = vx
+        self.prev_wz = wz
 
         # -------------------------------------------------
         # Publish
         # -------------------------------------------------
-        current_twist.linear.x = vx
+        # current_twist.linear.x = vx
+        current_twist.angular.z = wz
         self.twist_publisher.publish(current_twist)
 
-        print("Published velocity:", vx)
+        print("Published vx:", vx, "| wz:", wz)
+
 
 
 def main(args=None):
