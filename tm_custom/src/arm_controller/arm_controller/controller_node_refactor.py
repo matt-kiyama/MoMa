@@ -27,7 +27,7 @@ class StiffArmParams:
     vel_min_x: float = -0.040        # m/s
 
     gain_linear_x: float = 0.18
-    gain_angular_z: float = 1.1
+    gain_angular_z: float = 0.95
 
     acc_limit_x: float = 0.3         # m/s^2
     dec_limit_x: float = 0.072       # m/s^2
@@ -107,6 +107,7 @@ class ArmService(Node):
         self.prev_time = self.get_clock().now()
 
         self.filtered_fy = 0.0
+        self.filtered_fx = 0.0
 
     def limit_rate(self, desired, previous, rate_limit, dt):
         max_delta = rate_limit * dt
@@ -154,18 +155,44 @@ class ArmService(Node):
         tcp_fx = clamp(self.tcp_force[0], p.force_min, p.force_max)
         tcp_fy = clamp(self.tcp_force[1], p.force_min, p.force_max)
 
-        alpha_fy = 0.2
+        # Low-pass filter forces
+        alpha_fx = 0.2
+        alpha_fy = 0.12
+
+        self.filtered_fx = alpha_fx * tcp_fx + (1.0 - alpha_fx) * self.filtered_fx
         self.filtered_fy = alpha_fy * tcp_fy + (1.0 - alpha_fy) * self.filtered_fy
+
+        tcp_fx = self.filtered_fx
         tcp_fy = self.filtered_fy
 
         # Deadbands
         if abs(tcp_fx) < 0.4:
             tcp_fx = 0.0
-        if abs(tcp_fy) < 0.4:
+        if abs(tcp_fy) < 0.6:
             tcp_fy = 0.0
+
+        # Asymmetric soft blending
+        # Keep x available, suppress z more strongly when x is active
+        blend_strength_x = 0.2
+        blend_strength_z = 1.4
+
+        abs_fx = abs(tcp_fx)
+        abs_fy = abs(tcp_fy)
+        denom = max(abs_fx + abs_fy, 1e-6)
+
+        fx_ratio = abs_fx / denom
+        fy_ratio = abs_fy / denom
+
+        x_scale = max(0.0, 1.0 - blend_strength_x * fy_ratio)
+        z_scale = max(0.0, 1.0 - blend_strength_z * fx_ratio)
+
+        tcp_fx = tcp_fx * x_scale
+        tcp_fy = tcp_fy * z_scale
 
         print("TCP Force X:", tcp_fx)
         print("TCP Force Y:", tcp_fy)
+        print("Blend ratios X/Y:", fx_ratio, fy_ratio)
+        print("Blend scales X/Z:", x_scale, z_scale)
 
         # =================================================
         # ===== LINEAR X (UNCHANGED — YOUR GOOD LOGIC) =====
@@ -257,24 +284,29 @@ class ArmService(Node):
         t = (now - self.start_time).nanoseconds * 1e-9
 
         self.csv_writer.writerow([
-            t,
-            tcp_fx,
-            self.prev_vx,
-            vx_force,
-            vx_damping,
-            vx_des,
-            vx,
-            rate_limit_x,
-            reversing_x,
-            limit_type_x,
-            tcp_fy,
-            self.prev_wz,
-            wz_force,
-            wz_damping,
-            wz_des,
-            wz,
-            rate_limit_z,
-            limit_type_z
+            # Time
+            "time_sec",
+
+            # -------- Linear X --------
+            "tcp_fx",
+            "prev_vx",
+            "vx_force",
+            "vx_damping",
+            "vx_des",
+            "vx_cmd",
+            "rate_limit_x",
+            "reversing_x",
+            "limit_type_x",
+
+            # -------- Angular Z --------
+            "tcp_fy",
+            "prev_wz",
+            "wz_force",
+            "wz_damping",
+            "wz_des",
+            "wz_cmd",
+            "rate_limit_z",
+            "limit_type_z"
         ])
 
         if int(t * 50) % 50 == 0:
@@ -289,7 +321,7 @@ class ArmService(Node):
         # -------------------------------------------------
         # Publish
         # -------------------------------------------------
-        # current_twist.linear.x = vx
+        current_twist.linear.x = vx
         current_twist.angular.z = wz
         self.twist_publisher.publish(current_twist)
 
