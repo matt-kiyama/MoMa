@@ -1,3 +1,6 @@
+import os
+from glob import glob
+
 from setuptools import find_packages, setup
 
 package_name = 'arm_controller'
@@ -10,6 +13,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,7 +24,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': ['controller = arm_controller.controller_node:main',
-                            'controller_refactor = arm_controller.controller_node_refactor:main'
+                            'controller_refactor = arm_controller.controller_node_refactor:main',
+                            'stiff_tuner_gui = arm_controller.stiff_param_tuner_gui:main'
         ],
     },
 )

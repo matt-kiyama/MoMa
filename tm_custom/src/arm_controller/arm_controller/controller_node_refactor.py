@@ -2,11 +2,14 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
+from nav_msgs.msg import Odometry
+from rcl_interfaces.msg import SetParametersResult
+from rclpy.parameter import Parameter
 
 from tm_msgs.msg import FeedbackState
 from tm_msgs.msg import StaResponse
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 import numpy as np
 
 import csv
@@ -46,6 +49,13 @@ def clamp(value: float, lower: float, upper: float) -> float:
 
 
 class ArmService(Node):
+    STIFF_PARAM_PREFIX = "stiff_arm"
+    STIFF_PARAM_FIELDS = tuple(StiffArmParams.__dataclass_fields__.keys())
+
+    STOP_LINEAR_X_THRESHOLD = 0.01
+    STOP_LINEAR_Y_THRESHOLD = 0.01
+    STOP_ANGULAR_Z_THRESHOLD = 0.02
+    STOP_HOLD_TIME_SEC = 0.25
 
     def __init__(self):
         super().__init__("arm_service")
@@ -86,9 +96,13 @@ class ArmService(Node):
         self.sta_subscription = self.create_subscription(
             StaResponse, "sta_response", self.sta_callback, 10
         )
+        self.odom_subscription = self.create_subscription(
+            Odometry, "ld250_pose", self.odom_callback, 10
+        )
 
         self.feedback_subscription
         self.sta_subscription
+        self.odom_subscription
 
         # Publisher
         self.twist_publisher = self.create_publisher(Twist, "/platform/velocity_command", 10)
@@ -99,7 +113,13 @@ class ArmService(Node):
         self.zero_vels_count = 0
         self.sta_response_val = False
 
+        self.base_is_stopped = False
+        self._stopped_since_sec = None
+
         self.declare_parameter("angle", 91.0)
+        self._declare_stiff_arm_parameters()
+        self._apply_param_values_to_struct(self._read_stiff_arm_parameter_values())
+        self.param_callback_handle = self.add_on_set_parameters_callback(self._on_set_parameters)
 
         # Acceleration limiting variables
         self.prev_vx = 0.0
@@ -114,6 +134,118 @@ class ArmService(Node):
         delta = desired - previous
         delta = clamp(delta, -max_delta, max_delta)
         return previous + delta
+
+    def _declare_stiff_arm_parameters(self):
+        defaults = asdict(self.params)
+        for field_name in self.STIFF_PARAM_FIELDS:
+            self.declare_parameter(
+                f"{self.STIFF_PARAM_PREFIX}.{field_name}",
+                float(defaults[field_name]),
+            )
+
+    def _read_stiff_arm_parameter_values(self):
+        values = {}
+        for field_name in self.STIFF_PARAM_FIELDS:
+            param_value = self.get_parameter(f"{self.STIFF_PARAM_PREFIX}.{field_name}").value
+            values[field_name] = float(param_value)
+        return values
+
+    def _apply_param_values_to_struct(self, values):
+        for field_name in self.STIFF_PARAM_FIELDS:
+            setattr(self.params, field_name, float(values[field_name]))
+
+    def _validate_stiff_arm_params(self, values):
+        if values["force_min"] >= values["force_max"]:
+            return False, "force_min must be less than force_max."
+
+        if values["vel_min_x"] >= values["vel_max_x"]:
+            return False, "vel_min_x must be less than vel_max_x."
+
+        if values["vel_min_z"] >= values["vel_max_z"]:
+            return False, "vel_min_z must be less than vel_max_z."
+
+        if values["acc_limit_x"] <= 0.0:
+            return False, "acc_limit_x must be > 0."
+
+        if values["dec_limit_x"] <= 0.0:
+            return False, "dec_limit_x must be > 0."
+
+        if values["reversal_limit"] <= 0.0:
+            return False, "reversal_limit must be > 0."
+
+        if values["acc_limit_z"] <= 0.0:
+            return False, "acc_limit_z must be > 0."
+
+        if values["gain_linear_x"] < 0.0 or values["gain_angular_z"] < 0.0:
+            return False, "gain values must be >= 0."
+
+        if values["damping_linear_x"] < 0.0 or values["damping_angular_z"] < 0.0:
+            return False, "damping values must be >= 0."
+
+        return True, ""
+
+    def _on_set_parameters(self, parameters):
+        result = SetParametersResult(successful=True, reason="")
+
+        updates = {}
+        for param in parameters:
+            if not param.name.startswith(f"{self.STIFF_PARAM_PREFIX}."):
+                continue
+
+            field_name = param.name.split(".", 1)[1]
+            if field_name not in self.STIFF_PARAM_FIELDS:
+                result.successful = False
+                result.reason = f"Unknown stiff-arm parameter: {param.name}"
+                return result
+
+            if param.type_ not in (Parameter.Type.DOUBLE, Parameter.Type.INTEGER):
+                result.successful = False
+                result.reason = f"Parameter {param.name} must be numeric."
+                return result
+
+            updates[field_name] = float(param.value)
+
+        if not updates:
+            return result
+
+        if not self.base_is_stopped:
+            result.successful = False
+            result.reason = "Base must be stopped for at least 0.25s before tuning parameters."
+            return result
+
+        candidate_values = asdict(self.params)
+        candidate_values.update(updates)
+
+        is_valid, reason = self._validate_stiff_arm_params(candidate_values)
+        if not is_valid:
+            result.successful = False
+            result.reason = reason
+            return result
+
+        self._apply_param_values_to_struct(candidate_values)
+        return result
+
+    def odom_callback(self, msg):
+        linear_x = msg.twist.twist.linear.x
+        linear_y = msg.twist.twist.linear.y
+        angular_z = msg.twist.twist.angular.z
+
+        below_threshold = (
+            abs(linear_x) <= self.STOP_LINEAR_X_THRESHOLD
+            and abs(linear_y) <= self.STOP_LINEAR_Y_THRESHOLD
+            and abs(angular_z) <= self.STOP_ANGULAR_Z_THRESHOLD
+        )
+
+        now_sec = self.get_clock().now().nanoseconds * 1e-9
+        if below_threshold:
+            if self._stopped_since_sec is None:
+                self._stopped_since_sec = now_sec
+                self.base_is_stopped = False
+            else:
+                self.base_is_stopped = (now_sec - self._stopped_since_sec) >= self.STOP_HOLD_TIME_SEC
+        else:
+            self._stopped_since_sec = None
+            self.base_is_stopped = False
 
 
     def feedback_callback(self, msg):
@@ -205,8 +337,8 @@ class ArmService(Node):
         reversing_x = tcp_fx * self.prev_vx < 0.0
 
         acc_limit_x = p.acc_limit_x
-        dec_limit_x = p.acc_limit_x * 0.4
-        reverse_boost = 2.5
+        dec_limit_x = p.dec_limit_x
+        reverse_boost = p.reversal_limit
 
         if reversing_x:
             rate_limit_x = acc_limit_x * reverse_boost
