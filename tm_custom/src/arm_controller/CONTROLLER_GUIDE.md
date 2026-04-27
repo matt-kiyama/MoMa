@@ -208,37 +208,128 @@ Updates are rejected unless:
 
 ## 8) Symptom -> Adjustment Cheat Sheet
 
-- Too jumpy in X:
-  - decrease `gain_linear_x`
-  - increase `damping_linear_x`
-  - decrease `acc_limit_x`
+### Core math (used by all examples)
 
-- X feels sluggish:
-  - increase `gain_linear_x`
-  - decrease `damping_linear_x`
-  - increase `acc_limit_x`
+Linear X:
 
-- X overshoots after release:
-  - increase `damping_linear_x`
-  - increase `dec_limit_x` if stopping is too slow
+- `vx_des = gain_linear_x * tcp_fx - damping_linear_x * prev_vx`
+- `vx_next = prev_vx + clip(vx_des - prev_vx, -rate_x * dt, rate_x * dt)`
+- `vx_cmd = clip(vx_next, vel_min_x, vel_max_x)`
 
-- Reversal feels harsh:
-  - decrease `reversal_limit`
-  - decrease `acc_limit_x`
+Where `rate_x` is:
 
-- Reversal feels delayed:
-  - increase `reversal_limit`
-  - increase `acc_limit_x` slightly
+- `acc_limit_x` during accel
+- `dec_limit_x` during decel
+- `acc_limit_x * reversal_limit` during reversal
 
-- Yaw turns too fast:
-  - decrease `gain_angular_z`
-  - increase `damping_angular_z`
-  - lower `vel_max_z`
+Angular Z:
 
-- Yaw turns too slow:
-  - increase `gain_angular_z`
-  - decrease `damping_angular_z`
-  - raise `vel_max_z` cautiously
+- `wz_des = gain_angular_z * tcp_fy - damping_angular_z * prev_wz`
+- `wz_next = prev_wz + clip(wz_des - prev_wz, -rate_z * dt, rate_z * dt)`
+- `wz_cmd = clip(wz_next, vel_min_z, vel_max_z)`
+
+Where `rate_z` is:
+
+- `acc_limit_z` during accel
+- `acc_limit_z * 0.35` during decel
+- `acc_limit_z * 1.5` during reversal
+
+Below, examples use `dt = 0.02 s` (50 Hz).
+
+### A) Too jumpy in X
+
+What math shows:
+
+- Per-cycle jump size is bounded by `acc_limit_x * dt`.
+- With `acc_limit_x = 0.30`, jump is `0.006 m/s` each cycle.
+- With `acc_limit_x = 1.20`, jump is `0.024 m/s` each cycle (4x sharper).
+
+Action:
+
+- Decrease `acc_limit_x` first for smoother onset.
+- If still jumpy, decrease `gain_linear_x` and/or increase `damping_linear_x`.
+
+### B) X feels sluggish
+
+What math shows:
+
+- If ramp is too small, response lags even when `vx_des` is large.
+- Example: from `0` to `0.04 m/s` cap:
+  - `acc_limit_x = 0.30` -> `0.04 / (0.30*0.02) = ~7 cycles` (~0.14 s)
+  - `acc_limit_x = 0.10` -> `0.04 / (0.10*0.02) = ~20 cycles` (~0.40 s)
+
+Action:
+
+- Increase `acc_limit_x` for faster rise.
+- For low-force response, increase `gain_linear_x` slightly.
+- If response is sticky, decrease `damping_linear_x`.
+
+### C) X overshoots after release
+
+At force release, `tcp_fx -> 0`, so:
+
+- `vx_des = -damping_linear_x * prev_vx`
+
+Example with `prev_vx = 0.03 m/s`:
+
+- `damping_linear_x = 0.12` -> `vx_des = -0.0036`
+- Decel step size with `dec_limit_x = 0.072`:
+  - max change per cycle = `0.072*0.02 = 0.00144 m/s`
+  - stop time from `0.03` is about `0.03 / 0.00144 = ~21 cycles` (~0.42 s)
+
+Action:
+
+- Increase `dec_limit_x` to shorten stop time.
+- Increase `damping_linear_x` if coasting persists.
+
+### D) Reversal feels harsh vs delayed
+
+In reversal, `rate_x = acc_limit_x * reversal_limit`.
+
+Example with `acc_limit_x = 0.30`:
+
+- `reversal_limit = 0.30` -> `rate_x = 0.09`, step = `0.0018 m/s/cycle`
+- `reversal_limit = 1.50` -> `rate_x = 0.45`, step = `0.0090 m/s/cycle`
+
+From `+0.03` to `-0.03 m/s` (total change `0.06`):
+
+- at `0.0018` step -> ~33 cycles (~0.66 s) -> delayed feel
+- at `0.0090` step -> ~7 cycles (~0.14 s) -> sharp/harsh feel
+
+Action:
+
+- Harsh reversal: lower `reversal_limit` or `acc_limit_x`.
+- Delayed reversal: raise `reversal_limit` modestly.
+
+### E) Yaw turns too fast
+
+What math shows:
+
+- Yaw is usually bounded by `vel_max_z` for moderate/large force.
+- Example with `tcp_fy = 1.0`, `gain_angular_z = 1.1`, `prev_wz = 0`:
+  - `wz_des = 1.1 rad/s` (much larger than default cap `0.05`)
+  - output will quickly hit `vel_max_z`.
+
+Action:
+
+- Lower `vel_max_z` to limit top turn speed.
+- Decrease `gain_angular_z` for softer sensitivity.
+- Increase `damping_angular_z` to reduce turn carry-over after release.
+
+### F) Yaw turns too slow
+
+What math shows:
+
+- Rise time depends on `acc_limit_z`.
+- To reach `0.05 rad/s` from zero:
+  - `acc_limit_z = 0.35` -> step `0.007`, ~8 cycles (~0.16 s)
+  - `acc_limit_z = 0.10` -> step `0.002`, ~25 cycles (~0.50 s)
+
+Action:
+
+- Increase `acc_limit_z` for faster turn onset.
+- Increase `gain_angular_z` if low-force turning is weak.
+- Raise `vel_max_z` cautiously only if safe.
 
 ## 9) Run Commands
 
