@@ -2,6 +2,10 @@
 
 This package now supports live tuning of stiff-arm controller gains/limits while the controller is running, with a safety lock that only allows parameter updates when the mobile base is stopped.
 
+Additional docs:
+
+- `CONTROLLER_GUIDE.md`: full controller internals and tuning playbook
+
 ## What Was Added
 
 - Runtime ROS parameters for all stiff-arm tuning fields under `stiff_arm.*`.
@@ -51,6 +55,85 @@ All of these are ROS parameters under `stiff_arm.*`:
 - `acc_limit_z`
 - `damping_linear_x`
 - `damping_angular_z`
+
+## Detailed Tuning Guide
+
+This section explains exactly how each variable affects the control output.
+
+### 1) Control Law Reference
+
+Linear X path:
+
+- `tcp_fx` is clamped by `force_min/force_max`, filtered, then used in:
+- `vx_des = gain_linear_x * tcp_fx - damping_linear_x * prev_vx`
+- `vx` is rate-limited:
+  - accel phase: `acc_limit_x`
+  - decel phase: `dec_limit_x`
+  - reversal phase: `acc_limit_x * reversal_limit`
+- final `vx` is clamped to `vel_min_x/vel_max_x`
+
+Angular Z path:
+
+- `tcp_fy` is clamped by `force_min/force_max`, filtered, then used in:
+- `wz_des = gain_angular_z * tcp_fy - damping_angular_z * prev_wz`
+- `wz` is rate-limited using `acc_limit_z` (decel path is derived in code from it)
+- final `wz` is clamped to `vel_min_z/vel_max_z`
+
+### 2) Parameter-By-Parameter Guidance
+
+| Parameter | What it does | If too high | If too low | Tuning tip |
+|---|---|---|---|---|
+| `force_max` | Upper force clamp before control law (N). | Feels overly aggressive on hard pushes. | Saturates early, won’t respond proportionally to stronger push. | Start conservative; increase only if you see frequent clamp saturation. |
+| `force_min` | Lower force clamp before control law (N). | Same risk as above in negative direction. | Negative-direction commands saturate too early. | Keep roughly symmetric with `force_max` unless asymmetry is intentional. |
+| `gain_linear_x` | Converts force-X to desired linear speed. | Twitchy, oversensitive fore/aft motion. | Sluggish base response in X. | Increase in small steps (~5-15%) until responsiveness is acceptable. |
+| `damping_linear_x` | Opposes current X speed to reduce overshoot. | Feels heavy/sticky; hard to keep moving. | Oscillation or overshoot in X. | Raise this after gain if X feels “bouncy.” |
+| `acc_limit_x` | Max ramp rate for increasing X speed (m/s²). | Jerky/abrupt acceleration. | Slow to pick up speed from rest. | Tune for comfort and traction limits of your base. |
+| `dec_limit_x` | Ramp rate when reducing X speed magnitude (m/s²). | Harsh braking feel, sudden slowdown. | Long coasting/stopping distance. | Lower for smoother stop; raise for tighter control. |
+| `reversal_limit` | Multiplier on `acc_limit_x` during X direction reversal. | Snappy reversal, possible jerk/chatter. | Hesitant reversal with lag crossing through zero. | Keep near current value; increase only if reversals feel delayed. |
+| `vel_max_x` | Positive X speed cap (m/s). | Base can move too fast for safe hand-guiding. | Tops out too early. | Set from safety/ops speed policy first, then tune gains. |
+| `vel_min_x` | Negative X speed cap (m/s). | Too fast in reverse direction. | Reverse motion feels artificially weak. | Match magnitude of `vel_max_x` unless asymmetric behavior is needed. |
+| `gain_angular_z` | Converts force-Y to desired yaw rate. | Over-rotates easily; hard to make fine turns. | Requires large force to rotate. | Increase gradually after X tuning is stable. |
+| `damping_angular_z` | Opposes current yaw rate to smooth turns. | Feels resistant to turning. | Yaw overshoot or oscillatory turn response. | Raise if yaw keeps “coasting” after force release. |
+| `acc_limit_z` | Max ramp rate for yaw speed changes (rad/s²). | Sharp rotational onset. | Slow turn initiation. | Tune for comfort and anti-slip behavior during turning. |
+| `vel_max_z` | Positive yaw-rate cap (rad/s). | Rotation may feel unsafe/too fast. | Cannot reach desired turning speed. | Set by safety first, then raise only as needed. |
+| `vel_min_z` | Negative yaw-rate cap (rad/s). | Too fast in opposite rotation direction. | Opposite direction feels weak. | Usually keep symmetric with `vel_max_z`. |
+
+### 3) Recommended Tuning Order
+
+1. Set safety envelopes first:
+   - `vel_max_x`, `vel_min_x`, `vel_max_z`, `vel_min_z`
+   - `force_max`, `force_min`
+2. Tune responsiveness:
+   - `gain_linear_x`, then `gain_angular_z`
+3. Add damping for stability:
+   - `damping_linear_x`, then `damping_angular_z`
+4. Shape motion feel:
+   - `acc_limit_x`, `dec_limit_x`, `reversal_limit`, `acc_limit_z`
+5. Re-check caps:
+   - confirm behavior never relies on constant saturation at velocity limits.
+
+### 4) Practical Test Routine
+
+Use the same short test sequence after each change:
+
+1. Apply a small push in +X and release.
+2. Apply a small push in -X and release.
+3. Reverse quickly from +X to -X.
+4. Apply small left/right yaw inputs via force-Y.
+5. Confirm stop behavior is smooth and repeatable.
+
+If one axis feels good, lock it and tune the other axis next.
+
+### 5) Important Non-Tunable Internals (Current Code)
+
+These are fixed in `controller_node_refactor.py` right now:
+
+- Force filter coefficients (`alpha_fx`, `alpha_fy`)
+- Deadbands for force channels
+- Axis blending terms (`blend_strength_x`, `blend_strength_z`)
+- Z-axis decel/reversal shaping constants derived from `acc_limit_z`
+
+If your tuning hits a wall, these fixed terms may be the next knobs to expose.
 
 ## Validation Rules
 

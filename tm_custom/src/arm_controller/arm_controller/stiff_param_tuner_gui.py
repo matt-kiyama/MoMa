@@ -26,6 +26,22 @@ class StiffParamTunerGui(Node):
         "damping_linear_x",
         "damping_angular_z",
     )
+    PARAM_DESCRIPTIONS = {
+        "force_max": "Upper clamp for measured TCP force (N).",
+        "force_min": "Lower clamp for measured TCP force (N).",
+        "vel_max_z": "Maximum commanded base angular velocity around Z (rad/s).",
+        "vel_min_z": "Minimum commanded base angular velocity around Z (rad/s).",
+        "vel_max_x": "Maximum commanded base linear velocity in X (m/s).",
+        "vel_min_x": "Minimum commanded base linear velocity in X (m/s).",
+        "gain_linear_x": "Gain from filtered force-X to desired linear velocity-X.",
+        "gain_angular_z": "Gain from filtered force-Y to desired angular velocity-Z.",
+        "acc_limit_x": "Rate limit for increasing linear velocity-X (m/s^2).",
+        "dec_limit_x": "Rate limit for reducing linear velocity-X magnitude (m/s^2).",
+        "reversal_limit": "Multiplier for X rate limit during direction reversal.",
+        "acc_limit_z": "Rate limit for angular velocity-Z changes (rad/s^2).",
+        "damping_linear_x": "Linear damping term applied against previous linear velocity.",
+        "damping_angular_z": "Angular damping term applied against previous angular velocity.",
+    }
 
     STOP_LINEAR_X_THRESHOLD = 0.01
     STOP_LINEAR_Y_THRESHOLD = 0.01
@@ -61,7 +77,7 @@ class StiffParamTunerGui(Node):
 
     def _build_ui(self):
         self.root.title("Stiff Arm Parameter Tuner")
-        self.root.geometry("620x620")
+        self.root.geometry("980x620")
 
         header = tk.Frame(self.root, padx=12, pady=12)
         header.pack(fill=tk.X)
@@ -85,21 +101,57 @@ class StiffParamTunerGui(Node):
             pady=2,
         )
         self.status_badge.pack(side=tk.LEFT, padx=(8, 0))
+        tk.Label(
+            header,
+            text="Tuning is applied only when status is STOPPED.",
+            anchor="w",
+            fg="#666666",
+            pady=4,
+        ).pack(fill=tk.X)
 
         table_frame = tk.Frame(self.root, padx=12, pady=8)
         table_frame.pack(fill=tk.BOTH, expand=True)
 
+        tk.Label(
+            table_frame,
+            text="Parameter",
+            anchor="w",
+            font=("TkDefaultFont", 9, "bold"),
+        ).grid(row=0, column=0, sticky="w", padx=(0, 10), pady=(0, 6))
+        tk.Label(
+            table_frame,
+            text="Value",
+            anchor="w",
+            font=("TkDefaultFont", 9, "bold"),
+        ).grid(row=0, column=1, sticky="w", pady=(0, 6))
+        tk.Label(
+            table_frame,
+            text="Description",
+            anchor="w",
+            font=("TkDefaultFont", 9, "bold"),
+        ).grid(row=0, column=2, sticky="w", padx=(12, 0), pady=(0, 6))
+
         for row, field_name in enumerate(self.PARAM_FIELDS):
+            display_row = row + 1
             tk.Label(
                 table_frame,
                 text=field_name,
                 anchor="w",
                 width=22,
-            ).grid(row=row, column=0, sticky="w", padx=(0, 10), pady=3)
+            ).grid(row=display_row, column=0, sticky="w", padx=(0, 10), pady=3)
 
             entry = tk.Entry(table_frame, width=20)
-            entry.grid(row=row, column=1, sticky="w", pady=3)
+            entry.grid(row=display_row, column=1, sticky="w", pady=3)
             self.entries[field_name] = entry
+
+            tk.Label(
+                table_frame,
+                text=self.PARAM_DESCRIPTIONS[field_name],
+                anchor="w",
+                justify=tk.LEFT,
+                wraplength=520,
+                fg="#444444",
+            ).grid(row=display_row, column=2, sticky="w", padx=(12, 0), pady=3)
 
         action_frame = tk.Frame(self.root, padx=12, pady=8)
         action_frame.pack(fill=tk.X)
