@@ -28,8 +28,9 @@ Primary implementation file:
   - Used for tool force (`tcp_force`) and tool pose (`tool_pose`)
 - `sta_response` (`tm_msgs/msg/StaResponse`)
   - Status message handling (queue-tag related)
-- `ld250_pose` (`nav_msgs/msg/Odometry`)
+- `/platform/odometry` (`nav_msgs/msg/Odometry`)
   - Used to determine whether base is stopped for safe parameter updates
+  - Subscribed with sensor-data/best-effort QoS to match the base publisher
 
 ### Publisher
 
@@ -59,6 +60,7 @@ Each time a `feedback_states` message arrives, `_stiff_arm_control()` runs.
 - X channel: `alpha_fx = 0.2`
 - Y channel: `alpha_fy = 0.12`
 - Smoothed values become `tcp_fx` and `tcp_fy`
+- If raw force returns inside the deadband, or changes sign against the filtered force, the filtered value is reset to `0`. This prevents the filter tail from commanding continued motion after release.
 
 4. Apply deadband
 - X deadband: `|tcp_fx| < 0.4` -> `tcp_fx = 0`
@@ -110,10 +112,17 @@ The controller rejects tuning updates unless the base is stopped.
 
 Stop criteria:
 
-- `|linear.x| <= 0.01`
-- `|linear.y| <= 0.01`
-- `|angular.z| <= 0.02`
+- `|linear.x| <= 0.03` by default
+- `|linear.y| <= 0.03` by default
+- `|angular.z| <= 0.05` by default
 - Conditions above must hold continuously for at least `0.25` seconds
+
+The thresholds and hold time are ROS parameters:
+
+- `stop_linear_x_threshold`
+- `stop_linear_y_threshold`
+- `stop_angular_z_threshold`
+- `stop_hold_time_sec`
 
 If not stopped, parameter writes fail with:
 
@@ -266,7 +275,7 @@ Action:
 
 ### C) X overshoots after release
 
-At force release, `tcp_fx -> 0`, so:
+At force release, raw `tcp_force[0]` should return inside the `0.4 N` deadband. The controller resets the filtered X force to `0`, so:
 
 - `vx_des = -damping_linear_x * prev_vx`
 
@@ -279,8 +288,10 @@ Example with `prev_vx = 0.03 m/s`:
 
 Action:
 
+- First confirm the release reset is happening in the CSV log: `raw_tcp_fx` should be inside the deadband, `tcp_fx` should become `0`, and `limit_type_x` should switch to `DECEL`.
 - Increase `dec_limit_x` to shorten stop time.
 - Increase `damping_linear_x` if coasting persists.
+- If `raw_tcp_fx` remains outside the deadband after you let go, the issue is force bias/noise or contact still loading the tool, not the velocity deceleration limit.
 
 ### D) Reversal feels harsh vs delayed
 
@@ -344,6 +355,15 @@ Launch controller + GUI:
 
 ```bash
 ros2 launch arm_controller stiff_tuning.launch.py
+```
+
+If idle odometry noise keeps the GUI in `MOVING`, pass matching thresholds to both nodes through launch:
+
+```bash
+ros2 launch arm_controller stiff_tuning.launch.py \
+  stop_linear_x_threshold:=0.04 \
+  stop_linear_y_threshold:=0.04 \
+  stop_angular_z_threshold:=0.06
 ```
 
 Manual split:

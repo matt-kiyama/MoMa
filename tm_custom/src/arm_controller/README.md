@@ -10,12 +10,15 @@ Additional docs:
 
 - Runtime ROS parameters for all stiff-arm tuning fields under `stiff_arm.*`.
 - Safety gate for parameter updates:
-  - Uses `ld250_pose` (`nav_msgs/msg/Odometry`).
+  - Uses `/platform/odometry` (`nav_msgs/msg/Odometry`).
+  - Subscribes with sensor-data/best-effort QoS to match the base odometry publisher.
   - Update accepted only if:
-    - `|linear.x| <= 0.01`
-    - `|linear.y| <= 0.01`
-    - `|angular.z| <= 0.02`
+    - `|linear.x| <= 0.03` by default
+    - `|linear.y| <= 0.03` by default
+    - `|angular.z| <= 0.05` by default
     - conditions held continuously for at least `0.25 s`
+  - These thresholds are configurable with `stop_linear_x_threshold`,
+    `stop_linear_y_threshold`, `stop_angular_z_threshold`, and `stop_hold_time_sec`.
 - New GUI node for live tuning:
   - executable: `stiff_tuner_gui`
   - node name: `stiff_param_tuner_gui`
@@ -28,14 +31,16 @@ Additional docs:
 - Subscribes:
   - `feedback_states` (`tm_msgs/msg/FeedbackState`)
   - `sta_response` (`tm_msgs/msg/StaResponse`)
-  - `ld250_pose` (`nav_msgs/msg/Odometry`) for stop/moving detection
+  - `/platform/odometry` (`nav_msgs/msg/Odometry`) for stop/moving detection
 - Publishes:
   - `/platform/velocity_command` (`geometry_msgs/msg/Twist`)
 
 ### `stiff_tuner_gui` (`stiff_param_tuner_gui`)
 
 - Reads/writes parameters on controller node `arm_service` (configurable).
-- Subscribes to odometry (`ld250_pose` by default) to show `STOPPED` / `MOVING` status.
+- Subscribes to odometry (`/platform/odometry` by default, sensor-data/best-effort QoS)
+  to show `STOPPED` / `MOVING` status.
+- Shows the latest odometry velocities so a persistent `MOVING` state can be diagnosed.
 
 ## Tunable Parameters
 
@@ -64,7 +69,7 @@ This section explains exactly how each variable affects the control output.
 
 Linear X path:
 
-- `tcp_fx` is clamped by `force_min/force_max`, filtered, then used in:
+- `tcp_fx` is clamped by `force_min/force_max`, filtered, and reset to `0` when raw X force returns inside the release deadband, then used in:
 - `vx_des = gain_linear_x * tcp_fx - damping_linear_x * prev_vx`
 - `vx` is rate-limited:
   - accel phase: `acc_limit_x`
@@ -171,7 +176,11 @@ Optional launch overrides:
 ```bash
 ros2 launch arm_controller stiff_tuning.launch.py \
   controller_node_name:=arm_service \
-  odom_topic:=ld250_pose
+  odom_topic:=/platform/odometry \
+  stop_linear_x_threshold:=0.03 \
+  stop_linear_y_threshold:=0.03 \
+  stop_angular_z_threshold:=0.05 \
+  stop_hold_time_sec:=0.25
 ```
 
 Run controller:
@@ -192,7 +201,11 @@ Optional GUI overrides:
 ```bash
 ros2 run arm_controller stiff_tuner_gui --ros-args \
   -p controller_node_name:=arm_service \
-  -p odom_topic:=ld250_pose
+  -p odom_topic:=/platform/odometry \
+  -p stop_linear_x_threshold:=0.03 \
+  -p stop_linear_y_threshold:=0.03 \
+  -p stop_angular_z_threshold:=0.05 \
+  -p stop_hold_time_sec:=0.25
 ```
 
 ## GUI Workflow
@@ -231,7 +244,9 @@ If the base is moving, `ros2 param set` will fail with a message similar to:
   - Ensure node name matches GUI `controller_node_name` parameter.
 - GUI always shows `MOVING`:
   - Check odometry topic is correct and active.
-  - Verify odometry velocities settle below thresholds for at least `0.25 s`.
+  - Read the velocity line under the status badge to see which odometry component is above threshold.
+  - If the base is physically stopped but odometry jitters, raise the relevant `stop_*_threshold`
+    parameter slightly and pass the same value to the controller and GUI.
 - Apply rejected:
   - Stop the base and retry.
   - Check parameter values satisfy validation rules above.

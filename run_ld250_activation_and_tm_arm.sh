@@ -12,6 +12,19 @@ run_cmd() {
   "$@"
 }
 
+source_allow_unset() {
+  local had_u=0
+  if [[ $- == *u* ]]; then
+    had_u=1
+    set +u
+  fi
+  # shellcheck disable=SC1090
+  source "$1"
+  if (( had_u )); then
+    set -u
+  fi
+}
+
 if [[ ! -f /opt/ros/jazzy/setup.bash ]]; then
   printf 'Missing ROS setup: /opt/ros/jazzy/setup.bash\n' >&2
   exit 1
@@ -20,8 +33,7 @@ fi
 # ----------------------
 # Activation part (Workflow as of 10/23/25)
 # ----------------------
-# shellcheck disable=SC1091
-source /opt/ros/jazzy/setup.bash
+source_allow_unset /opt/ros/jazzy/setup.bash
 export ROS_STATIC_PEERS
 
 run_cmd ros2 lifecycle get /platform/manager
@@ -38,12 +50,10 @@ if [[ ! -d "$TMR_WS" ]]; then
 fi
 
 if [[ -f /opt/ros/humble/setup.bash ]]; then
-  # shellcheck disable=SC1091
-  source /opt/ros/humble/setup.bash
+  source_allow_unset /opt/ros/humble/setup.bash
 else
   # Fall back to current ROS env if humble isn't present.
-  # shellcheck disable=SC1091
-  source /opt/ros/jazzy/setup.bash
+  source_allow_unset /opt/ros/jazzy/setup.bash
 fi
 
 cd "$TMR_WS"
@@ -54,8 +64,7 @@ if [[ ! -f "$TMR_WS/install/setup.bash" ]]; then
   exit 1
 fi
 
-# shellcheck disable=SC1091
-source "$TMR_WS/install/setup.bash"
+source_allow_unset "$TMR_WS/install/setup.bash"
 
 # Runs in foreground (Ctrl+C to stop)
 run_cmd ros2 run tm_driver tm_driver "robot_ip:=${TM_ROBOT_IP}"

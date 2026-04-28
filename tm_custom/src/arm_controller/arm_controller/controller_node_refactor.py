@@ -5,6 +5,7 @@ from geometry_msgs.msg import Twist
 from nav_msgs.msg import Odometry
 from rcl_interfaces.msg import SetParametersResult
 from rclpy.parameter import Parameter
+from rclpy.qos import qos_profile_sensor_data
 
 from tm_msgs.msg import FeedbackState
 from tm_msgs.msg import StaResponse
@@ -33,12 +34,13 @@ class StiffArmParams:
     gain_angular_z: float = 1.1
 
     acc_limit_x: float = 0.3         # m/s^2
-    dec_limit_x: float = 0.072       # m/s^2
+    # dec_limit_x: float = 0.072       # m/s^2
+    dec_limit_x: float = 0.1       # m/s^2
     reversal_limit: float = 0.30     # m/s^2 or multiplier depending on usage
 
     acc_limit_z: float = 0.35        # rad/s^2
 
-    damping_linear_x: float = 0.12   # N / (m/s)
+    damping_linear_x: float = 0.24   # N / (m/s)
     damping_angular_z: float = 0.65   # N*m / (rad/s)
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -52,10 +54,10 @@ class ArmService(Node):
     STIFF_PARAM_PREFIX = "stiff_arm"
     STIFF_PARAM_FIELDS = tuple(StiffArmParams.__dataclass_fields__.keys())
 
-    STOP_LINEAR_X_THRESHOLD = 0.01
-    STOP_LINEAR_Y_THRESHOLD = 0.01
-    STOP_ANGULAR_Z_THRESHOLD = 0.02
-    STOP_HOLD_TIME_SEC = 0.25
+    DEFAULT_STOP_LINEAR_X_THRESHOLD = 0.03
+    DEFAULT_STOP_LINEAR_Y_THRESHOLD = 0.03
+    DEFAULT_STOP_ANGULAR_Z_THRESHOLD = 0.05
+    DEFAULT_STOP_HOLD_TIME_SEC = 0.25
 
     def __init__(self):
         super().__init__("arm_service")
@@ -63,7 +65,9 @@ class ArmService(Node):
         # -----------------------------
         # CSV logging setup
         # -----------------------------
-        log_dir = os.path.expanduser("~/stiff_arm_logs")
+        log_dir = os.path.expanduser(
+            os.environ.get("STIFF_ARM_LOG_DIR", "~/stiff_arm_logs")
+        )
         os.makedirs(log_dir, exist_ok=True)
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         log_path = os.path.join(
@@ -75,13 +79,25 @@ class ArmService(Node):
 
         self.csv_writer.writerow([
             "time_sec",
+            "raw_tcp_fx",
             "tcp_fx",
             "prev_vx",
-            "damped_fx",
+            "vx_force",
+            "vx_damping",
             "vx_des",
             "vx_cmd",
-            "acc_limit_x",
-            "reversing_x"
+            "rate_limit_x",
+            "reversing_x",
+            "limit_type_x",
+            "raw_tcp_fy",
+            "tcp_fy",
+            "prev_wz",
+            "wz_force",
+            "wz_damping",
+            "wz_des",
+            "wz_cmd",
+            "rate_limit_z",
+            "limit_type_z",
         ])
 
         self.start_time = self.get_clock().now()
@@ -96,8 +112,26 @@ class ArmService(Node):
         self.sta_subscription = self.create_subscription(
             StaResponse, "sta_response", self.sta_callback, 10
         )
+        self.odom_topic = self.declare_parameter("odom_topic", "/platform/odometry").value
+        self.stop_linear_x_threshold = abs(float(self.declare_parameter(
+            "stop_linear_x_threshold",
+            self.DEFAULT_STOP_LINEAR_X_THRESHOLD,
+        ).value))
+        self.stop_linear_y_threshold = abs(float(self.declare_parameter(
+            "stop_linear_y_threshold",
+            self.DEFAULT_STOP_LINEAR_Y_THRESHOLD,
+        ).value))
+        self.stop_angular_z_threshold = abs(float(self.declare_parameter(
+            "stop_angular_z_threshold",
+            self.DEFAULT_STOP_ANGULAR_Z_THRESHOLD,
+        ).value))
+        self.stop_hold_time_sec = max(0.0, float(self.declare_parameter(
+            "stop_hold_time_sec",
+            self.DEFAULT_STOP_HOLD_TIME_SEC,
+        ).value))
+
         self.odom_subscription = self.create_subscription(
-            Odometry, "ld250_pose", self.odom_callback, 10
+            Odometry, self.odom_topic, self.odom_callback, qos_profile_sensor_data
         )
 
         self.feedback_subscription
@@ -115,6 +149,11 @@ class ArmService(Node):
 
         self.base_is_stopped = False
         self._stopped_since_sec = None
+        self._last_odom_sec = None
+        self._last_odom_linear_x = 0.0
+        self._last_odom_linear_y = 0.0
+        self._last_odom_angular_z = 0.0
+        self._last_odom_below_threshold = False
 
         self.declare_parameter("angle", 91.0)
         self._declare_stiff_arm_parameters()
@@ -210,7 +249,7 @@ class ArmService(Node):
 
         if not self.base_is_stopped:
             result.successful = False
-            result.reason = "Base must be stopped for at least 0.25s before tuning parameters."
+            result.reason = self._base_stop_guard_reason()
             return result
 
         candidate_values = asdict(self.params)
@@ -231,21 +270,64 @@ class ArmService(Node):
         angular_z = msg.twist.twist.angular.z
 
         below_threshold = (
-            abs(linear_x) <= self.STOP_LINEAR_X_THRESHOLD
-            and abs(linear_y) <= self.STOP_LINEAR_Y_THRESHOLD
-            and abs(angular_z) <= self.STOP_ANGULAR_Z_THRESHOLD
+            abs(linear_x) <= self.stop_linear_x_threshold
+            and abs(linear_y) <= self.stop_linear_y_threshold
+            and abs(angular_z) <= self.stop_angular_z_threshold
         )
 
         now_sec = self.get_clock().now().nanoseconds * 1e-9
+        self._last_odom_sec = now_sec
+        self._last_odom_linear_x = linear_x
+        self._last_odom_linear_y = linear_y
+        self._last_odom_angular_z = angular_z
+        self._last_odom_below_threshold = below_threshold
         if below_threshold:
             if self._stopped_since_sec is None:
                 self._stopped_since_sec = now_sec
                 self.base_is_stopped = False
             else:
-                self.base_is_stopped = (now_sec - self._stopped_since_sec) >= self.STOP_HOLD_TIME_SEC
+                self.base_is_stopped = (now_sec - self._stopped_since_sec) >= self.stop_hold_time_sec
         else:
             self._stopped_since_sec = None
             self.base_is_stopped = False
+
+    def _base_stop_guard_reason(self):
+        base_reason = (
+            f"Base must be stopped for at least {self.stop_hold_time_sec:.2f}s "
+            "before tuning parameters."
+        )
+
+        now_sec = self.get_clock().now().nanoseconds * 1e-9
+        if self._last_odom_sec is None:
+            return (
+                f"{base_reason} Controller has not received odometry on "
+                f"'{self.odom_topic}'."
+            )
+
+        odom_age_sec = now_sec - self._last_odom_sec
+        velocity_text = (
+            f"Controller odom: vx={self._last_odom_linear_x:.4f} m/s, "
+            f"vy={self._last_odom_linear_y:.4f} m/s, "
+            f"wz={self._last_odom_angular_z:.4f} rad/s; thresholds are "
+            f"{self.stop_linear_x_threshold:.3f}, "
+            f"{self.stop_linear_y_threshold:.3f}, "
+            f"{self.stop_angular_z_threshold:.3f}."
+        )
+
+        if odom_age_sec > 1.0:
+            return (
+                f"{base_reason} Controller odometry on '{self.odom_topic}' is stale "
+                f"({odom_age_sec:.2f}s old). {velocity_text}"
+            )
+
+        if self._last_odom_below_threshold and self._stopped_since_sec is not None:
+            held_sec = now_sec - self._stopped_since_sec
+            return (
+                f"{base_reason} Controller has only seen stopped odometry for "
+                f"{held_sec:.2f}s. {velocity_text}"
+            )
+
+        return f"{base_reason} {velocity_text}"
 
 
     def feedback_callback(self, msg):
@@ -284,23 +366,34 @@ class ArmService(Node):
         # -------------------------------------------------
         # Force input
         # -------------------------------------------------
-        tcp_fx = clamp(self.tcp_force[0], p.force_min, p.force_max)
-        tcp_fy = clamp(self.tcp_force[1], p.force_min, p.force_max)
+        raw_tcp_fx = clamp(self.tcp_force[0], p.force_min, p.force_max)
+        raw_tcp_fy = clamp(self.tcp_force[1], p.force_min, p.force_max)
 
         # Low-pass filter forces
         alpha_fx = 0.2
         alpha_fy = 0.12
+        deadband_fx = 0.4
+        deadband_fy = 0.6
 
-        self.filtered_fx = alpha_fx * tcp_fx + (1.0 - alpha_fx) * self.filtered_fx
-        self.filtered_fy = alpha_fy * tcp_fy + (1.0 - alpha_fy) * self.filtered_fy
+        # Release should not be delayed by the low-pass filter tail.
+        if abs(raw_tcp_fx) < deadband_fx or raw_tcp_fx * self.filtered_fx < 0.0:
+            self.filtered_fx = 0.0
+        else:
+            self.filtered_fx = alpha_fx * raw_tcp_fx + (1.0 - alpha_fx) * self.filtered_fx
+
+        if abs(raw_tcp_fy) < deadband_fy or raw_tcp_fy * self.filtered_fy < 0.0:
+            self.filtered_fy = 0.0
+        else:
+            self.filtered_fy = alpha_fy * raw_tcp_fy + (1.0 - alpha_fy) * self.filtered_fy
 
         tcp_fx = self.filtered_fx
         tcp_fy = self.filtered_fy
 
-        # Deadbands
-        if abs(tcp_fx) < 0.4:
+        # Deadbands after filtering suppress startup noise while raw-force reset
+        # above prevents continued motion after force release.
+        if abs(tcp_fx) < deadband_fx:
             tcp_fx = 0.0
-        if abs(tcp_fy) < 0.6:
+        if abs(tcp_fy) < deadband_fy:
             tcp_fy = 0.0
 
         # Asymmetric soft blending
@@ -334,6 +427,10 @@ class ArmService(Node):
         vx_damping = p.damping_linear_x * self.prev_vx
         vx_des = vx_force - vx_damping
 
+        print("X Force contribution:", vx_force)
+        print("X Damping contribution:", vx_damping)
+        print("X Desired velocity:", vx_des)
+
         reversing_x = tcp_fx * self.prev_vx < 0.0
 
         acc_limit_x = p.acc_limit_x
@@ -349,6 +446,9 @@ class ArmService(Node):
         else:
             rate_limit_x = acc_limit_x
             limit_type_x = "ACCEL"
+
+        print("X Limit type:", limit_type_x)
+        print("X Rate limit:", rate_limit_x)
 
         vx = self.limit_rate(vx_des, self.prev_vx, rate_limit_x, dt)
         vx = clamp(vx, p.vel_min_x, p.vel_max_x)
@@ -416,29 +516,26 @@ class ArmService(Node):
         t = (now - self.start_time).nanoseconds * 1e-9
 
         self.csv_writer.writerow([
-            # Time
-            "time_sec",
-
-            # -------- Linear X --------
-            "tcp_fx",
-            "prev_vx",
-            "vx_force",
-            "vx_damping",
-            "vx_des",
-            "vx_cmd",
-            "rate_limit_x",
-            "reversing_x",
-            "limit_type_x",
-
-            # -------- Angular Z --------
-            "tcp_fy",
-            "prev_wz",
-            "wz_force",
-            "wz_damping",
-            "wz_des",
-            "wz_cmd",
-            "rate_limit_z",
-            "limit_type_z"
+            t,
+            raw_tcp_fx,
+            tcp_fx,
+            self.prev_vx,
+            vx_force,
+            vx_damping,
+            vx_des,
+            vx,
+            rate_limit_x,
+            reversing_x,
+            limit_type_x,
+            raw_tcp_fy,
+            tcp_fy,
+            self.prev_wz,
+            wz_force,
+            wz_damping,
+            wz_des,
+            wz,
+            rate_limit_z,
+            limit_type_z,
         ])
 
         if int(t * 50) % 50 == 0:
