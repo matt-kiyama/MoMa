@@ -25,17 +25,17 @@ class StiffArmParams:
     force_max: float = 60.0          # newtons
     force_min: float = -80.0         # newtons
 
-    vel_max_z: float = 0.050         # rad/s
-    vel_min_z: float = -0.050        # rad/s
-    vel_max_x: float = 0.040         # m/s
-    vel_min_x: float = -0.040        # m/s
+    vel_max_z: float = 0.070         # rad/s
+    vel_min_z: float = -0.070        # rad/s
+    vel_max_x: float = 0.060         # m/s
+    vel_min_x: float = -0.060        # m/s
 
     gain_linear_x: float = 0.18
     gain_angular_z: float = 1.1
 
     acc_limit_x: float = 0.3         # m/s^2
     # dec_limit_x: float = 0.072       # m/s^2
-    dec_limit_x: float = 0.1       # m/s^2
+    dec_limit_x: float = 0.12      # m/s^2
     reversal_limit: float = 0.30     # m/s^2 or multiplier depending on usage
 
     acc_limit_z: float = 0.35        # rad/s^2
