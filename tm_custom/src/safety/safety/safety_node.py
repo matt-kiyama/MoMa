@@ -8,6 +8,7 @@ from tm_msgs.msg import FeedbackState
 from nav_msgs.msg import Odometry
 from tm_msgs.srv import SetPositions, SetEvent
 from geometry_msgs.msg import Twist
+from rclpy.qos import qos_profile_sensor_data
 
 import sys 
 import os
@@ -42,7 +43,8 @@ class SafetyNode(Node):
         self.srv = self.create_service(SetPositions, 'safety_service', self.safety_service_callback)
         
         #client of setPositions which goes to arm
-        # self.set_positions_client = self.create_client(SetPositions, 'set_positions')
+        self.set_positions_client = self.create_client(SetPositions, 'set_positions')
+        self.pending_move_futures = []
         
         #create client of setEvent which will be used for sending stop and clear message
         self.event_client = self.create_client(SetEvent, 'set_event')
@@ -71,13 +73,13 @@ class SafetyNode(Node):
         #Publisher for velocities being sent to base
         self.ld250_cmd_vel_publisher = self.create_publisher(
             Twist,
-            'ld250_cmd_vel',
+            '/platform/velocity_command',
             100
         )
 
         self.LD250_safety_vel_subscription = self.create_subscription(
             Twist,
-            'ld250_safety_cmd_vel',
+            '/safety/velocity_command',
             self.safety_cmd_vel_callback,
             100)
         self.LD250_safety_vel_subscription  # prevent unused variable warning
@@ -85,9 +87,9 @@ class SafetyNode(Node):
         #subscribe to Odometry topic
         self.LD250_odom_subscription = self.create_subscription(
             Odometry,
-            'ld250_pose',
+            '/platform/odometry',
             self.class_odometry_callback,
-            10)
+            qos_profile_sensor_data)
         self.LD250_odom_subscription  # prevent unused variable warning
     
 
@@ -222,11 +224,27 @@ class SafetyNode(Node):
         return adjusted_tcp_velocity
 
 
-    def forward_request_to_move_service(self, request):
-        while not self.set_positions_client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('move_service not available, waiting...')
-        self.set_positions_client.call_async(request)
-        self.get_logger().info('Return from forward_request_callback')
+    def forward_request_to_move_service(self, request) -> bool:
+        if not self.set_positions_client.wait_for_service(timeout_sec=0.0):
+            self.get_logger().warn('set_positions service not available; rejecting safety_service request')
+            return False
+
+        future = self.set_positions_client.call_async(request)
+        self.pending_move_futures.append(future)
+        future.add_done_callback(self._set_positions_done_callback)
+        self.get_logger().info('Forwarded safety-checked request to set_positions')
+        return True
+
+    def _set_positions_done_callback(self, future):
+        try:
+            result = future.result()
+            if result is not None:
+                self.get_logger().info(f'set_positions returned ok={result.ok}')
+        except Exception as exc:
+            self.get_logger().error(f'set_positions call failed: {exc}')
+        finally:
+            if future in self.pending_move_futures:
+                self.pending_move_futures.remove(future)
 
 
     def safety_service_callback(self, request, response):
@@ -234,21 +252,23 @@ class SafetyNode(Node):
         print("Entering Safety Service Callback")
         print("request.motion_type: ", request.motion_type)
         print("Request Type: ", type(request))
+        forward_request = False
         match request.motion_type:
             case 1: #SetPositions.PTP_J
                 print("JOINT MOVE")
                 #check joint angles
                 request.positions = self.adjust_joint_angles_to_thresholds(arm=self.arm, requested_angles=request.positions)
                 request.velocity = self.adjust_joint_velocities_to_thresholds(arm=self.arm, requested_velocity=request.velocity)
-                # self.forward_request_to_move_service(request)
+                forward_request = True
             case 2: #SetPositions.PTP_T
                 print("TCP MOVE")
                 #check tcp position
                 request.positions = self.adjust_xyz_positions_to_thresholds(arm=self.arm, requested_positions=request.positions)
                 request.velocity = self.adjust_xyz_velocities_to_thresholds(arm=self.arm, requested_velocity=request.velocity)
-                # self.forward_request_to_move_service(request)
+                forward_request = True
             case _:
                 print("WEIRD MOVE")
+        response.ok = forward_request and self.forward_request_to_move_service(request)
         print("Leaving Safety Service Callback")
         return response
       

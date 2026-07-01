@@ -6,6 +6,7 @@ from std_msgs.msg import Bool
 from tm_msgs.msg import FeedbackState
 from nav_msgs.msg import Odometry
 from tm_msgs.srv import SetPositions
+from rclpy.qos import qos_profile_sensor_data
 import sys 
 import os
 sys.path.append(os.path.abspath("/home/rslomron/MoMa/tm_custom/src/safety/safety/"))
@@ -37,13 +38,12 @@ class BaseAndArmController(Node):
     def __init__(self):
         super().__init__('base_and_arm_controller')
         #client of setPositions which goes to arm
-        self.cli = self.create_client(SetPositions, 'set_positions')
-        # self.cli = self.create_client(SetPositions, 'safety_service')
+        self.cli = self.create_client(SetPositions, 'safety_service')
 
         #Publisher for velocities being sent to base
         self.twist_publisher = self.create_publisher(
             Twist,
-            'ld250_safety_cmd_vel',
+            '/safety/velocity_command',
             10
         )
 
@@ -60,9 +60,9 @@ class BaseAndArmController(Node):
 
         self.LD250_odom_subscription = self.create_subscription(
             Odometry,
-            'ld250_pose',
+            '/platform/odometry',
             self.base_feedback_callback,
-            10)
+            qos_profile_sensor_data)
         self.LD250_odom_subscription  # prevent unused variable warning
 
         # self.base_feedback = None
