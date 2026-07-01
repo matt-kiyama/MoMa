@@ -6,6 +6,7 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=find_packages(exclude=['test']), 
+    package_data={package_name: ['*.yaml']},
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -21,9 +22,9 @@ setup(
     entry_points={
         'console_scripts': ['safety1 = safety.safety_node:main',
                             'demo = safety.safety_demo:main',
+                            'endpoint_controller = safety.endpoint_controller_node:main',
                             'stow_safety = safety.safety_demo_stow:main',
                             'stow_controller = safety.controller_demo_stow:main',
         ],
     },
 )
-
